@@ -1,0 +1,104 @@
+@charset "utf-8";
+/*@import url(./basic.css);*/
+
+#idLayoutApp {
+    width: 100%;
+    height: 100%;
+}
+
+#idLayoutTop {
+    height:54px;
+    background-image: url("../images/bg-top.png");
+    background-size:cover;
+}
+
+#idLayoutLeft {
+    width:200px;
+    height:500px;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+
+#idLayoutCenter {
+    padding:0;
+    background:#eee;
+}
+
+#idLayoutBottom {
+    height:32px;
+    background: #e0ecff;
+}
+
+.contentFrame {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+.header{
+	position: relative;
+    vertical-align: middle;
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
+
+.header .logo {
+    float: left;
+}
+
+img[alt="logo"] {
+    height: 48px;
+}
+
+#idExit {
+    float:right;
+    position: relative;
+    right:10px;
+    top: 15px;
+}
+
+.footer {
+    margin: 6px;
+    font-size: 1.2rem;
+    text-align: right;
+}
+
+.footer a {
+    text-decoration: none;  
+}
+
+/*改变accordion选中项缺省背景*/
+.accordion .accordion-header {
+    background-color: #d0dcff;
+}
+
+.accordion .accordion-header-selected {
+    background-color: #e0ecff;
+}
+
+.accordionSection {
+    overflow-y:auto;
+    overflow-x:hidden;
+    padding:10px;
+}
+
+.navItem {
+    font-size: 1.2rem;
+    width: 80%;
+    margin: 4px 0;
+    padding: 4px 4px 4px 22px;
+    cursor: pointer;
+    color: #0099FF;
+    background:url('../icons/icon-item.gif') no-repeat center left;
+}
+
+.navItem a {
+    color: #0099FF;
+}
+
+.navItem a:hover {
+    color: red;
+}

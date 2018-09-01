@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>计算机学院领导简介</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!-- Save for Web Styles (home(Regent).png) -->
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/leader.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css"><link rel="stylesheet" type="text/css" href="css/xcConfirm.css">
+</head>
+<body>
+<div class="intro_title">
+    <p style="text-align: center;font-size: 2.0rem;font-weight:bold; ">学院领导</p>
+    <hr/>
+    <p style="text-align: center;font-size: 1.2rem">
+        <span>作者：**</span>
+        <span>
+            &nbsp;&nbsp;单位：华侨大学计算机学院
+        </span>
+        <span >
+            &nbsp;&nbsp;发布时间：xxxx年xx月xx日
+        </span>
+        <span>
+            &nbsp;&nbsp;浏览次数：****
+        </span>
+    </p>
+</div>
+<!--<div class="person">
+    <div class="person-photo">
+
+    </div>
+    <div class="person-intro">
+
+    </div>
+</div>
+<div class="person">
+    <div class="person-photo">
+
+    </div>
+    <div class="person-intro">
+
+    </div>
+</div>-->
+<div class="leader_intro">
+    <table class="intro_table" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody>
+            <tr>
+                <td width="180" height="180" align="center">
+                    <a href="#">
+                        <img width="132px" height="170px" alt="蔡绍滨" src="images/caishaobin.bmp" >
+                    </a>
+                </td>
+                <td class="intro_content" valign="top">
+                    <p>
+                        <a href="#">
+                            <strong>蔡绍滨</strong>
+                        </a>
+                    </p>
+                    <br>
+                    <p style="font-size: 1.4rem">
+                        蔡绍滨，男，1973年出生，工学博士，教授，博士生导师，教育部新世纪优秀人才。
+                        现任华侨大学计算机学院院长，中国计算机学会无线传感器网络专家委员会委员，省计算机学会理事，美国ACM会员。
+                        《Ad Hoc Network》、《Computer Communications》，
+                        《软件学报》和《计算机研究与发展》等期刊审稿人，国家自然科学基金，省自然科学基金和中小型企业创新基金评审人。
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td style="height: 5%;" colspan="2"></td>
+            </tr>
+            <tr>
+                <td width="180" height="180" align="center">
+                    <a href="#">
+                        <img width="132px" height="170px" alt="缑锦" src="images/goujin.jpg" >
+                    </a>
+                </td>
+                <td class="intro_content" valign="top">
+                    <p>
+                        <a href="#">
+                            <strong>缑锦</strong>
+                        </a>
+                    </p>
+                    <br>
+                    <p style="font-size: 1.4rem">
+                        缑锦，1978年出生，华侨大学发展规划处副处长，计算机科学与技术学院教授、硕士研究生导师。
+                        2006年作为浙江省优秀毕业生毕业于浙江大学计算机科学与技术专业并获得博士学位，
+                        同年进入华侨大学任教，曾担任软件工程系系主任、计算机科学与技术学院院长助理等职务。
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td style="height: 5%;" colspan="2"></td>
+            </tr>
+            <tr>
+                <td width="180" height="180" align="center">
+                    <a href="#">
+                        <img width="132px" height="170px" alt="杜吉祥" src="images/dujixiang.png" >
+                    </a>
+                </td>
+                <td class="intro_content" valign="top">
+                    <p>
+                        <a href="#">
+                            <strong>杜吉祥</strong>
+                        </a>
+                    </p>
+                    <br>
+                    <p style="font-size: 1.4rem">
+                        杜吉祥，男，1977年生，山东高唐人，工学博士，教授，博士研究生导师。
+                        现任计算机科学与技术学院副院长，
+                        计算机科学与技术学科计算机视觉与模式识别学科方向带头人，
+                        厦门市计算机视觉与模式识别重点实验室副主任，
+                        第十届校学术委员会委员
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td style="height: 5%;" colspan="2"></td>
+            </tr>
+            <tr>
+                <td width="180" height="180" align="center">
+                    <a href="#">
+                        <img width="132px" height="170px" alt="陈卫峰" src="images/default.jpg" >
+                    </a>
+                </td>
+                <td class="intro_content" valign="top">
+                    <p>
+                        <a href="#">
+                            <strong>陈卫峰</strong>
+                        </a>
+                    </p>
+                    <br>
+                    <p style="font-size: 1.4rem">
+                        陈卫峰，男，现任计算机科学与技术学院党委书记。
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td style="height: 5%;" colspan="2"></td>
+            </tr>
+            <tr>
+                <td width="180" height="180" align="center">
+                    <a href="#">
+                        <img width="132px" height="170px" alt="钟必能" src="images/钟必能%20.jpg" >
+                    </a>
+                </td>
+                <td class="intro_content" valign="top">
+                    <p>
+                        <a href="#">
+                            <strong>钟必能</strong>
+                        </a>
+                    </p>
+                    <br>
+                    <p style="font-size: 1.4rem">
+                        钟必能，男，壮族，1981年生于广西河池宜州市，博士，副教授，硕士研究生导师，
+                        现工作于华侨大学计算机科学与技术学院, 任计算机科学与技术系系主任、计算机科学与技术/计算机技术领域研究生培养指导委员会委员。
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td style="height: 5%;" colspan="2"></td>
+            </tr>
+            <tr>
+                <td width="180" height="180" align="center">
+                    <a href="#">
+                        <img width="132px" height="170px" alt="田晖" src="images/tianhui.jpg" >
+                    </a>
+                </td>
+                <td class="intro_content" valign="top">
+                    <p>
+                        <a href="#">
+                            <strong>田晖</strong>
+                        </a>
+                    </p>
+                    <br>
+                    <p style="font-size: 1.4rem">
+                        田晖，男，1982年10月出生，博士，副教授，硕士生导师，网络与信息安全系主任。
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td style="height: 5%;" colspan="2"></td>
+            </tr>
+            <tr>
+                <td width="180" height="180" align="center">
+                    <a href="#">
+                        <img width="132px" height="170px" alt="喻小光" src="images/yuxiaoguang.png" >
+                    </a>
+                </td>
+                <td class="intro_content" valign="top">
+                    <p>
+                        <a href="#">
+                            <strong>喻小光</strong>
+                        </a>
+                    </p>
+                    <br>
+                    <p style="font-size: 1.4rem">
+                        喻小光，副教授，硕士研究生导师，1999年华侨大学计算机系本科毕业，
+                        2002年华侨大学信息学院研究生毕业，硕士毕业至今在华侨大学计算机学院工作，现担任计算机学院数字媒体系主任。
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td style="height: 5%;" colspan="2"></td>
+            </tr>
+            <tr>
+                <td width="180" height="180" align="center">
+                    <a href="#">
+                        <img width="132px" height="170px" alt="范慧琳" src="images/default.jpg" >
+                    </a>
+                </td>
+                <td class="intro_content" valign="top">
+                    <p>
+                        <a href="#">
+                            <strong>范慧琳</strong>
+                        </a>
+                    </p>
+                    <br>
+                    <p style="font-size: 1.4rem">
+                        范慧琳，女，现任计算机科学与技术学院计算机基础教学部主任。
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td style="height: 5%;" colspan="2"></td>
+            </tr>
+            <tr>
+                <td width="180" height="180" align="center">
+                    <a href="#">
+                        <img width="132px" height="170px" alt="陈威" src="images/default.jpg" >
+                    </a>
+                </td>
+                <td class="intro_content" valign="top">
+                    <p>
+                        <a href="#">
+                            <strong>陈威</strong>
+                        </a>
+                    </p>
+                    <br>
+                    <p style="font-size: 1.4rem">
+                        陈威，男，现任计算机科学与技术学院实验室主任。
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td style="height: 5%;" colspan="2"></td>
+            </tr>
+            <tr>
+                <td width="180" height="180" align="center">
+                    <a href="#">
+                        <img width="132px" height="170px" alt="张远东" src="images/default.jpg" >
+                    </a>
+                </td>
+                <td class="intro_content" valign="top">
+                    <p>
+                        <a href="#">
+                            <strong>张远东</strong>
+                        </a>
+                    </p>
+                    <br>
+                    <p style="font-size: 1.4rem">
+                        张远东，男，现任计算机科学与技术学院实验室主任。
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td style="height: 5%;" colspan="2"></td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

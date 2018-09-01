@@ -1,0 +1,226 @@
+﻿
+#root {
+    width:1080px;
+    /*width:100%;*/
+    background-color: #FFFFFF;
+    padding:0;
+    margin: 0 auto;
+}
+
+.row{
+    width: 980px;
+    max-width: 980px;
+    min-width: 599px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#logo {
+    position: relative;
+    float: left;
+    left: 0;
+    top: 0;
+    width:252px;
+    height:135px;
+    margin: 0;
+}
+
+#navMenu{
+    position: relative;
+    float: right;
+    right: 0;
+    top: 0;
+}
+
+#language_bar {
+    clear: left;
+    list-style-type: none;
+    width:100%;
+    height:28px;
+}
+
+ul.menu > li{
+    float: left;
+    list-style: none;
+    display: block;
+    right: 1px;
+    overflow: hidden;
+    cursor: pointer;
+    border-right: 1px dotted #b0b5b5;
+}
+
+ul.menu > li:first-child{
+    border-left: 1px dotted #b0b5b5;
+}
+
+div.nav_menu {
+    position:relative;
+    float: left;
+    left: 0;
+    top: 0;
+    width:119px;
+    height:135px;
+    /*height:122px;*/
+    opacity: 1;
+}
+
+.nav_img {
+    width: 119px;
+    height:122px;
+}
+
+div.nav_popup {
+    position:absolute;
+    top:135px;
+    width:380px;
+    height:300px;
+    z-index:2000;
+    display: none;
+}
+
+div.nav_popup > div:first-child {
+    position: relative;
+    border-bottom:dotted 1px #FFF;
+    height:40px;
+    line-height:40px;
+    padding-left: 20px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color:#FFF
+}
+
+div.nav_popup > div:first-child+div {
+    float: left;
+    position: relative;
+    left: 0;
+    width: 220px;
+    height:230px;
+    padding:10px 20px 10px 20px;
+    color:#FFF;
+    border-right:dotted 1px #FFF;
+}
+
+div.nav_popup > div:first-child+div+div {
+    float: left;
+    position: relative;
+    left: 0;
+    width: 118px;
+    height:250px;
+    color:#FFF;
+}
+
+div.nav_popup img {
+    margin-bottom: 5px;
+}
+
+div.nav_popup p {
+    text-align: justify;
+    line-height: 1.6rem;
+}
+
+ul.nav_list {
+    margin:10px;
+    padding : 0;
+    left:20px;
+    list-style:none;
+    width:118px;
+}
+
+.nav_item {
+    width:100px;
+    border-bottom:dotted 1px #FFF;
+    color:#FFF;
+    line-height:25px;
+}
+
+li.nav_item a {
+    color: #FFF;
+}
+
+#navIntroduction {
+    left: -260px;
+    background-color:#c23c33;
+}
+
+#navTeaching {
+    left:-140px;
+    background-color:#004b98;
+}
+#navFaculty {
+    left:-20px;
+    background-color:#799a05;
+}
+#navAffairs {
+    left: 100px;
+    background-color:#009bdf;
+}
+#navAcademic {
+    left: 220px;
+    background-color:#9f3259;
+}
+#navPostgraduate {
+    left: 340px;
+    background-color:#a45b96;
+}
+
+ul.version{
+    float: left;
+    width:100%;
+    height: 100%;
+    margin: 0;
+    border-top: 1px dotted #b0b5b5;
+    border-bottom: 1px dotted #b0b5b5;
+    position: relative;
+    z-index: 15;
+}
+
+#language_bar ul li a{
+    color: #000;
+    line-height: 28px;
+    display: inline;
+}
+
+#language_bar ul li a:hover, a.active {
+    color: red;
+}
+
+#language_bar li.search {
+    position: relative;
+    right: 0;
+}
+
+li.version {
+    float: left;
+    list-style-type: none;
+}
+
+li.search{
+    float: right;
+    list-style-type: none;
+}
+
+li.search form{
+    margin: 0;
+    padding: 0;
+}
+
+#to_search {
+    width: 220px;
+    height: 24px;
+    margin-top: 2px;
+    margin-right: 2px;
+    padding-top: 0;
+    border: solid 1px #eee;
+    vertical-align: text-bottom;
+}
+#search_this_site {
+    width: 148px;
+    height: 24px;
+    margin-top: 2px;
+    margin-right: 2px;
+    padding-top: 0;
+    border: solid 1px #eee;
+    vertical-align: text-bottom;
+}
+
+

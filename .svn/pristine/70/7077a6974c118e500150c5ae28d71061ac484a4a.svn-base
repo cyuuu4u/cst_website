@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>
+        冒泡软件
+    </title>
+    <link rel="shortcut icon" href="../images/logo.ico">
+    <link rel="stylesheet" href="../js/easyui1.5.1/themes/default/easyui.css">
+    <link rel="stylesheet" href="../js/easyui1.5.1/themes/icon.css">
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/make_order.css">
+    <script src="../js/easyui1.5.1/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/easyui1.5.1/jquery.easyui.min.js"></script>
+    <script src="../js/easyui1.5.1/locale/easyui-lang-zh_CN.js"></script>
+    <script src="../js/mopo.js"></script>
+    <script src="js/data.js" type="text/javascript"></script>
+    <script src="js/make_order.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+    <div id="idOrderInfo">
+        <input id="idSchemer" name="schemerId" value="">
+        <span class="tool-separator"></span>
+        <input id="idBatchNo" class="easyui-textbox"
+               data-options="label:'订单批号：',labelWidth:80,labelAlign:'left',width:180,readonly:true"
+               value="20170305"/>
+        <span class="tool-separator"></span>
+        <input id="idOrderStatus" class="easyui-textbox"
+               data-options="label:'订单状态：',labelWidth:80,labelAlign:'left',width:180,readonly:true,cls:'alert'"
+               value="下单中..."/>
+        <span class="tool-separator"></span>
+        <a href="#" class="easyui-linkbutton" style="float: right" iconCls="icon-make-order" onclick="toolOrderItem.makeOrder();">确定下单</a>
+    </div>
+
+    <!-- 数据网格 -->
+    <table id="idDgOrderItem" class="easyui-datagrid" style="width:100%;height:auto;min-height: 100px">
+    </table>
+
+    <!-- 工具栏 -->
+    <div id="idToolOrderItem" style="padding:5px;">
+        <div>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="toolOrderItem.add();">添加</a>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="toolOrderItem.remove();">删除</a>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="toolOrderItem.edit();">编辑</a>
+            <span class="datagrid-tool-separator"></span>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-reload" plain="true" onclick="toolOrderItem.reload();">刷新</a>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-inverse" plain="true" onclick="toolOrderItem.inverse();">反选</a>
+        </div>
+    </div>
+
+    <!-- 编辑对话框 -->
+    <div id="idDlgOrderItem">
+        <form>
+            <input name="orderItemId" type="hidden">
+            <p>
+                <span>方案：</span><input id="idSchemeId" name="schemeId" value="">
+            </p>
+            <p>
+                <span>版本：</span><input class="textbox" type="text" name="versionName" readonly/>
+            </p>
+            <p>
+                <span>机型：</span><input class="textbox" type="text" name="modelName" readonly/>
+            </p>
+            <p>
+                <span>数量：</span><input type="text" class="easyui-numberbox" name="quantity" value="" data-options="min:0,precision:0">
+            </p>
+        </form>
+    </div>
+</body>
+</html>

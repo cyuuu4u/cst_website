@@ -1,0 +1,122 @@
+package biz.mopo.hqucst.po;
+
+import java.util.Date;
+
+import com.xxdw.platform.common.Pojo;
+
+public class Document extends Pojo {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Integer id  ;                      
+	private String name    ;                    
+    private Integer documentType;              
+    private Integer documentKindId ;
+    private String documentKind;
+    private Integer parentCode   ;             
+	private Date uploadTime;                
+    private Date lastEditTime ;             
+    private Integer creatorId  ;
+    private String creator;
+	private String url ;                      
+	private String pictureUrl;                
+	private String contont;                
+	private Integer top;                       
+	private String desc;
+	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Integer getDocumentType() {
+		return documentType;
+	}
+	public void setDocumentType(Integer documentType) {
+		this.documentType = documentType;
+	}
+	public Integer getDocumentKindId() {
+		return documentKindId;
+	}
+	public void setDocumentKindId(Integer documentKindId) {
+		this.documentKindId = documentKindId;
+	}
+	public Integer getParentCode() {
+		return parentCode;
+	}
+	public void setParentCode(Integer parentCode) {
+		this.parentCode = parentCode;
+	}
+	public Date getUploadTime() {
+		return uploadTime;
+	}
+	public void setUploadTime(Date uploadTime) {
+		this.uploadTime = uploadTime;
+	}
+	public Date getLastEditTime() {
+		return lastEditTime;
+	}
+	public void setLastEditTime(Date lastEditTime) {
+		this.lastEditTime = lastEditTime;
+	}
+	public Integer getCreatorId() {
+		return creatorId;
+	}
+	public void setCreatorId(Integer creatorId) {
+		this.creatorId = creatorId;
+	}
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
+	}
+	public String getPictureUrl() {
+		return pictureUrl;
+	}
+	public void setPictureUrl(String pictureUrl) {
+		this.pictureUrl = pictureUrl;
+	}
+	public String getContont() {
+		return contont;
+	}
+	public void setContont(String contont) {
+		this.contont = contont;
+	}
+	public Integer getTop() {
+		return top;
+	}
+	public void setTop(Integer top) {
+		this.top = top;
+	}
+	public String getDesc() {
+		return desc;
+	}
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+	public String getCreator() {
+		return creator;
+	}
+	public void setCreator(String creator) {
+		this.creator = creator;
+	}
+	public String getDocumentKind() {
+		return documentKind;
+	}
+	public void setDocumentKind(String documentKind) {
+		this.documentKind = documentKind;
+	}	                 
+	
+	
+	
+}

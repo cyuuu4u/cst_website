@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>华侨大学计算机学院-张洪博</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/level2.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css"><link rel="stylesheet" type="text/css" href="css/xcConfirm.css">
+    <link rel="stylesheet" type="text/css" href="css/leader.css">
+
+    <script src="js/jquery-3.1.1.min.js"></script><script src="js/jquery.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/index.js"></script><script src="js/xcConfirm.js"></script>
+</head>
+<body>
+<div id="root">
+    <div class="row">
+        <div>
+            <div id="logo">
+                <a href="index.html"><img src="images/logo.png"></a>
+            </div>
+            <div id="navMenu">
+                <ul class="menu">
+                    <li>
+                        <div class="nav_menu" id="navMenuIntroduction">
+                            <a class="pic_show" href="introduction.html" ><img src="images/menuIntroduction2.png" class="nav_img"></a>
+                            <a class="pic_hide" href="introduction.html"><img src="images/menuIntroduction.png" class="nav_img"></a>
+                        </div>
+                        <div id="navIntroduction" class="nav_popup">
+                            <div>学院概况</div>
+                            <div>
+                                <img src="images/pop_introduction.jpg" width="220px" height="100px" />
+                                <p>
+                                   1980年创办计算机专业，2008年成立计算机科学与技术学院。现有计算机科学与技术、软件工程、网络工程、数字媒体技术四个本科专业；计算机科学与技术、软件工程两个一级学科硕士点；模式识别与智能系统二级硕士点；计算机技术领域工程硕士点。
+                                </p>
+                            </div>
+                            <div>
+                                <ul class="nav_list">
+                                    <li class="nav_item"><a  href="introduction.html">01/学院简介</a></li>
+                                    <li class="nav_item"><a  href="introduction02.html">02/现任领导</a></li>
+                                    <li class="nav_item"><a  href="introduction03.html">03/组织机构</a></li>
+                                    <li class="nav_item"><a  href="introduction03.html">04/学院沿革</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav_menu" id="navMenuTeaching">
+                            <a class="pic_show" href="teaching.html"><img src="images/menuTeaching2.png" class="nav_img"></a>
+                            <a class="pic_hide" href="teaching.html"><img src="images/menuTeaching.png" class="nav_img"></a>
+                        </div>
+                        <div id="navTeaching" class="nav_popup">
+                            <div>教学工作</div>
+                            <div>
+                                <img src="images/pop_teaching.png" width="220px" height="100px" />
+                                <p>
+                                    在教学平台方面，学院拥有福建省计算机综合实验教学示范中心，福建省网络工程人才培养模式创新实验区；拥有三门省级精品课程，分别是《编译原理》、《面向对象程序设计》和《数据结构》；《软件工程》教学团队获福建省优秀教学团队称号；获得福建省教学成果二等奖一项。
+                                </p>
+                            </div>
+                            <div>
+                                <ul class="nav_list">
+                                    <li class="nav_item"><a  href="teaching.html">01/教学动态</a></li>
+                                    <li class="nav_item"><a  href="teaching02.html">02/专业设置</a></li>
+                                    <li class="nav_item"><a  href="teaching03.html">03/教学计划</a></li>
+                                    <li class="nav_item"><a  href="teaching04.html">04/教学研究</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav_menu nav_menu_cur" id="navMenuFaculty" style="top:0;">
+                            <a href="faculty.html"><img src="images/menuFaculty.png" class="nav_img"></a>
+                        </div>
+                        <div id="navFaculty" class="nav_popup">
+                            <div>师资队伍</div>
+                            <div>
+                                <img src="images/pop_faculty.jpg" width="220px" height="100px" />
+                                <p>
+                                    学院现有教职工86名，其中专任教师68人；专任教师中，教授6名、副教授21名，37名教师具有博士学位，占教师总数的54.4%。实验人员中，高级实验师3名。
+                                </p>
+                            </div>
+                            <div>
+                                <ul class="nav_list">
+                                    <li class="nav_item"><a  href="faculty.html">01/师资队伍</a></li>
+                                    <li class="nav_item"><a  href="faculty02.html">02/科研团队</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav_menu" id="navMenuAffairs">
+                            <a class="pic_show" href="affairs.html"><img src="images/menuAffairs2.png" class="nav_img"></a>
+                            <a class="pic_hide" href="affairs.html"><img src="images/menuAffairs.png" class="nav_img"></a>
+                        </div>
+                        <div id="navAffairs" class="nav_popup">
+                            <div>院务工作</div>
+                            <div>
+                                <img src="images/pop_affairs.png" width="220px" height="100px" />
+                                <p>
+                                    学院聘请优秀的教师担任班主任工作，建有本科生科研创新基地，
+                                    鼓励学生积极参与挑战杯、世界大学生程序设计竞赛、数学建模大赛和微软、IBM、Intel等公司的大学生专业技能竞赛，
+                                    广泛开展丰富多彩的课外科技创新活动。至今荣获各级各类奖项超过三十项。
+                                </p>
+                            </div>
+                            <div>
+                                <ul class="nav_list">
+                                    <li class="nav_item"><a  href="affairs.html">01/学院动态</a></li>
+                                    <li class="nav_item"><a  href="affairs02.html">02/学院发文</a></li>
+                                    <li class="nav_item"><a  href="affairs03.html">03/学子风采</a></li>
+                                    <li class="nav_item"><a  href="affairs04.html">04/就业信息</a></li>
+                                    <li class="nav_item"><a  href="affairs05.html">05/资料下载</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav_menu" id="navMenuAcademic">
+                            <a class="pic_show"  href="academic.html"><img src="images/menuAcademic2.png" class="nav_img"></a>
+                            <a class="pic_hide" href="academic.html"><img src="images/menuAcademic.png" class="nav_img"></a>
+                        </div>
+                        <div id="navAcademic" class="nav_popup">
+                            <div>学术科研</div>
+                            <div>
+                                <img src="images/pop_academic.png" width="220px" height="100px" />
+                                <p>
+                                    近年来，学院承担国家级科研项目12项，省部级科研项目36项，地厅级科研项目15项，横向科研项目30余项；
+                                    发表学术论文400余篇，其中SCI、EI收录100余篇；获得专利12项，公开出版专著和教材11部。
+                                </p>
+                            </div>
+                            <div>
+                                <ul class="nav_list">
+                                    <li class="nav_item"><a  href="academic.html">01/科研动态</a></li>
+                                    <li class="nav_item"><a  href="academic02.html">02/科研项目</a></li>
+                                    <li class="nav_item"><a  href="academic03.html">03/学术论文</a></li>
+                                    <li class="nav_item"><a  href="academic04.html">04/项目推广</a></li>
+                                    <li class="nav_item"><a  href="academic05.html">05/院企合作</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav_menu" id="navMenuPostgraduate">
+                            <a class="pic_show" href="postgraduate.html"><img src="images/menuPostgraduate2.png" class="nav_img"></a>
+                            <a class="pic_hide" href="postgraduate.html"><img src="images/menuPostgraduate.png" class="nav_img"></a>
+                        </div>
+                        <div id="navPostgraduate" class="nav_popup">
+                            <div>研究生教学</div>
+                            <div>
+                                <img src="images/pop_postgraduate.jpg" width="220px" height="100px" />
+                                <p>
+                                    学院现有计算机科学与技术与软件工程两个一级学科硕士点，
+                                    以及一个模式识别与智能系统二级硕士点和一个计算机技术领域工程硕士点。
+                                </p>
+                            </div>
+                            <div>
+                                <ul class="nav_list">
+                                    <li class="nav_item"><a  href="postgraduate.html">01/研究生动态</a></li>
+                                    <li class="nav_item"><a  href="postgraduate02.html">02/专业介绍</a></li>
+                                    <li class="nav_item"><a  href="postgraduate03.html">03/招生信息</a></li>
+                                    <li class="nav_item"><a  href="postgraduate04.html">04/导师简介</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="language_bar">
+            <ul class="version">
+                <li class="version"><a href="index.html">简体中文</a>&nbsp;|&nbsp;</li>
+                <li class="version"><a href="index_en.html">English</a></li>
+                <li class="search">
+                    <form action="/search" method="get">
+                        <input type="text" id="to_search" name="to_search" value="" placeholder="站内搜索..."/>
+                        <input style="float: right" type="image" src="images/home(Regent)_15.gif" alt="搜索" onClick="window.open('search.html');return false;" />
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="row-second">
+            <div class="title-one">师资队伍</div>&nbsp;
+            <div class="title-two">01/师资队伍</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="list">
+            <ul class="left-list">
+                <li>内页</li>
+                <li><a class="left-list" style="color: #008fd9" href="faculty.html">01/师资队伍</a></li>
+                <li><a class="left-list" href="faculty02.html">02/科研团队</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="left-content">
+                <div align="center"> <img class="teacherimg"  alt="张洪博" src="images/default.jpg"></div>
+            </div>
+            <div style="font-size: 1.4rem">
+                <br>
+                <p><strong>张洪博</strong></p>
+                <br>
+                <p><strong>个人简介：</strong></p>
+                <p>男，理学博士，讲师，主要研究兴趣为计算机视觉、模式识别、视频分析。2011-2012年到台湾元智大学交流学习，
+                    2013年毕业于厦门大学获博士学位（硕博连读），现就职于华侨大学计算机科学与技术学院。主持国家自然科学（青年）基金,
+                    福建省自然科学（面上）基金和华侨大学引进人才启动基金项目各一项，参与多项国家自然科学基金，福建省自然学科基金。
+                    已在国内外期刊和会议发表20余篇，担任多个国际期刊以及国际会议审稿人。
+                </p>
+                <br>
+                <p><strong>研究方向：</strong></p>
+                <p>计算机视觉，图像视频分</p>
+                <br>
+                <p><strong>主讲课程：</strong></p>
+                <p>《随机数学》、《数字媒体信息检索》</p>
+                <br>
+                <p><strong>招生信息：</strong></p>
+                <p>招生专业</p>
+                <p>1. 计算机科学与技术（学硕）  2. 计算机技术（专硕）</p>
+                <p>学生要求</p>
+                <p>对计算机视觉、模式识别、视频分析等研究领域感兴趣；快乐学习。</p>
+                <br>
+                <p><strong>近几年发表的学术论文列表：</strong></p>
+                <p>1.Zhang, H.-B.; Lei, Q.; Zhong, B.-N.; Du, J.-X.; Chen, D.-S. A Sparse Representation Algorithm for Effective Photograph Retrieval. Math. Comput. Appl. 2017, 22, 8.
+                    <br>2.Hong-Bo Zhang, Qing Lei, Duan-Sheng Chen, Bi-Neng Zhong, Jialin Peng, Ji-Xiang Du, Song-Zhi Su, Probability-based Method for Boosting Human Action Recognition Using Scene Context. IET Computer Vision, 2016, 10(6): p.528-536. (SCI, EI)
+                    <br>3.Hong-Bo Zhang, Qing Lei, Bi-Neng Zhong, Ji-Xiang Du, Jialin Peng, Tsung-Chih Hsiao and Duan-Sheng Chen, Multi-surface analysis for human action recognition in video. SpringerPlus (2016) 5: 1226. doi:10.1186/s40064-016-2876-z.(SCI)
+                    <br>4.Hong-Bo Zhang, Qing Lei, Bi-Neng Zhong, Ji-Xiang Du, JiaLin Peng, A Survey on Human Pose Estimation. Intelligent Automation & Soft Computing, 2016, Volume: 22, Issue: 03, pages 483 - 489 (SCI)
+                    <br>5.李彦，张洪博*，石莲英. 基于 SIFT 特征匹配的车牌识别方法. 计算机工程与应用, 2016, 52(12): 194-200.
+                    <br>6.Hong-Bo Zhang, Yu Ma, Feng Guo, Miaohui Zhang, Ying Lin, Motion difference histogram for recognizing human action in video, 2016 International Conference on Applied System Innovation (ICASI), Okinawa, Japan.
+                    <br>6.Bineng Zhong, Xiangnan Yang, Yingju Shen, Cheng Wang, Tian Wang, Zhen Cui, Hongbo Zhang, Xiaopeng Hong, Duansheng Chen. Higher Order Partial Least Squares for Object Tracking: A 4D-Tracking Method. Neurocomputing, 2016(SCI, EI)
+                    <br>7.Der-Jyh Duh, Jian-Chih Huang, Shu-Yuan Chen*, Songzhi Su, Hong-Bo Zhang & Shaozi Li, Facial Expression Recognition Based on Spatio-Temporal Interest Points for Depth Sequences. The Imaging Science Journal, 2016 (SCI, EI)
+                    <br>8.Hong-Bo Zhang, Shao-Zi Li*, Shu-Yuan Chen, Song-Zhi Su*, Xian-Ming Lin, Dong-Lin Cao, Locating and recognizing multiple human actions by searching for maximum score subsequences. Signal Image and Video Processing, 2015. 9(3): p.705-714. (SCI, EI)
+                    <br>9.Jialin Peng, Hu, P. J., Lu, F., Peng, Z. Y., Kong, D. X. and Zhang H. B., 3D liver segmentation using multiple region appearances and graph cuts, Medical Physics, 2015, 42(12) 6840-6852 (SCI, EI)
+                    <br>10.Bineng Zhong, Yingju Shen, Yan Chen, Weibo Xie, Zhen Cui, Hongbo Zhang, Duansheng Chen, Tian Wang, Xin Liu, Shujuan Peng, Jin Gou, Jixiang Du, Jing Wang, Wenming Zheng. Online Learning 3D Context for Robust Visual Tracking. Neurocomputing 2015, 151(2), pp.710-718 (SCI, EI)
+                    <br>11.Hongbo Zhang, Shang-An Li, Shu-Yuan Chen, Songzhi Su, Der-Jyh Duh, and Shaozi Li, Adaptive photograph retrieval method, Multimedia Tools and Applications, 2014, vol. 70, no. 3, pp. 2189-2209, June. (SCI, EI)
+                    <br>12.Kuo-Wei Li, Shu-Yuan Chen*, Songzhi Su, Der-Jyh Duh, Hongbo Zhang, and Shaozi Li, Logo Detection with Extendibility and Discrimination, Multimedia tools and application, 2014, 72(2):1285-1310 (SCI, EI)
+                    <br>13.Qing Lei, Shao Zi Li*, HongBo Zhang, Action recognition in realistic scenes via local spatio-temporal representation, Journal of Information and Computational Science, 2014, Vol.11, pp.275-286 (EI)
+                    <br>14.Hongbo Zhang, ShaoZi Li, SongZhi Su, and Shu-Yuan Chen*, Selecting Effective and Discriminative Spatio-Temporal Interest Points for Recognizing Human Action, IEICE Transactions on Information and Systems, 2013, Vol.E96-D, No.8, pp.1783-1792. (SCI, EI)
+                    <br>15.Hong-Bo Zhang, Song-Zhi Su, Shao-Zi Li, Duan-Sheng Chen, Bineng Zhong, Rongrong Ji, Songzhi Su, Seeing Actions Through Scene Context, Visual Communications and Image Processing, 2013, Sarawak, Malaysia  (EI)
+                    <br>16.Mengmeng Shi, Hongbo Zhang, Songzhi Su, Jing-Lun Kao, Shu-Yuan Chen*, and Shaozi Li*, Simple but effective method for identifying coarse genres of office documents, Information-An International Interdisciplinary Journal, 2013, vol.16, no.11, pp.7973-7981, November
+                    <br>17.Qing Lei, Shao Zi Li*, HongBo Zhang, Learning discriminative visual codebook for human action recognition, Journal of Computers, 2013, Vol.8, n.12, pp.3093-3102 (EI)
+                </p>
+                <br>
+                <p><strong>项目列表：</strong></p>
+                <p>1.国家自然科学基金青年项目，61502182，三维空间中基于图结构的人体姿态估计算法研究，2016/01-2018/12，在研，主持
+                    <br>2.福建自然科学基金面上项目，2015J01253, RGBD数据下基于图匹配的人体姿态估计方法研究，2015/04-2018/04，在研，主持
+                    <br>3.福建省网络计算与智能信息处理重点实验室开放课题，基于稀疏表示的半监督回归方法及其应用研究，2016/01-2017/06, 在研，主持
+                    <br>4.华侨大学引进人才启动基金，13BS409，智能监控中的人体行为识别方法研究，2013/10-2015/10，在研，主持
+                </p>
+                <br><br>
+                <p><strong>联系方式：</strong></p>
+                <p>电子邮箱：zhanghongbo@hqu.edu.cn</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="black_footer">
+    <div id="container">
+        <div class="footer_col">
+            <div class="plant">
+                <p class="footer_title"><a class="footer_title">校内链接</a></p>
+                <p class="footer_content" ><a class="footer_content" href="http://www.hqu.edu.cn/">华侨大学主页</a></p>
+                <p class="footer_content">
+                    <a class="footer_content" href="http://eee.hqu.edu.cn/">信息科学与工程学院</a>/
+                    <a class="footer_content" href="http://clxy.hqu.edu.cn/">材料科学与工程学院</a>/
+                    <a class="footer_content" href="http://hgxy.hqu.edu.cn/">化工学院</a>/
+                    <a class="footer_content" href="http://med.hqu.edu.cn/">机电与自动化学院</a>/
+                    <a class="footer_content" href="http://civil.hqu.edu.cn/">土木工程学院</a>/
+                    <a class="footer_content" href="http://jzxy.hqu.edu.cn/">建筑学院</a>/
+                    <a class="footer_content" href="http://mdc.hqu.edu.cn/">音乐舞蹈学院</a>/
+                    <a class="footer_content" href="http://hwxy.hqu.edu.cn/">华文学院</a></p>
+                <p class="footer_content">
+                    <a class="footer_content" href="http://gxy.hqu.edu.cn/">工学院</a>/
+                    <a class="footer_content" href="http://ggxy.hqu.edu.cn/">工商管理学院</a>/
+                    <a class="footer_content" href="http://lyxy.hqu.edu.cn/">旅游学院</a>/
+                    <a class="footer_content" href="http://wxy.hqu.edu.cn/">文学院</a>/
+                    <a class="footer_content" href="http://cfa.hqu.edu.cn/">美术学院</a>/
+                    <a class="footer_content" href="http://flc.hqu.edu.cn/">外国语学院</a>/
+                    <a class="footer_content" href="http://guoji.hqu.edu.cn/">国际学院</a>/
+                    <a class="footer_content" href="http://maths.hqu.edu.cn/">数学科学学院</a>/
+                    <a class="footer_content" href="http://tyxy.hqu.edu.cn/">体育学院</a></p>
+                <div class="xuxian"></div>
+            </div>
+            <div  class="plant">
+                <p class="footer_title">
+                    <a class="footer_title">校外链接</a>
+                </p>
+                <p class="footer_content">
+                    <a class="footer_content" href="http://www.baidu.com/">百度</a>/
+                    <a class="footer_content" href="http://www.w3school.com.cn/">w3school</a>
+                </p>
+                <p class="footer_content">
+                    <a class="footer_content" href="http://www.xjtu.edu.cn/">西安交通大学</a>/
+                    <a class="footer_content" href="https://www2.gmu.edu/">乔治·梅森大学</a>
+                </p>
+                <p class="footer_content">
+                    <a class="footer_content" href="http://www.xmisp.com/">厦门鑫点击科技有限公司</a>/
+                    <a class="footer_content" href="http://www.aocmonitor.com.cn/">冠捷科技股份有限公司</a>
+                </p>
+                <div class="xuxian"></div>
+            </div>
+        </div>
+        <div class="footer_col">
+            <div class="plant">
+                <p class="footer_title"><a class="footer_title">学院概况</a></p>
+                <p class="footer_content">
+                    <a class="footer_content" href="introduction.html">学院简介</a>/
+                    <a class="footer_content" href="introduction02.html">现任领导</a>/
+                    <a class="footer_content" href="introduction03.html">组织机构</a>/
+                    <a class="footer_content" href="introduction04.html">学院沿革</a>
+                </p>
+                <div class="xuxian"></div>
+            </div>
+            <div class="plant">
+                <p class="footer_title"><a class="footer_title">教学工作</a></p>
+                <p class="footer_content">
+                    <a class="footer_content" href="teaching.html">教学动态</a>/
+                    <a class="footer_content" href="teaching02.html">专业设置</a>/
+                    <a class="footer_content" href="teaching03.html">教学计划</a>/
+                    <a class="footer_content" href="teaching04.html">教学研究</a>
+                </p>
+                <div class="xuxian"></div>
+            </div>
+            <div class="plant">
+                <p class="footer_title"><a class="footer_title">师资队伍</a></p>
+                <p class="footer_content">
+                    <a class="footer_content" href="faculty.html">师资队伍</a>/
+                    <a class="footer_content" href="faculty02.html">科研团队</a>
+                </p>
+                <div class="xuxian"></div>
+            </div>
+        </div>
+        <div class="footer_col">
+            <div class="plant">
+                <p class="footer_title"><a class="footer_title">院务工作</a></p>
+                <p class="footer_content">
+                    <a class="footer_content" href="affairs.html">学院动态</a>/
+                    <a class="footer_content" href="affairs02.html">学院发文</a>/
+                    <a class="footer_content" href="affairs03.html">学子风采</a>/
+                    <a class="footer_content" href="affairs04.html">就业信息</a>/<a class="footer_content" href="affairs05.html">资料下载</a>
+                </p>
+                <div class="xuxian"></div>
+            </div>
+            <div class="plant">
+                <p class="footer_title"><a class="footer_title">学术研究</a></p>
+                <p class="footer_content">
+                    <a class="footer_content" href="academic.html">科研动态</a>/
+                    <a class="footer_content" href="academic02.html">科研项目</a>/
+                    <a class="footer_content" href="academic03.html">学术论文</a>/
+                    <a class="footer_content" href="academic04.html">项目推广</a>/
+                    <a class="footer_content" href="academic05.html">院企合作</a>
+                </p>
+                <div class="xuxian"></div>
+            </div>
+            <div class="plant">
+                <p class="footer_title"><a class="footer_title">研究生教学</a></p>
+                <p class="footer_content">
+                    <a class="footer_content" href="postgraduate.html">研究生动态</a>/
+                    <a class="footer_content" href="postgraduate02.html">专业介绍</a>/
+                    <a class="footer_content" href="postgraduate03.html">招生信息</a>/
+                    <a class="footer_content" href="postgraduate04.html">导师简介</a>
+                </p>
+                <div class="xuxian"></div>
+            </div>
+        </div>
+        <div class="footer_col">
+            <div id="footer_contact_us"><p id="contact">联系我们</p></div>
+            <div id="picture1"><img src="images/home(Regent)_footer_22.gif"></div>
+            <div id="picture2"><img src="images/home(Regent)_footer_24.gif"></div>
+            <div class="picture3"><img src="images/weibo.jpg" style="width: 63px;max-height:63px;"></div>
+            <div class="picture3"><img src="images/weixin.jpg" style="width: 63px;max-height:63px;"></div>
+            <div class="plant">
+                <div class="xiaoqu">厦门校区</div>
+                <p class="message">办公室电话：0592-6162559<br>传真：0592-6162556<br>团委办公室：0502-6162557<br>教学秘书室：0592-6162551<br>企业招聘：0592-6162557</p>
+                <p class="xiaoqu">泉州校区</p>
+                <p class="message">办公室电话：0595-22693250<br>传真：0595-22693309</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

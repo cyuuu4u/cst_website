@@ -1,0 +1,24 @@
+//mopo.js
+
+$(document).ready(function() {
+
+});
+
+// easyui datagrid inverse-selection
+$.fn.inverse = function() {
+    //this指的是用jQuery选中的元素
+    //example :$('a'),则this=$('a')
+    //this.css('color', 'red');
+    var pThis = this;
+    var all = pThis.datagrid("getRows");
+    $.each(all, function(i, item) {
+        var sel = "div.datagrid-cell-check input[type='checkbox'][value='" + item.id + "']";
+        //alert($(sel).is(':checked'));
+        if (pThis.parent().find(sel).is(':checked')) {
+            pThis.datagrid("unselectRow", i);
+        }
+        else {
+            pThis.datagrid("selectRow", i);
+        }
+    });
+};

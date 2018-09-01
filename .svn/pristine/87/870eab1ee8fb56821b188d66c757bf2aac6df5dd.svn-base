@@ -1,0 +1,170 @@
+
+$(document).ready(function () {
+    //------------------------------------------------------------
+    // 可选的方案公司
+    $('#idSchemer').combobox({
+        //url:'combobox_data.json',
+        valueField:'id',
+        textField:'name',
+        label: '方案公司：',
+        labelWidth: 80,
+        data: listComboSchemers
+    });
+
+    // 可选的方案
+    $('#idSchemeId').combobox({
+        //url:'combobox_data.json',
+        valueField:'id',
+        textField:'name',
+        labelWidth: 80,
+        data: listComboSchemes
+    });
+
+    //------------------------------------------------------------
+    // 数据网格
+    $('#idDgOrderItem').datagrid({
+        title : '订单项列表',
+        fitColumns: true,
+        striped : true, //斑马线
+        rownumbers : true,
+        checkOnSelect: true,
+        pagination : true,
+        pagePosition: 'bottom',
+        pageList : [10,20,50,100],
+        pageSize : 20,
+        pageNumber : 1,
+        singleSelect : false,
+        toolbar : '#idToolOrderItem',
+        //url : 'bgUser_listUser.action',
+        showFooter: true,
+        data : listMakeOrderItem,
+        columns:[[
+            {
+                field : 'id',
+                title : '编号',
+                width : 40,
+                checkbox : true
+            },
+            {
+                field : 'schemeId',
+                title : '方案ID',
+                width : 120,
+                hidden: true
+            },
+            {
+                field : 'schemeName',
+                title : '方案名称',
+                width : 120
+            },
+            {
+                field : 'versionName',
+                title : '版本',
+                width : 120
+            },
+            {
+                field : 'modelName',
+                title : '机型',
+                width : 120
+            },
+            {
+                field : 'quantity',
+                title : '订货量',
+                width : 100
+            }
+        ]]
+        //rownumbers : false,
+    }).datagrid('mergeCells', {
+        index: 0,
+        field: 'schemeName',
+        colspan: 3,
+        type: 'footer'
+    }).datagrid("getPager").pagination({
+        showRefresh:false
+    }); // end of $('#idDgOrderItem').datagrid...
+
+    //------------------------------------------------------------
+    // 工具栏操作类
+    toolOrderItem = {
+        makeOrder : function () {
+            $.messager.confirm('确定操作', '您确定按表中所列的订单项下单吗？', function(flag) {
+                if(flag) {
+                    var ids = [];
+                    for (var i = 0; i < rows.length; i++) {
+                        ids.push(rows[i].id);
+                    }
+                    //ajax...
+                }
+            });
+        },
+        
+        add : function() {
+            $('#idDlgOrderItem').form('load', {
+                orderItemId :   '',
+                schemeId :      '',
+                versionName :   '',
+                modelName :     '',
+                quantity:       '0'
+            }).dialog({title : '添加订单项资料'}).dialog('open');
+        },
+
+        remove : function() {
+            var rows =  $('#idDgOrderItem').datagrid('getSelections');
+            if (rows.length > 0) {
+                $.messager.confirm('确定操作', '您确定要删除所选的记录吗？', function(flag) {
+                    if(flag) {
+                        var ids = [];
+                        for (var i = 0; i < rows.length; i++) {
+                            ids.push(rows[i].id);
+                        }
+                        //ajax...
+                    }
+                });
+            } else {
+                $.messager.alert('提示', '请选择要删除的记录！！', 'info');
+            }
+        },
+
+        edit : function() {
+            var rows =  $('#idDgOrderItem').datagrid('getSelections');
+            if (rows.length == 1) {
+                $('#idDlgOrderItem').form('load',{
+                    orderItemId : rows[0].id,
+                    schemeId :    rows[0].schemeId,
+                    versionName : rows[0].versionName,
+                    modelName :   rows[0].modelName,
+                    quantity :    rows[0].quantity
+                }).dialog({title : '编辑订单项资料'}).dialog('open');
+            } else {
+                $.messager.alert('警告', '修改必须选中且只能选中一行！！', 'warning');
+            }
+        },
+
+        reload : function() {
+            $('#idDgOrderItem').datagrid('reload');
+        },
+
+        inverse : function() {
+            $("#idDgOrderItem").inverse();
+        }
+    }; // end of toolOrderItem = {...
+
+    //------------------------------------------------------------
+    // 编辑帐号信息对话框
+    $('#idDlgOrderItem').dialog({
+        width : 400,
+        title : '编辑订单项信息',
+        modal : true,
+        closed : true,
+        buttons : [{
+            text : '提交',
+            iconCls : 'icon-ok'
+        },{
+            text : '取消',
+            iconCls : 'icon-cancel',
+            handler : function() {
+                $('#idDlgOrderItem').dialog('close').form('reset')
+            }
+        }]
+    }); // end of $('#idDlgOrderItem').dialog...
+
+});

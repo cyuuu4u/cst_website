@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	}
+
+body, th, td, input, textarea, select {font-size: 12px; color:#295c95; margin:0px; padding:0px; font-family:Arial, Helvetica, sans-serif;} 
+body {margin: 0}
+img{border: 0;}
+td{margin:0; padding:0;}
+ul, li {padding: 0; margin: 0; list-style: none;}
+
+a:link {color: blue;	text-decoration: none;}
+a:visited {text-decoration: none;color: blue;}
+a:hover { text-decoration: none;color: #E7141A;}
+a:active {text-decoration: none;}
+
+.Userbox1{width:160px;color:#295c95; border:#cacaca solid 1px; font-size:12px; font-family:Verdana, Geneva, sans-serif; background-color:#FFF; padding:2px;}
+.Useraddressbox{width:350px;color:#295c95; border:#cacaca solid 1px; font-size:12px; font-family:Verdana, Geneva, sans-serif; background-color:#FFF; padding:2px;}
+.UserPCbox{width:120px; color:#295c95; border:#cacaca solid 1px; font-size:12px; font-family:Verdana, Geneva, sans-serif; background-color:#FFF; padding:2px;}
+.UserCodebox{width:50px; color:#295c95; border:#cacaca solid 1px; font-size:12px; font-family:Verdana, Geneva, sans-serif; background-color:#FFF; padding:2px;}
+.Searchbox{width:120px; color:#295c95; border:#cacaca solid 1px; font-size:12px; font-family:Verdana, Geneva, sans-serif; background-color:#FFF; padding:2px;}
+.button{width:50px; height:20px; border:#cacaca solid 1px; font-size:12px; background-color:#FFF; padding:2px;}
+.button_check{width:70px; height:20px; border:#cacaca solid 1px; font-size:12px; background-color:#FFF; padding:2px;}
+.Userbox2{width:250px;color:#295c95; border:#cacaca solid 1px; font-size:12px; font-family:Verdana, Geneva, sans-serif; background-color:#FFF; padding:2px;}
+.topic_content{width:500px ; height:345px}
+
+.alert{color:red}

@@ -1,0 +1,263 @@
+
+$(document).ready(function () {
+    //------------------------------------------------------------
+    // 数据网格
+    $('#idDgOrder').datagrid({
+        title : '订单列表',
+        fitColumns: true,
+        striped : true, //斑马线
+        rownumbers : true,
+        checkOnSelect: true,
+        pagination : true,
+        pagePosition: 'bottom',
+        pageList : [10,20,50,100],
+        pageSize : 20,
+        pageNumber : 1,
+        singleSelect : true,
+        toolbar : '#idToolOrder',
+        //url : 'bgUser_listUser.action',
+        showFooter: true,
+        data : listOrder,
+        columns:[[
+            {
+                field : 'id',
+                title : '编号',
+                width : 40,
+                checkbox : true
+            },
+            {
+                field : 'customerId',
+                title : '客户ID',
+                width : 40,
+                hidden: true
+            },
+            {
+                field : 'customerName',
+                title : '客户名称',
+                width : 80
+            },
+            {
+                field : 'batchNo',
+                title : '批号',
+                width : 50
+            },
+            {
+                field : 'quantity',
+                title : '下单总量',
+                width : 50
+            },
+            {
+                field : 'openQuantity',
+                title : '开单总量',
+                width : 50
+            },
+            {
+                field : 'createTime',
+                title : '下单时间',
+                width : 120
+            }
+        ]],
+        // 事件
+        onSelect: function(rowIndex, rowData) {
+            var data = (rowData.id == 1)  ? listOpenOrderItem1 : listOpenOrderItem2;
+
+            $("#idDgOrderItem")
+                .datagrid({title : '(' + rowData.customerName + ',' + rowData.batchNo + ')订单细项'})
+                .datagrid("loadData",data).datagrid("getPager").pagination({
+                layout:['first','prev','manual','next','last']
+            });
+        }
+
+        //rownumbers : false,
+    }).datagrid('mergeCells', {
+        index: 0,
+        field: 'customerName',
+        colspan: 2,
+        type: 'footer'
+    }).datagrid("getPager").pagination({
+        showRefresh:false
+    }); // end of $('#idDgOrder').datagrid...
+
+    //------------------------------------------------------------
+    // 工具栏操作类
+    toolOrder = {
+        openOrder : function () {
+            $.messager.confirm('确定操作', '请确认各订单项的开单量，您确定开单吗？', function(flag) {
+                if(flag) {
+                    var ids = [];
+                    for (var i = 0; i < rows.length; i++) {
+                        ids.push(rows[i].id);
+                    }
+                    //ajax...
+                }
+            });
+        },
+
+        reload : function() {
+            $('#idDgOrder').datagrid('reload');
+        },
+
+        inverse : function() {
+            $("#idDgOrder").inverse();
+        }
+    }; // end of toolOrder = {...
+
+    //////////////////////////////////////////////////////////////
+    // 订单细项
+
+    // 列表
+    $('#idDgOrderItem').datagrid({
+        title : '订单明细',
+        fitColumns: true,
+        striped : true, //斑马线
+        rownumbers : true,
+        checkOnSelect: true,
+        pagination : true,
+        pagePosition: 'bottom',
+        pageSize : 10,
+        pageNumber : 1,
+        singleSelect : true,
+        //toolbar : '#idToolOrderItem',
+        //url : 'bgUser_listUser.action',
+        showFooter: true,
+        //data : listOpenOrderItem,
+        columns:[[
+            {
+                field : 'id',
+                title : '编号',
+                width : 40,
+                checkbox : true
+            },
+            {
+                field : 'schemeId',
+                title : '方案ID',
+                width : 30,
+                hidden: true
+            },
+            {
+                field : 'schemeName',
+                title : '方案名称',
+                width : 80
+            },
+            {
+                field : 'versionName',
+                title : '版本',
+                width : 50
+            },
+            {
+                field : 'modelName',
+                title : '机型',
+                width : 50
+            },
+            {
+                field : 'quantity',
+                title : '订货量',
+                width : 50
+            },
+            {
+                field : 'openQuantity',
+                title : '开单量',
+                width : 50,
+                editor: {
+                    type: 'numberbox',
+                    options: {required: true,min:0,precision:0}
+                }
+            },
+            {
+                field:'action',title:'操作',width:60,align:'center',
+                formatter:function(value,row,index){
+                    if (row.editing){
+                        var s = '<a href="javascript:void(0)" onclick="toolOrderItem.saveRow(this)">确定</a> ';
+                        var c = '<a href="javascript:void(0)" onclick="toolOrderItem.cancelRow(this)">取消</a>';
+                        return s+c;
+                    } else {
+                        var e = '<a href="javascript:void(0)" onclick="toolOrderItem.editRow(this)">编辑</a> ';
+                        return e;
+                    }
+                }
+            }
+        ]],
+
+        onEndEdit:function(index,row){
+            /*var ed = $(this).datagrid('getEditor', {
+             index: index,
+             field: 'productid'
+             });
+             row.productname = $(ed.target).combobox('getText');*/
+        },
+
+        onBeforeEdit:function(index,row){
+            row.editing = true;
+            $(this).datagrid('refreshRow', index);
+        },
+
+        onAfterEdit:function(index,row){
+            row.editing = false;
+            $(this).datagrid('refreshRow', index);
+        },
+
+        onCancelEdit:function(index,row){
+            row.editing = false;
+            $(this).datagrid('refreshRow', index);
+        }
+
+    }).datagrid('mergeCells', {
+        index: 0,
+        field: 'schemeName',
+        colspan: 3,
+        type: 'footer'
+    }).datagrid("getPager").pagination({
+        //showRefresh:false
+        layout:['first','prev','manual','next','last']
+    }); // end of $('#idDgOrderItem').datagrid...
+
+    //------------------------------------------------------------
+    // 版本列表工具栏操作类
+    toolOrderItem = {
+        dg : $("#idDgOrderItem"), //dgInterphone,
+
+        getRowIndex : function (target){
+            var tr = $(target).closest('tr.datagrid-row');
+            return parseInt(tr.attr('datagrid-row-index'));
+        },
+
+        editRow : function (target){
+            this.dg.datagrid('beginEdit', this.getRowIndex(target));
+        },
+
+        saveRow : function (target){
+            this.dg.datagrid('endEdit', this.getRowIndex(target));
+        },
+
+        cancelRow : function (target){
+            this.dg.datagrid('cancelEdit', this.getRowIndex(target));
+        },
+
+        reload : function() {
+            $('#idDgOrderItem').datagrid('reload');
+        },
+
+        inverse : function() {
+            $("#idDgOrderItem").inverse();
+        }
+    }; // end of toolOrderItem = {...
+
+    //------------------------------------------------------------
+    // 订单项对话框
+    $('#idDlgOrderItem').dialog({
+        width : 450,
+        title : '开单',
+        modal : true,
+        closed : true,
+        buttons : [{
+            text : '确定',
+            iconCls : 'icon-ok'
+        },{
+            text : '取消',
+            iconCls : 'icon-cancel',
+            handler : function() {
+                $('#idDlgOrderItem').dialog('close').form('reset')
+            }
+        }]
+    }); // end of $('#idDlgOrderItem').dialog...
+});

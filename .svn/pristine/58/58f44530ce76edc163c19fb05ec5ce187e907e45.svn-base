@@ -1,0 +1,204 @@
+package biz.mopo.hqucst.po;
+
+import java.util.Date;
+
+import com.xxdw.platform.common.Pojo;
+
+public class User extends Pojo {
+	public static final int PROP_ROOT 		= 0;
+	public static final int PROP_MODERATOR 	= 1;
+	public static final int PROP_COMMON 	= 2;
+	
+	private Integer id;
+    private Integer deptId;
+    private String deptMyname;
+    private String hostName;
+    private Boolean enabled;
+    private Boolean monitored;
+    private Byte auditStepNum;
+    private Boolean isAuditor;
+    private Boolean watermark;
+    private String username;
+	private String myname;
+	private String password;
+	private String oldPassword;
+	private String authKind;
+	private Double amount;
+	private Double balance;
+	private String email;
+	private Date creationTime;
+	private String desc;
+    private Integer userQuotaId;
+	private Double userQuotaAmount;
+	private String periodCode;
+	private Boolean overDraftable;
+	private String overDraftKind;
+	private Double overDraftTop;
+	private Boolean inherit;
+    
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public Integer getDeptId() {
+		return deptId;
+	}
+	public void setDeptId(Integer deptId) {
+		this.deptId = deptId;
+	}
+	public String getDeptMyname() {
+		return deptMyname;
+	}
+	public void setDeptMyname(String deptMyname) {
+		this.deptMyname = deptMyname;
+	}
+	public String getHostName() {
+		return hostName;
+	}
+	public void setHostName(String hostName) {
+		this.hostName = hostName;
+	}
+	public Boolean getEnabled() {
+		return enabled;
+	}
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
+	}
+	public Boolean getMonitored() {
+		return monitored;
+	}
+	public void setMonitored(Boolean monitored) {
+		this.monitored = monitored;
+	}
+	public Byte getAuditStepNum() {
+		return auditStepNum;
+	}
+	public void setAuditStepNum(Byte auditStepNum) {
+		this.auditStepNum = auditStepNum;
+	}
+	public Boolean getIsAuditor() {
+		return isAuditor;
+	}
+	public void setIsAuditor(Boolean isAuditor) {
+		this.isAuditor = isAuditor;
+	}
+	public Boolean getWatermark() {
+		return watermark;
+	}
+	public void setWatermark(Boolean watermark) {
+		this.watermark = watermark;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getMyname() {
+		return myname;
+	}
+	public void setMyname(String myname) {
+		this.myname = myname;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getOldPassword() {
+		return oldPassword;
+	}
+	public void setOldPassword(String oldPassword) {
+		this.oldPassword = oldPassword;
+	}
+	public String getAuthKind() {
+		return authKind;
+	}
+	public void setAuthKind(String authKind) {
+		this.authKind = authKind;
+	}
+	public Double getAmount() {
+		return amount;
+	}
+	public void setAmount(Double amount) {
+		this.amount = amount;
+	}
+	public Double getBalance() {
+		return balance;
+	}
+	public void setBalance(Double balance) {
+		this.balance = balance;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public Date getCreationTime() {
+		return creationTime;
+	}
+	public void setCreationTime(Date creationTime) {
+		this.creationTime = creationTime;
+	}
+	public String getDesc() {
+		return desc;
+	}
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+	public Integer getUserQuotaId() {
+		return userQuotaId;
+	}
+	public void setUserQuotaId(Integer userQuotaId) {
+		this.userQuotaId = userQuotaId;
+	}
+	public Double getUserQuotaAmount() {
+		return userQuotaAmount;
+	}
+	public void setUserQuotaAmount(Double userQuotaAmount) {
+		this.userQuotaAmount = userQuotaAmount;
+	}
+	public String getPeriodCode() {
+		return periodCode;
+	}
+	public void setPeriodCode(String periodCode) {
+		this.periodCode = periodCode;
+	}
+	public Boolean getOverDraftable() {
+		return overDraftable;
+	}
+	public void setOverDraftable(Boolean overDraftable) {
+		this.overDraftable = overDraftable;
+	}
+	public String getOverDraftKind() {
+		return overDraftKind;
+	}
+	public void setOverDraftKind(String overDraftKind) {
+		this.overDraftKind = overDraftKind;
+	}
+	public Double getOverDraftTop() {
+		return overDraftTop;
+	}
+	public void setOverDraftTop(Double overDraftTop) {
+		this.overDraftTop = overDraftTop;
+	}
+	public Boolean getInherit() {
+		return inherit;
+	}
+	public void setInherit(Boolean inherit) {
+		this.inherit = inherit;
+	}
+	public static int getPropRoot() {
+		return PROP_ROOT;
+	}
+	public static int getPropModerator() {
+		return PROP_MODERATOR;
+	}
+	public static int getPropCommon() {
+		return PROP_COMMON;
+	}
+}

@@ -1,0 +1,414 @@
+
+$(document).ready(function () {
+    //------------------------------------------------------------
+    // 数据网格
+    $('#idDgScheme').datagrid({
+        title : 'DH方案列表',
+        fitColumns: true,
+        striped : true, //斑马线
+        rownumbers : true,
+        checkOnSelect: true,
+        pagination : true,
+        pagePosition: 'bottom',
+        pageList : [10,20,50,100],
+        pageSize : 20,
+        pageNumber : 1,
+        singleSelect : true,
+        toolbar : '#idToolScheme',
+        //url : 'bgUser_listUser.action',
+        data : listScheme,
+        columns:[[
+            {
+                field : 'id',
+                title : '编号',
+                width : 40,
+                checkbox : true
+            },
+            {
+                field : 'name',
+                title : '名称',
+                width : 60
+            },
+            {
+                field : 'modelName',
+                title : '针对机型',
+                width : 60
+            },
+            {
+                field : 'brief',
+                title : '简介',
+                width : 120
+            }
+        ]],
+        // 事件
+        onSelect: function(rowIndex, rowData) {
+            var data = (rowData.id == 1)  ? listSchemeVersion1 : listSchemeVersion2;
+
+            $("#idDgSchemeVersion")
+                .datagrid({title : '(' + rowData.name + ')DH方案包含的版本'})
+                .datagrid("loadData",data).datagrid("getPager").pagination({
+                    layout:['first','prev','manual','next','last']
+            });
+        }
+
+        //rownumbers : false,
+    }).datagrid("getPager").pagination({
+        showRefresh:false
+    }); // end of $('#idDgScheme').datagrid...
+
+    //------------------------------------------------------------
+    // 工具栏操作类
+    toolScheme = {
+        add : function() {
+            $('#idDlgScheme').form('load', {
+                schemeId :    '0',
+                name :      ''
+            }).dialog({title : '添加DH方案'}).dialog('open');
+        },
+
+        remove : function() {
+            var rows =  $('#idDgScheme').datagrid('getSelections');
+            if (rows.length > 0) {
+                $.messager.confirm('确定操作', '你确定要删除所选的记录吗？', function(flag) {
+                    if(flag) {
+                        var ids = [];
+                        for (var i = 0; i < rows.length; i++) {
+                            ids.push(rows[i].id);
+                        }
+                        //ajax...
+                    }
+                });
+            } else {
+                $.messager.alert('提示', '请选择要删除的记录！！', 'info');
+            }
+        },
+
+        edit : function() {
+            var rows =  $('#idDgScheme').datagrid('getSelections');
+            if (rows.length == 1) {
+                $('#idDlgScheme').form('load',{
+                    schemeId :      rows[0].id,
+                    name :          rows[0].name,
+                    brief :         rows[0].brief
+                }).dialog({title : '编辑DH方案信息'}).dialog('open');
+            } else {
+                $.messager.alert('警告', '修改必须选中且只能选中一行！！', 'warning');
+            }
+        },
+
+        editModel : function() {
+            $('#idDlgInterphone').dialog('open');
+        },
+
+        reload : function() {
+            $('#idDgScheme').datagrid('reload');
+        },
+
+        inverse : function() {
+            $("#idDgScheme").inverse();
+        }
+    }; // end of toolScheme = {...
+
+    //------------------------------------------------------------
+    // 编辑对话框
+    $('#idDlgScheme').dialog({
+        width : 400,
+        title : '修改用户DH方案',
+        modal : true,
+        closed : true,
+        buttons : [{
+            text : '提交',
+            iconCls : 'icon-ok'
+        },{
+            text : '取消',
+            iconCls : 'icon-cancel',
+            handler : function() {
+                $('#idDlgScheme').dialog('close').form('reset')
+            }
+        }]
+    }); // end of $('#idDlgScheme').dialog...
+
+    //////////////////////////////////////////////////////////////
+    // 对讲机型号管理对话框
+    $('#idDlgInterphone').dialog({
+        width : 500,
+        title : '对讲机型号',
+        iconCls : 'icon-phone',
+        modal : true,
+        closed : true
+    }); // end of $('#idDlgInterphone').dialog...
+
+    // 对讲机型号列表
+    $('#idDgInterphone').datagrid({
+        title : '型号列表',
+        headerCls : 'panel-header-high',
+        tools : [{
+                iconCls:'icon-title-bar-add',
+                handler:function () {
+                    toolInterphone.insert();
+                }
+            }],
+        fitColumns: true,
+        striped : true, //斑马线
+        rownumbers : true,
+        checkOnSelect: true,
+        pagination : true,
+        pagePosition: 'bottom',
+        pageSize : 10,
+        pageNumber : 1,
+        singleSelect : true,
+        //url : 'bgUser_listUser.action',
+        data : listModel,
+        columns:[[
+            {
+                field : 'code', title : '编号', width : 40, editor: {
+                    type: 'textbox',
+                    options: {required: true}
+                }
+            },
+            {
+                field : 'name', title : '型号名称', width : 120, editor: {
+                    type: 'textbox',
+                    options: {required: true}
+                }
+            },
+            {
+                field:'action',title:'操作',width:60,align:'center',
+                formatter:function(value,row,index){
+                    if (row.editing){
+                        var s = '<a href="javascript:void(0)" onclick="toolInterphone.saveRow(this)">确定</a> ';
+                        var c = '<a href="javascript:void(0)" onclick="toolInterphone.cancelRow(this)">取消</a>';
+                        return s+c;
+                    } else {
+                        var e = '<a href="javascript:void(0)" onclick="toolInterphone.editRow(this)">编辑</a> ';
+                        var d = '<a href="javascript:void(0)" onclick="toolInterphone.deleteRow(this)">删除</a>';
+                        return e+d;
+                    }
+                }
+            }
+        ]],
+
+        onEndEdit:function(index,row){
+            /*var ed = $(this).datagrid('getEditor', {
+                index: index,
+                field: 'productid'
+            });
+            row.productname = $(ed.target).combobox('getText');*/
+        },
+
+        onBeforeEdit:function(index,row){
+            row.editing = true;
+            $(this).datagrid('refreshRow', index);
+        },
+
+        onAfterEdit:function(index,row){
+            row.editing = false;
+            $(this).datagrid('refreshRow', index);
+        },
+
+        onCancelEdit:function(index,row){
+            row.editing = false;
+            $(this).datagrid('refreshRow', index);
+        }
+
+    }).datagrid("getPager").pagination({
+        //showRefresh:false
+        layout:['first','prev','manual','next','last']
+    }); // end of $('#idDgInterphone').datagrid...
+
+    $("#idDlgInterphone").find('a.icon-title-bar-add').css({width:'32px',color:'black'}).html('<span>添加</span>');
+    //var dgInterphone = $("#idDgInterphone");
+
+    //------------------------------------------------------------
+    // 型号列表操作类
+    toolInterphone = {
+        dg : $("#idDgInterphone"), //dgInterphone,
+
+        getRowIndex : function (target){
+            var tr = $(target).closest('tr.datagrid-row');
+            return parseInt(tr.attr('datagrid-row-index'));
+        },
+
+        editRow : function (target){
+            this.dg.datagrid('beginEdit', this.getRowIndex(target));
+        },
+
+        deleteRow : function (target){
+            var pThis = this;
+            $.messager.confirm('确认框','您确定要删除该行吗？',function(r){
+                if (r){
+                    pThis.dg.datagrid('deleteRow', pThis.getRowIndex(target));
+                }
+            });
+        },
+        
+        saveRow : function (target){
+            this.dg.datagrid('endEdit', this.getRowIndex(target));
+        },
+        
+        cancelRow : function (target){
+            this.dg.datagrid('cancelEdit', this.getRowIndex(target));
+        },
+        
+        insert : function (){
+            var row = this.dg.datagrid('getSelected');
+            if (row){
+                var index = this.dg.datagrid('getRowIndex', row);
+            } else {
+                index = 0;
+            }
+            this.dg.datagrid('insertRow', {
+                index: index,
+                row:{
+                    code: '',
+                    name: ''
+                }
+            });
+            this.dg.datagrid('selectRow',index);
+            this.dg.datagrid('beginEdit',index);
+        }
+    }; // end of toolInterphonse = {...
+
+    //////////////////////////////////////////////////////////////
+    // 版本管理
+
+    // 列表
+    $('#idDgSchemeVersion').datagrid({
+        title : 'DH方案包含的版本',
+        fitColumns: true,
+        striped : true, //斑马线
+        rownumbers : true,
+        checkOnSelect: true,
+        pagination : true,
+        pagePosition: 'bottom',
+        pageSize : 10,
+        pageNumber : 1,
+        singleSelect : true,
+        toolbar : '#idToolSchemeVersion',
+        //url : 'bgUser_listUser.action',
+        columns:[[
+            {
+                field : 'id',
+                title : '编号',
+                width : 40,
+                checkbox : true
+            },
+            {
+                field : 'versionNo',
+                title : '版本号',
+                width : 40
+            },
+            {
+                field : 'filename',
+                title : '文件名',
+                width : 60
+            },
+            {
+                field : 'brief',
+                title : '简介',
+                width : 120
+            }
+        ]]
+    }).datagrid("getPager").pagination({
+        //showRefresh:false
+        layout:['first','prev','manual','next','last']
+    }); // end of $('#idDgSchemeVersion').datagrid...
+
+    //------------------------------------------------------------
+    // 版本列表工具栏操作类
+    toolSchemeVersion = {
+        add : function() {
+            $('#idDlgSchemeVersion').form('load', {
+                schemeVersionId : ''
+            }).dialog('open');
+        },
+
+        edit : function() {
+            var rows =  $('#idDgSchemeVersion').datagrid('getSelections');
+            if (rows.length == 1) {
+                $('#idDlgSchemeVersion').form('load',{
+                    schemeVersionId :   rows[0].id,
+                    versionNo :         rows[0].versionNo,
+                    brief :             rows[0].brief
+                }).dialog({title : '编辑DH方案版本信息'}).dialog('open');
+            } else {
+                $.messager.alert('警告', '修改必须选中且只能选中一行！！', 'warning');
+            }
+        },
+
+        remove : function() {
+            var rows =  $('#idDgSchemeVersion').datagrid('getSelections');
+            if (rows.length > 0) {
+                var ids = [];
+                for (var i = 0; i < rows.length; i++) {
+                    ids.push(rows[i].id);
+                }
+            } else {
+                $.messager.alert('提示', '请选择要移出的版本！！', 'info');
+            }
+        },
+
+        upload : function () {
+            var rows =  $('#idDgSchemeVersion').datagrid('getSelections');
+            if (rows.length == 1) {
+                if (rows[0].filename != '') {
+                    $.messager.confirm('确定操作', '该版本的代码已存在，要覆盖原先的代码吗？', function(flag) {
+                        if(flag) {
+                            $('#idDlgUploadCode').form('load', {
+                                schemeVersionId: rows[0].id
+                            }).dialog('open');
+                        }
+                    });
+                }
+                else {
+                    $('#idDlgUploadCode').form('load', {
+                        schemeVersionId: rows[0].id
+                    }).dialog('open');
+                }
+            } else {
+                $.messager.alert('警告', '上传代码时必须选中且只能选中一行！！', 'warning');
+            }
+        },
+
+        inverse : function() {
+            $("#idDgSchemeVersion").inverse();
+        }
+    }; // end of toolSchemeVersion = {...
+
+    //------------------------------------------------------------
+    // 版本对话框
+    $('#idDlgSchemeVersion').dialog({
+        width : 450,
+        title : '添加版本到DH方案',
+        modal : true,
+        closed : true,
+        buttons : [{
+            text : '确定',
+            iconCls : 'icon-ok'
+        },{
+            text : '取消',
+            iconCls : 'icon-cancel',
+            handler : function() {
+                $('#idDlgSchemeVersion').dialog('close').form('reset')
+            }
+        }]
+    }); // end of $('#idDlgSchemeVersion').dialog...
+
+    // 版本对话框
+    $('#idDlgUploadCode').dialog({
+        width : 450,
+        title : '上传DH方案版本代码',
+        modal : true,
+        closed : true,
+        buttons : [{
+            text : '确定',
+            iconCls : 'icon-ok'
+        },{
+            text : '取消',
+            iconCls : 'icon-cancel',
+            handler : function() {
+                $('#idDlgUploadCode').dialog('close').form('reset')
+            }
+        }]
+    }); // end of $('#idDlgUploadCode').dialog...
+});

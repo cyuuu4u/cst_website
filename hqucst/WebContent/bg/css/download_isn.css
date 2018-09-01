@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+body {
+    width:-webkit-calc(100% - 12px);
+    width:-moz-calc(100% - 12px);
+    width:calc(100% - 12px);
+    height:-webkit-calc(100% - 12px);
+    height:-moz-calc(100% - 12px);
+    height:calc(100% - 12px);
+    padding: 5px;
+}
+

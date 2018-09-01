@@ -1,0 +1,82 @@
+
+$(document).ready(function () {
+    //------------------------------------------------------------
+    // 数据网格
+    $('#idDgLog').datagrid({
+        title : '日志列表',
+        fitColumns: true,
+        striped : true, //斑马线
+        rownumbers : true,
+        checkOnSelect: true,
+        pagination : true,
+        pagePosition: 'bottom',
+        pageList : [10,20,50,100],
+        pageSize : 20,
+        pageNumber : 1,
+        singleSelect : false,
+        toolbar : '#idToolLog',
+        //url : 'bgUser_listUser.action',
+        data : listLog,
+        columns:[[
+            {
+                field : 'id',
+                title : '编号',
+                width : 40,
+                checkbox : true
+            },
+            {
+                field : 'operator',
+                title : '操作人帐号',
+                width : 100
+            },
+            {
+                field : 'op',
+                title : '操作类型',
+                width : 100
+            },
+            {
+                field : 'object',
+                title : '操作对象',
+                width : 100
+            },
+            {
+                field : 'loginTime',
+                title : '操作时间',
+                width : 120
+            }
+        ]]
+        //rownumbers : false,
+    }).datagrid("getPager").pagination({
+        showRefresh:false
+    }); // end of $('#idDgLog').datagrid...
+
+    //------------------------------------------------------------
+    // 工具栏操作类
+    toolLog = {
+        remove : function() {
+            var rows =  $('#idDgLog').datagrid('getSelections');
+            if (rows.length > 0) {
+                $.messager.confirm('确定操作', '你确定要删除所选的记录吗？', function(flag) {
+                    if(flag) {
+                        var ids = [];
+                        for (var i = 0; i < rows.length; i++) {
+                            ids.push(rows[i].id);
+                        }
+                        //ajax...
+                    }
+                });
+            } else {
+                $.messager.alert('提示', '请选择要删除的记录！！', 'info');
+            }
+        },
+
+        reload : function() {
+            $('#idDgLog').datagrid('reload');
+        },
+
+        inverse : function() {
+            $("#idDgLog").inverse();
+        }
+    }; // end of toolLog = {...
+
+});

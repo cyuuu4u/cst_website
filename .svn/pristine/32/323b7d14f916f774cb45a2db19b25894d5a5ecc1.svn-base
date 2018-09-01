@@ -1,0 +1,164 @@
+package biz.mopo.hqucst.dao;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import biz.mopo.hqucst.po.User;
+
+import com.xxdw.platform.common.SearchVo;
+import com.xxdw.platform.controller.PageSupport;
+import com.xxdw.platform.db.DbUtil;
+
+public class UserDao {
+	
+	private static UserDao userDao = null;
+	private UserDao() {}
+	
+	public static UserDao getInstance() {
+		if(userDao == null) {
+			userDao = new UserDao();
+		}
+		return userDao;
+	}
+	
+	//-----------------------------------------------------------
+	
+	public boolean hasWithUsername(String username, Integer exceptId) throws SQLException {
+		String strSql = "SELECT f_username FROM t_user WHERE f_username='" + username+"'";
+		if(exceptId != null) {
+		    strSql += " AND f_id<>" + exceptId;
+		}
+		return DbUtil.hasRecord(strSql);
+	}
+	
+	public boolean isPasswordMatch(String username, String password) throws SQLException {
+		String strSql = "SELECT f_username FROM t_user WHERE ";
+		strSql += " f_username='" + username + "' AND f_password=md5('" + password + "')";
+		return DbUtil.hasRecord(strSql);
+	}
+	
+	public User findById(Integer id) throws SQLException {
+		String strSql = "SELECT * FROM v_user WHERE f_id=" + id;
+		return DbUtil.executeQuery4Pojo(strSql, User.class);
+	}
+	
+	public User findByUsername(String username) throws SQLException {
+	    String strSql = "SELECT * FROM t_user WHERE f_username='" + username + "'";
+        return DbUtil.executeQuery4Pojo(strSql, User.class);
+    }
+	
+	public void add(User po) throws SQLException {
+		List<Object> listValue = new ArrayList<Object>();
+		listValue.add(po.getUsername());
+		listValue.add(po.getPassword());
+		listValue.add(po.getMyname());
+        listValue.add(po.getDeptId());
+        listValue.add(po.getHostName());
+        listValue.add(po.getAuthKind());
+        listValue.add(po.getAuditStepNum());
+        listValue.add(po.getIsAuditor());
+        listValue.add(po.getWatermark());
+        listValue.add(po.getMonitored());
+        listValue.add(po.getEnabled());
+		listValue.add(po.getEmail());
+		listValue.add(po.getDesc());
+		
+		String strSql = "INSERT INTO t_user (f_username, f_password, f_myname, f_deptId, f_hostName, f_authKind,"
+		+ " f_auditStepNum, f_isAuditor, f_watermark, f_monitored, f_enabled, f_email, f_amount, f_creationTime, f_desc, f_chargeableTime) VALUES ";
+		strSql += "(?, md5(?), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, now(), ?, now())";
+		DbUtil.executeUpdate(strSql, listValue);
+	}
+	
+	public void update(User po) throws SQLException {
+		List<Object> listValue = new ArrayList<Object>();
+		listValue.add(po.getUsername());
+		listValue.add(po.getMyname());
+        listValue.add(po.getDeptId());
+        listValue.add(po.getHostName());
+        listValue.add(po.getAuthKind());
+        listValue.add(po.getAuditStepNum());
+        listValue.add(po.getIsAuditor());
+        listValue.add(po.getWatermark());
+        listValue.add(po.getMonitored());
+        listValue.add(po.getEnabled());
+		listValue.add(po.getEmail());
+		listValue.add(po.getDesc());
+		
+		String strSql;
+		if(po.getPassword() == "")
+		{
+			listValue.add(po.getId());
+		
+			strSql = "UPDATE t_user SET f_username=?, f_myname=?, f_deptId=?, f_hostName=?, f_authKind=?,"
+					+ " f_auditStepNum=?, f_isAuditor=?, f_watermark=?, f_monitored=?, f_enabled=?, f_email=?,"
+					+ " f_desc=? WHERE f_id=?";
+		}
+		else
+		{
+			listValue.add(po.getPassword());
+			listValue.add(po.getId());
+			strSql = "UPDATE t_user SET f_username=?, f_myname=?, f_deptId=?, f_hostName=?, f_authKind=?,"
+					+ " f_auditStepNum=?, f_isAuditor=?, f_watermark=?, f_monitored=?, f_enabled=?, f_email=?,"
+					+ " f_desc=?, f_password=md5(?) WHERE f_id=?";
+		}
+		DbUtil.executeUpdate(strSql, listValue);
+	}
+	
+	public User addAmount(User po) throws SQLException {
+		
+		String strSql = "UPDATE t_user SET f_amount=f_amount-" + po.getAmount() + " WHERE f_id=" + po.getId();
+		DbUtil.executeUpdate(strSql);
+		
+		strSql = "SELECT func_get_balance(f_id) f_balance, f_username FROM t_user WHERE f_id=" + po.getId();
+        return DbUtil.executeQuery4Pojo(strSql, User.class);
+	}
+	
+	public void deleteById(int id) throws SQLException {
+		List<String> listSql = new ArrayList<String>();
+		String strSql = "DELETE FROM t_user_quota WHERE f_userId=" + id;
+		listSql.add(strSql);
+		strSql = "DELETE FROM t_user WHERE f_id=" + id;
+		listSql.add(strSql);
+		
+		DbUtil.executeBatchUpdate(listSql);
+	}
+	
+	public void changePassword(User po) throws SQLException {
+	    List<Object> listValue = new ArrayList<Object>();
+        listValue.add(po.getPassword());
+        listValue.add(po.getId());
+        
+        String strSql = "UPDATE t_user SET f_password=md5(?) WHERE f_id=?";
+        DbUtil.executeUpdate(strSql, listValue);
+    }
+	
+	public List<User> findAll() throws SQLException {
+		String strSql = "SELECT u.*, func_get_balance(u.f_id) f_balance, uq.f_id f_userQuotaId, uq.f_amount f_userQuotaAmount,"
+					  + " uq.f_periodCode, uq.f_overDraftable, uq.f_overDraftKind, uq.f_overDraftTop, uq.f_inherit"
+					  + " FROM v_user u LEFT JOIN t_user_quota uq ON u.f_id=uq.f_userId WHERE u.f_id<>1 ORDER BY u.f_id";
+		return DbUtil.executeQuery(strSql, User.class);
+	}
+	
+	public List<User> query(List<SearchVo> listSearchVo) throws SQLException {
+
+		String filter = SearchVo.parseCondition(listSearchVo);
+		String strSql = "SELECT u.*, func_get_balance(u.f_id) f_balance, uq.f_id f_userQuotaId, uq.f_amount f_userQuotaAmount,"
+					  + " uq.f_periodCode, uq.f_overDraftable, uq.f_overDraftKind, uq.f_overDraftTop, uq.f_inherit"
+					  + " FROM v_user u LEFT JOIN t_user_quota uq ON u.f_id=uq.f_userId WHERE u.f_id<>1 "
+					  + filter + " ORDER BY u.f_id";
+		return DbUtil.executeQuery(strSql, User.class);
+	}
+	
+	public PageSupport<User> findAllByPage(PageSupport<User> ps) throws SQLException {
+		String strSql = "SELECT count(*) FROM t_user";
+		Object objCount = DbUtil.executeScalar(strSql);
+		ps.setRecordNum(((Long)objCount).intValue());
+		
+		strSql = "SELECT * FROM t_user ORDER BY f_creationTime DESC LIMIT " + ps.getPageSize() + " OFFSET " + ps.getPageOffset();
+		List<User> list = DbUtil.executeQuery(strSql, User.class);
+		ps.setRecords(list);
+		
+		return ps;
+	}
+}

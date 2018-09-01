@@ -1,0 +1,261 @@
+package biz.mopo.hqucst.action;
+
+import java.sql.BatchUpdateException;
+import java.sql.SQLException;
+import java.util.List;
+
+import biz.mopo.hqucst.bean.UserForm;
+import biz.mopo.hqucst.po.User;
+import biz.mopo.hqucst.service.UserService;
+
+import com.xxdw.platform.common.JsonResultVo;
+import com.xxdw.platform.controller.Action2;
+import com.xxdw.platform.util.CommonUtils;
+
+public class UserAction extends Action2 {
+	private UserForm 	formBean;
+	//private QuotaForm 	formQuota;
+	//private UserFilterForm filterForm;
+
+	public void setFormBean(UserForm formBean) {
+		this.formBean = formBean;
+	}
+	public UserForm getFormBean() {
+		return formBean;
+	}
+
+//	public QuotaForm getFormQuota() {
+//		return formQuota;
+//	}
+//	public void setFormQuota(QuotaForm formQuota) {
+//		this.formQuota = formQuota;
+//	}
+//	public UserFilterForm getFilterForm() {
+//		return filterForm;
+//	}
+//	public void setFilterForm(UserFilterForm filterForm) {
+//		this.filterForm = filterForm;
+//	}
+	//----------------------------------------------------------
+	public String list() {
+		UserService serv = UserService.getInstance();
+		try {
+			List<User> listUser = serv.findAll();
+
+			jsonVo.setSuccess(true);
+			jsonVo.setData(listUser);
+		} catch (SQLException e) {
+			jsonVo.setMessage("获取用户列表出错。");
+		}
+
+		this.print(jsonVo);
+		return null;
+	}
+
+	/*public String add() {
+		if(formBean.validate()) {
+			User po = (User)this.formBean.toPojo(User.class);
+
+			UserService serv = UserService.getInstance();
+			try {
+				if(serv.hasWithUsername(po.getUsername(), null)) {
+					jsonVo.setMessage("用户名已存在。");
+				}
+				else {
+					serv.add(po);
+					jsonVo.setSuccess(true);
+					jsonVo.setMessage("新增用户成功。");
+				}
+			} catch (SQLException e) {
+				jsonVo.setMessage("新增用户出错。");
+			}
+		}
+		else {
+			jsonVo.setMessage("您提交的数据中部分格式不正确。");
+		}
+
+		this.print(jsonVo);
+		return null;
+	}*/
+
+	public String del(){
+		int id = CommonUtils.str2int(this.formBean.getId(), -1);
+		if(id == -1){
+			jsonVo.setMessage("错误的用户ID!");
+		}
+		else {
+			UserService serv = UserService.getInstance();
+			try {
+				serv.deleteById(id);
+				jsonVo.setSuccess(true);
+				jsonVo.setMessage("已成功删除ID为[" +id + "]的用户!");
+			} catch(BatchUpdateException e) {
+				jsonVo.setMessage("该用户已被引用，不能删除!");
+			} catch (SQLException e) {
+				jsonVo.setMessage("删除用户出错!");
+			}
+		}
+
+		this.print(jsonVo);
+		return null;
+	}
+
+	public String getPersonalInfo(){
+		int id = CommonUtils.str2int(this.formBean.getId(), -1);
+		if(id == -1){
+			jsonVo.setMessage("错误的用户ID!");
+		}
+		else {
+			UserService serv = UserService.getInstance();
+			try {
+				User user = serv.findById(id);
+				jsonVo.setSuccess(true);
+				jsonVo.setData(user);
+			} catch (SQLException e) {
+				jsonVo.setMessage("获取用户资料失败!");
+			}
+		}
+
+		this.print(jsonVo);
+		return null;
+	}
+
+	/*public String mod() {
+		if(formBean.validate()) {
+			User po = (User)this.formBean.toPojo(User.class);
+
+			UserService serv = UserService.getInstance();
+			try {
+				if(serv.hasWithUsername(po.getUsername(), po.getId())) {
+					jsonVo.setMessage("用户名重复。");
+				}
+				else {
+					serv.update(po);
+					jsonVo.setSuccess(true);
+					jsonVo.setMessage("修改用户信息成功。");
+				}
+			} catch (SQLException e) {
+				jsonVo.setMessage("修改用户信息出错。");
+			}
+		}
+		else {
+			jsonVo.setMessage("您提交的数据中部分格式不正确。");
+		}
+
+		this.print(jsonVo);
+		return null;
+	}*/
+
+	public String setQuota() {
+		this.jsonVo.setOp(JsonResultVo.OP_MOD);
+//		if(formQuota.validate()) {
+//			QuotaPo po = (QuotaPo)this.formQuota.toPojo(QuotaPo.class);
+//
+//			UserService serv = UserService.getInstance();
+//			try {
+//				serv.setQuota(po);
+//				jsonVo.setSuccess(true);
+//				jsonVo.setMessage("设置用户配额成功。");
+//			} catch (SQLException e) {
+//				jsonVo.setMessage("设置用户配额出错。");
+//			}
+//		}
+//		else {
+//			jsonVo.setMessage("您提交的数据中部分格式不正确。");
+//		}
+
+		this.print(jsonVo);
+		return null;
+	}
+
+	/*public String addAmount() {
+		int id = CommonUtils.str2int(this.formBean.getId(), -1);
+		if(id == -1){
+			jsonVo.setMessage("错误的用户ID!");
+		}
+		else {
+			User po = (User)this.formBean.toPojo(User.class);
+
+			UserService serv = UserService.getInstance();
+			try {
+				User user = serv.addAmount(po);
+				jsonVo.setSuccess(true);
+				jsonVo.setData(user);
+				jsonVo.setMessage("为用户[" +user.getUsername() + "]增加余额成功。");
+			} catch (SQLException e) {
+				jsonVo.setMessage("增加余额出错。");
+			}
+		}
+
+		this.print(jsonVo);
+		return null;
+	}*/
+
+	public String changePassword() {
+		if(formBean.validate()) {
+			User po = (User)this.formBean.toPojo(User.class);
+
+			UserService serv = UserService.getInstance();
+			try {
+				if(! serv.isPasswordMatch(po.getUsername(), po.getOldPassword())) {
+					jsonVo.setMessage("原密码错误。");
+				}
+				else {
+					serv.changePassword(po);
+					jsonVo.setSuccess(true);
+					jsonVo.setMessage("修改用户密码成功。");
+				}
+			} catch (SQLException e) {
+				jsonVo.setMessage("修改用户密码失败。");
+			}
+		}
+		else {
+			jsonVo.setMessage("您提交的数据中部分格式不正确。");
+		}
+
+		this.print(jsonVo);
+		return null;
+	}
+
+	public String login() {
+		UserService serv = UserService.getInstance();
+		try {
+			User po = (User)this.formBean.toPojo(User.class);
+
+			if(! serv.isPasswordMatch(po.getUsername(), po.getPassword())) {
+				jsonVo.setMessage("用户名与密码不匹配。");
+			}
+			else {
+				User user = serv.findByUsername(po.getUsername());
+				if(user.getEnabled().equals(false)) {
+					jsonVo.setMessage("该用户还未激活，请与管理员联系。");
+				}
+				else {
+					jsonVo.setSuccess(true);
+					jsonVo.setData(user);
+				}
+			}
+		} catch (SQLException e) {
+			jsonVo.setMessage("登录失败。");
+		}
+
+		this.print(jsonVo);        
+		return null;
+	}
+
+	public String query() {
+		UserService serv = UserService.getInstance();
+		try {
+			List<User> listUser = null;//serv.query(filterForm.toSearchVoList());
+
+			jsonVo.setSuccess(true);
+			jsonVo.setData(listUser);
+//		} catch (SQLException e) {
+		} catch (Exception e) {
+			jsonVo.setMessage("获取用户列表出错。");
+		}
+
+		this.print(jsonVo);
+		return null;
+	}
+}

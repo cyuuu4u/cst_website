@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+body {
+    width:-webkit-calc(100% - 12px);
+    width:-moz-calc(100% - 12px);
+    width:calc(100% - 12px);
+    height:-webkit-calc(100% - 12px);
+    height:-moz-calc(100% - 12px);
+    height:calc(100% - 12px);
+    padding: 5px;
+}
+
+#idLayoutPage {
+    width: 100%;
+    height: 100%;
+}
+
+#idPageWest {
+    width: 50%;
+    height:100%;
+}
+
+#idPageEast {
+    width:50%;
+    height:100%;
+}
+
+#idShipmentInfo {
+    width:-webkit-calc(100% - 12px);
+    width:-moz-calc(100% - 12px);
+    width:calc(100% - 12px);
+    height:26px;
+    text-align: left;
+    border:1px solid #95B8E7;
+    background: #e0ecff;
+    /*background: #F4F4F4;*/
+    padding: 5px;
+    margin-bottom: -1px;
+}

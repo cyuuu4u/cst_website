@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>华侨大学计算机学院-Search</title>
+    <!-- Save for Web Styles (home(Regent).png) -->
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/index_en.css">
+    <link rel="stylesheet" type="text/css" href="css/level2.css">
+    <link rel="stylesheet" type="text/css" href="css/level2_en.css">
+    <link rel="stylesheet" type="text/css" href="css/footer_en.css">
+    <link rel="stylesheet" type="text/css" href="css/xcConfirm.css">
+    <link rel="stylesheet" type="text/css" href="css/timeline.css">
+    <!-- End Save for Web Styles -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/index_en.js"></script>
+    <script src="js/xcConfirm.js"></script>
+</head>
+<body>
+<div id="root">
+    <!--header-->
+    <div class="row">
+        <div>
+            <div id="logo_en">
+                <a href="index_en.html"><img src="images/index_en_02.png"></a>
+            </div>
+            <div id="navMenu">
+                <ul class="menu">
+                    <li>
+                        <div class="nav_menu_en">
+                            <a href="introduction_en.html"><img src="images/index_en_04.png" class="nav_img_en"></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav_menu_en">
+                            <a href="faculty_en.html"><img src="images/index_en_06.png" class="nav_img_en"></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav_menu_en">
+                            <a href="news_en.html"><img src="images/index_en_08.png" class="nav_img_en"></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav_menu_en">
+                            <a href="programs_en.html"><img src="images/index_en_10.png" class="nav_img_en"></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="language_bar">
+            <ul class="version">
+                <li class="version"><a href="index.html">简体中文</a>&nbsp;|&nbsp;</li>
+                <li class="version"><a href="index_en.html">English</a></li>
+                <li class="search">
+                    <form action="/search" method="get">
+                        <input type="text" id="to_search" name="to_search" value="" placeholder="Search..."/>
+                        <input style="float: right" type="image" src="images/home(Regent)_15.gif" alt="搜索" onClick="window.open('search_en.html');return false;" />
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="row-second_en">
+            <div class="title-one">SEARCH</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="list">
+            <p style="margin-top: 24px;font-weight: bold;font-size: 12px;">SEARCH IN THE RESULTS</p>
+            <form action="search_en.html" method="get">
+                <input type="text" id="search_this_site" name="to_search" value="" placeholder=""/>
+                <input style="float: right;margin-top: 3px;margin-right: 12px" type="image" src="images/search_03.gif" alt="search" />
+                <p style="margin-top: 24px;font-weight: bold;font-size: 12px;">REFINING RESULTS</p>
+                <ul class="left-list" style="margin-top: 5px;font-size:12px;font-weight:normal;">
+                    <li><label><input type="checkbox" style="margin-right: 4px" checked="checked" name="">NEWS&EVENTS</label></li>
+                    <li><label><input type="checkbox" style="margin-right: 4px" checked="checked" name="">INTERNATIONAL PROGRAMS</label></li>
+                </ul>
+                <div style="margin-top: -20px">
+                    <label><input type="submit" value="Refine" style="background: #000;font-weight: bold;color: white;padding: 2px 8px 2px 8px"></label>
+                </div>
+            </form>
+        </div>
+        <div class="content" style="min-height: 300px">
+            <div>
+                <p style="font-size: 14px;line-height: 25px;margin-top: 20px;margin-bottom: 20px;">
+                    <span><a href="#">OUR SCHOOL HELD A MEETING ON THE CONSTRUCTION OF STYLE OF STUDY</a></span>
+                    <span style ="float: right">April 12,2017 </span>
+                </p>
+                <div class="xuxian"></div>
+                <p style="font-size: 14px;line-height: 25px;margin-top: 20px;margin-bottom: 20px;">
+                    <span><a href="#">OUR TEACHER OF DIGITAL MEDIA SYSTEM ONCE AGAIN PARTICIPATED IN IEET ENGINEERING
+                        AND TECHNOLOGY EDUCATION CERTIFICATION TRAINING</a></span>
+                    <span style ="float: right">April 17, 2017 </span>
+                </p>
+                <div class="xuxian"></div>
+                <p style="font-size: 14px;line-height: 25px;margin-top: 20px;margin-bottom: 20px;">
+                    <span><a href="#">3D HAND-PAINTED OFFICIAL LINE DOWN THE STATION SCENERY COMPELLING</a></span>
+                    <span style ="float: right">April 18,2017 </span>
+                </p>
+                <div class="xuxian"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="black_footer" style="min-height: 380px">
+    <div id="container">
+        <div class="footer_col">
+            <p class="footer_title">LINKS</p>
+            <div class="plant">
+                <p class="footer_content" ><a class="footer_content" href="index_en.html">Index</a></p>
+                <p class="footer_content">
+                    <a class="footer_content" href="introduction_en.html">Introduction</a>/
+                    <a class="footer_content" href="faculty_en.html">Faculty</a>/
+                    <a class="footer_content" href="news_en.html">News&Events</a>/
+                    <a class="footer_content" href="programs_en.html">International Programs</a></p>
+                <div class="xuxian"></div>
+            </div>
+            <div  class="plant">
+                <p class="footer_content">
+                    <a class="footer_content" href="http://www.hqu.edu.cn/">Huaqiao University</a>/
+                    <br>
+                    <a class="footer_content" href="http://www.xjtu.edu.cn/">Xi'an Jiaotong University</a>/
+                    <a class="footer_content" href="https://www2.gmu.edu/">George Mason University</a></p>
+                <div class="xuxian"></div>
+            </div>
+        </div>
+        <div class="footer_col">
+            <div style="height: 26px;"></div>
+            <div class="plant">
+                <p class="footer_content">
+                    <a class="footer_content"  href="http://www.xmisp.com/">Xiamen Xin click Technology Co</a>/
+                    <a class="footer_content" href="http://www.aocmonitor.com.cn/">TPV Technology Co., Ltd</a></p>
+                <div class="xuxian"></div>
+            </div>
+            <div class="plant">
+                <p class="footer_content">
+                    <a class="footer_content" href="http://www.baidu.com/">Baidu</a>/
+                    <a class="footer_content" href="http://www.w3school.com.cn/">w3school</a>/
+                <div class="xuxian"></div>
+            </div>
+        </div>
+        <div class="footer_col">
+            <p class="footer_title">STAY CONNECTED</p>
+            <div id="picture1"><img src="images/home(Regent)_footer_22.gif"></div>
+            <div id="picture2"><img src="images/home(Regent)_footer_24.gif"></div>
+            <div class="picture3"><img src="images/weibo.jpg" style="width: 63px;max-height:63px;"></div>
+            <div class="picture3"><img src="images/weixin.jpg" style="width: 63px;max-height:63px;"></div>
+        </div>
+        <div class="footer_col">
+            <p class="footer_title">Xiamen Campus</p>
+            <div class="plant">
+                <p class="message">Office Phone：0592-6162559<br>Fax：0592-6162556<br>Youth League Office：0502-6162557<br>Teaching Secretariat：0592-6162551<br>Recruitment ：0592-6162557</p>
+                <p class="xiaoqu">Quanzhou Campus</p>
+                <p class="message">Office Phone：0595-22693250<br>Fax：0595-22693309</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Save for Web Slices -->
+</body>
+</html>

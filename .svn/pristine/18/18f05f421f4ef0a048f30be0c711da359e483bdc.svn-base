@@ -1,0 +1,99 @@
+
+#black_footer{
+    clear: both;
+    padding:36px 0 36px 0;
+    left:0;
+    position: relative;
+    top: 50px;
+    min-height: 500px;
+    min-width:1080px;
+    background-color: black;
+    margin: 0 auto;
+}
+
+#container{
+    top:0;
+    width: 980px;
+    max-width: 980px;
+    min-width: 599px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.footer_col {
+    left:0;
+    top:0;
+    width:206px;
+    height: auto;
+    float: left;
+    margin: 0 39px 0 0;
+}
+.plant{
+    left: 0;
+    top:0;
+    width:205px;
+    margin-bottom:15px ;
+    height: auto;
+}
+.footer_title{
+    color: white;
+    font-family: Helvetica;
+    font-size:18px;
+    font-weight: bold;
+    letter-spacing: 0.1vw;
+    margin-bottom: 8px;
+}
+.footer_content {
+    color: #b0b5b5;
+    margin-bottom: 10px;
+/*    font-size:1.2rem ;
+    letter-spacing: 2px;*/
+    font-family: Helvetica;
+    font-size:14px ;
+    line-height: 100%;
+    letter-spacing: 0.05vw;
+}
+.xuxian{
+    width: 100%;
+    height: 0;
+    border-bottom:#b0b5b5 1px dotted ;
+}
+
+#footer_contact_us{
+    color: white;
+    font-size:24px;
+    height: 40px;
+    letter-spacing: 0.1vw;
+}
+
+#picture1{
+    float: left;
+    width: 111px;
+    height: 34px;
+}
+#picture2{
+    float: left;
+    width:86px;
+    height: 34px;
+}
+.picture3{
+    margin: 25px 40px 40px 0px;
+    float: left;
+    width: 63px;
+}
+.xiaoqu{
+    font-size:16px ;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 0.08vw;
+    margin: 10px 0px 10px 0px;
+}
+.message{
+    color: white;
+    font-size:12px ;
+    font-weight: bold;
+    line-height:20px;
+}
+#contact{
+    line-height: 10px;
+}

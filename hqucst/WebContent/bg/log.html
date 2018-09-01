@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>
+        冒泡软件
+    </title>
+    <link rel="shortcut icon" href="../images/logo.ico">
+    <link rel="stylesheet" href="../js/easyui1.5.1/themes/default/easyui.css">
+    <link rel="stylesheet" href="../js/easyui1.5.1/themes/icon.css">
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/log.css">
+    <script src="../js/easyui1.5.1/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/easyui1.5.1/jquery.easyui.min.js"></script>
+    <script src="../js/easyui1.5.1/locale/easyui-lang-zh_CN.js"></script>
+    <script src="../js/mopo.js"></script>
+    <script src="js/data.js" type="text/javascript"></script>
+    <script src="js/log.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+    <!-- 数据网格 -->
+    <table id="idDgLog" class="easyui-datagrid" style="width:100%;height:auto;min-height: 100px">
+    </table>
+
+    <!-- 工具栏 -->
+    <div id="idToolLog" style="padding:5px;">
+        <div>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="toolLog.remove();">删除</a>
+            <span class="datagrid-tool-separator"></span>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-reload" plain="true" onclick="toolLog.reload();">刷新</a>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-inverse" plain="true" onclick="toolLog.inverse();">反选</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>华侨大学计算机学院-科研团队</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/level2.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css"><link rel="stylesheet" type="text/css" href="css/xcConfirm.css">
+
+    <script src="js/jquery-3.1.1.min.js"></script><script src="js/jquery.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/index.js"></script><script src="js/xcConfirm.js"></script>
+</head>
+<body>
+<div id="root">
+    <div class="row">
+        <div>
+            <div id="logo">
+                <a href="index.html"><img src="images/logo.png"></a>
+            </div>
+            <div id="navMenu">
+                <ul class="menu">
+                    <li>
+                        <div class="nav_menu" id="navMenuIntroduction">
+                            <a class="pic_show" href="introduction.html" ><img src="images/menuIntroduction2.png" class="nav_img"></a>
+                            <a class="pic_hide" href="introduction.html"><img src="images/menuIntroduction.png" class="nav_img"></a>
+                        </div>
+                        <div id="navIntroduction" class="nav_popup">
+                            <div>学院概况</div>
+                            <div>
+                                <img src="images/pop_introduction.jpg" width="220px" height="100px" />
+                                <p>
+                                    1980年创办计算机专业，2008年成立计算机科学与技术学院。现有计算机科学与技术、软件工程、网络工程、数字媒体技术四个本科专业；计算机科学与技术、软件工程两个一级学科硕士点；模式识别与智能系统二级硕士点；计算机技术领域工程硕士点。
+                                </p>
+                            </div>
+                            <div>
+                                <ul class="nav_list">
+                                    <li class="nav_item"><a  href="introduction.html">01/学院简介</a></li>
+                                    <li class="nav_item"><a  href="introduction02.html">02/现任领导</a></li>
+                                    <li class="nav_item"><a  href="introduction03.html">03/组织机构</a></li>
+                                    <li class="nav_item"><a  href="introduction03.html">04/学院沿革</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav_menu" id="navMenuTeaching">
+                            <a class="pic_show" href="teaching.html"><img src="images/menuTeaching2.png" class="nav_img"></a>
+                            <a class="pic_hide" href="teaching.html"><img src="images/menuTeaching.png" class="nav_img"></a>
+                        </div>
+                        <div id="navTeaching" class="nav_popup">
+                            <div>教学工作</div>
+                            <div>
+                                <img src="images/pop_teaching.png" width="220px" height="100px" />
+                                <p>
+                                    在教学平台方面，学院拥有福建省计算机综合实验教学示范中心，福建省网络工程人才培养模式创新实验区；拥有三门省级精品课程，分别是《编译原理》、《面向对象程序设计》和《数据结构》；《软件工程》教学团队获福建省优秀教学团队称号；获得福建省教学成果二等奖一项。
+                                </p>
+                            </div>
+                            <div>
+                                <ul class="nav_list">
+                                    <li class="nav_item"><a  href="teaching.html">01/教学动态</a></li>
+                                    <li class="nav_item"><a  href="teaching02.html">02/专业设置</a></li>
+                                    <li class="nav_item"><a  href="teaching03.html">03/教学计划</a></li>
+                                    <li class="nav_item"><a  href="teaching04.html">04/教学研究</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav_menu nav_menu_cur" id="navMenuFaculty" style="top:0;">
+                            <a href="faculty.html"><img src="images/menuFaculty.png" class="nav_img"></a>
+                        </div>
+                        <div id="navFaculty" class="nav_popup">
+                            <div>师资队伍</div>
+                            <div>
+                                <img src="images/pop_faculty.jpg" width="220px" height="100px" />
+                                <p>
+                                    学院现有教职工86名，其中专任教师68人；专任教师中，教授6名、副教授21名，37名教师具有博士学位，占教师总数的54.4%。实验人员中，高级实验师3名。
+                                </p>
+                            </div>
+                            <div>
+                                <ul class="nav_list">
+                                    <li class="nav_item"><a  href="faculty.html">01/师资队伍</a></li>
+                                    <li class="nav_item"><a  href="faculty02.html">02/科研团队</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav_menu" id="navMenuAffairs">
+                            <a class="pic_show" href="affairs.html"><img src="images/menuAffairs2.png" class="nav_img"></a>
+                            <a class="pic_hide" href="affairs.html"><img src="images/menuAffairs.png" class="nav_img"></a>
+                        </div>
+                        <div id="navAffairs" class="nav_popup">
+                            <div>院务工作</div>
+                            <div>
+                                <img src="images/pop_affairs.png" width="220px" height="100px" />
+                                <p>
+                                    学院聘请优秀的教师担任班主任工作，建有本科生科研创新基地，
+                                    鼓励学生积极参与挑战杯、世界大学生程序设计竞赛、数学建模大赛和微软、IBM、Intel等公司的大学生专业技能竞赛，
+                                    广泛开展丰富多彩的课外科技创新活动。至今荣获各级各类奖项超过三十项。
+                                </p>
+                            </div>
+                            <div>
+                                <ul class="nav_list">
+                                    <li class="nav_item"><a  href="affairs.html">01/学院动态</a></li>
+                                    <li class="nav_item"><a  href="affairs02.html">02/学院发文</a></li>
+                                    <li class="nav_item"><a  href="affairs03.html">03/学子风采</a></li>
+                                    <li class="nav_item"><a  href="affairs04.html">04/就业信息</a></li>
+                                    <li class="nav_item"><a  href="affairs05.html">05/资料下载</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav_menu" id="navMenuAcademic">
+                            <a class="pic_show"  href="academic.html"><img src="images/menuAcademic2.png" class="nav_img"></a>
+                            <a class="pic_hide" href="academic.html"><img src="images/menuAcademic.png" class="nav_img"></a>
+                        </div>
+                        <div id="navAcademic" class="nav_popup">
+                            <div>学术科研</div>
+                            <div>
+                                <img src="images/pop_academic.png" width="220px" height="100px" />
+                                <p>
+                                    近年来，学院承担国家级科研项目12项，省部级科研项目36项，地厅级科研项目15项，横向科研项目30余项；
+                                    发表学术论文400余篇，其中SCI、EI收录100余篇；获得专利12项，公开出版专著和教材11部。
+                                </p>
+                            </div>
+                            <div>
+                                <ul class="nav_list">
+                                    <li class="nav_item"><a  href="academic.html">01/科研动态</a></li>
+                                    <li class="nav_item"><a  href="academic02.html">02/科研项目</a></li>
+                                    <li class="nav_item"><a  href="academic03.html">03/学术论文</a></li>
+                                    <li class="nav_item"><a  href="academic04.html">04/项目推广</a></li>
+                                    <li class="nav_item"><a  href="academic05.html">05/院企合作</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav_menu" id="navMenuPostgraduate">
+                            <a class="pic_show" href="postgraduate.html"><img src="images/menuPostgraduate2.png" class="nav_img"></a>
+                            <a class="pic_hide" href="postgraduate.html"><img src="images/menuPostgraduate.png" class="nav_img"></a>
+                        </div>
+                        <div id="navPostgraduate" class="nav_popup">
+                            <div>研究生教学</div>
+                            <div>
+                                <img src="images/pop_postgraduate.jpg" width="220px" height="100px" />
+                                <p>
+                                    学院现有计算机科学与技术与软件工程两个一级学科硕士点，
+                                    以及一个模式识别与智能系统二级硕士点和一个计算机技术领域工程硕士点。
+                                </p>
+                            </div>
+                            <div>
+                                <ul class="nav_list">
+                                    <li class="nav_item"><a  href="postgraduate.html">01/研究生动态</a></li>
+                                    <li class="nav_item"><a  href="postgraduate02.html">02/专业介绍</a></li>
+                                    <li class="nav_item"><a  href="postgraduate03.html">03/招生信息</a></li>
+                                    <li class="nav_item"><a  href="postgraduate04.html">04/导师简介</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="language_bar">
+            <ul class="version">
+                <li class="version"><a href="index.html">简体中文</a>&nbsp;|&nbsp;</li>
+                <li class="version"><a href="index_en.html">English</a></li>
+                <li class="search">
+                    <form action="/search" method="get">
+                        <input type="text" id="to_search" name="to_search" value="" placeholder="站内搜索..."/>
+                        <input style="float: right" type="image" src="images/home(Regent)_15.gif" alt="搜索" onClick="window.open('search.html');return false;" />
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="row-second">
+            <div class="title-one">师资队伍</div>&nbsp;
+            <div class="title-two">02/科研团队</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="list">
+            <ul class="left-list">
+                <li>内页</li>
+                <li><a class="left-list" href="faculty.html">01/师资队伍</a></li>
+                <li><a class="left-list" style="color: #008fd9" href="faculty02.html">02/科研团队</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="detail-content" style="border-bottom: none">
+                <div class="title-one">网络信息安全创新团队介绍</div>
+
+                <div class="release-time">2016/04/21</div>
+                <p style="font-weight: bold" class="description">一、团队简介</p>
+                <p class="description">
+                    进入21世纪，以互联网为代表的信息化浪潮席卷了全球各个角落，渗透到了经济、政治、文化和国防等各个领域，对人们的生产、工作、
+                    学习、生活等都产生了全面而深刻的影响。然而，伴随着互联网的飞速发展，网络信息安全问题也日益突出，并已逐渐成为影响国家安全、
+                    经济发展、个人利益和社会稳定的重大关键问题。
+                    <br><br>
+                    为紧跟国际学科发展前沿，立足于国家信息化工业发展和海西建设及产业结构转型升级的实际要求，计算机学院于2010年起建立网络与信息安全科研团队，
+                    并于2014年<span style="text-decoration: underline">成为华侨大学首批重点支持的15个科研团队之一</span>。
+                    <br><br>
+                    目前，本团队拥有核心和骨干成员8人（均具有博士学位），其中教授1人，副教授4人，讲师3人，共有6人具有硕士导师资格。此外，学院特聘网络信息
+                    安全领域的知名学者、清华大学黄永峰教授作为闽江学者讲座教授，指导和参与本团队建设和发展。近三年来，团队获得国家自然科学基金面上项目3项、
+                    青年创新基金项目4项，福建省自然科学基金项目4项，福建省教育厅中青年教师教育科研项目1项，厦门市科技计划项目1项等，并获准立项筹建福建省绿
+                    色通信及其智能信息服务工程技术研究中心。
+                    <br><br>
+                    团队实验室地址：华侨大学厦门校区机电楼A414（教师）、A416、A418
+                    <br><br>
+                    <span style="text-decoration: underline">（实验室研究生将遵照《网络信息安全团队规章》统一管理，目前研究团队研究生总数在30人以上，有严格、规范的培养制度保障（例如提供额外的生活补助及奖励），
+                    有意者请联系团队的教师，具体联系方式及介绍附下）</span>
+                </p>
+                <p style="font-weight: bold" class="description">二、研究方向</p>
+                <div class="description">
+                    <p>本团队以“网络信息安全”为中心，围绕几个关键性研究问题展开团队合作研究，逐步形成了如下几个特色研究方向：</p>
+                    <br><br>
+                    <div style="text-align: center"><img src="images/faculty02_1.jpg"></div>
+                </div>
+                <p style="font-weight: bold" class="description">三、成员介绍（点击链接进入个人主页）</p>
+                <table cellpadding="0" cellspacing="0" style="width: 720px;height: 550px;border: 1px solid">
+                    <tbody>
+                    <tr style="height: 48px">
+                        <td style="width: 155px;height: 48px;border-right: 1px solid">
+                            <p style="text-align: center;line-height: 58px;">
+                                <span style="font-size: 14px;font-weight: bold">成员姓名</span>
+                            </p>
+                        </td>
+                        <td style="width: 105px;height: 48px;border-right: 1px solid">
+                            <p style="text-align: center">
+                                <span style="font-size: 14px;font-weight: bold">职称</span>
+                            </p>
+                        </td>
+                        <td style="width: 310px;height: 48px;border-right: 1px solid">
+                            <p style="text-align: center">
+                                <span style="font-size: 14px;font-weight: bold">硕士生招生专业</span>
+                            </p>
+                        </td>
+                        <td style="width: 290px;height: 48px;">
+                            <p style="text-align: center">
+                                <span style="font-size: 14px;font-weight: bold">研究专长及领域</span>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr style="height: 88px;">
+                        <td style="border-width: 1px 1px 0 0;border-style: solid solid none none">
+                            <p style="text-align: center;line-height: 88px;">
+                                <span style="font-size: 14px">
+                                    <a href="faculty0302.html">陈永红</a>
+                                </span>
+                            </p>
+                        </td>
+                        <td style="border-width: 1px 1px 0 0;border-style: solid solid none none">
+                            <p style="text-align: center">
+                                <span style="font-size: 14px">教授</span>
+                            </p>
+                        </td>
+                        <td style="border-width: 1px 1px 0 0;border-style: solid solid none none">
+                            <p style="text-align: center">
+                                <span style="font-size: 14px">计算机科学与技术（学硕）计算机技术（专硕）</span>
+                            </p>
+                        </td>
+                        <td style="border-width: 1px 0 0 0;border-style: solid none none none">
+                            <p style="text-align: left">
+                                <span style="font-size: 14px">入侵检测、数字水印、云计算应用及安全、大数据应用及安全、物联网和传感网络安全</span>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr style="height: 88px;">
+                        <td style="border-style: solid solid none none;border-width: 1px 1px 0 0">
+                            <p style="text-align: center;line-height: 88px;">
+                                <span style="font-size: 14px">
+                                    <a href="faculty0304.html">田晖</a>
+                                </span>
+                            </p>
+                        </td>
+                        <td style="border-style: solid solid none none;border-width: 1px 1px 0 0">
+                            <p style="text-align: center">
+                                <span style="font-size: 14px">副教授</span>
+                            </p>
+                        </td>
+                        <td style="border-style: solid solid none none;border-width: 1px 1px 0 0">
+                            <p style="text-align: left">
+                                <span style="font-size: 14px">计算机科学与技术（学硕）计算机技术（专硕）</span>
+                            </p>
+                        </td>
+                        <td style="border-style: solid none none none;border-width: 1px 0 0 0">
+                            <p style="text-align: left">
+                                <span style="font-size: 14px">云计算安全、大数据隐私保护、多媒体内容安全、数字取证、信息隐藏及检测</span>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr style="height: 88px;">
+                        <td style="border-width: 1px 1px 0 0;border-style: solid solid none none">
+                            <p style="text-align: center;line-height: 88px;">
+                                <span style="font-size: 14px">
+                                    <a href="faculty0305.html">王田</a>
+                                </span>
+                            </p>
+                        </td>
+                        <td style="border-width: 1px 1px 0 0;border-style: solid solid none none">
+                            <p style="text-align: center">
+                                <span style="font-size: 14px">副教授</span>
+                            </p>
+                        </td>
+                        <td style="border-width: 1px 1px 0 0;border-style: solid solid none none">
+                            <p style="text-align: left">
+                                <span style="font-size: 14px">计算机科学与技术（学硕）计算机技术（专硕）</span>
+                            </p>
+                        </td>
+                        <td style="border-width: 1px 0 0 0;border-style: solid none none none">
+                            <p style="text-align: left">
+                                <span style="font-size: 14px">物联网安全、无线传感网、云计算、雾计算、车联网、社交网络</span>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr style="height: 88px;">
+                        <td style="border-width: 1px 1px 0 0;border-style: solid solid none none">
+                            <p style="text-align: center;line-height: 88px;">
+                                <span style="font-size: 14px">
+                                    <a href="faculty0207.html">蔡奕侨</a>
+                                </span>
+                            </p>
+                        </td>
+                        <td style="border-width: 1px 1px 0 0;border-style: solid solid none none">
+                            <p style="text-align: center">
+                                <span style="font-size: 14px">副教授</span>
+                            </p>
+                        </td>
+                        <td style="border-width: 1px 1px 0 0;border-style: solid solid none none">
+                            <p style="text-align: left">
+                                <span style="font-size: 14px">软件工程（学硕）计算机技术（专硕）</span>
+                            </p>
+                        </td>
+                        <td style="border-width: 1px 0 0 0;border-style: solid none none none">
+                            <p style="text-align: left">
+                                <span style="font-size: 14px">智能算法及其应用、数据挖掘</span>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr style="height: 88px;">
+                        <td style="border-width: 1px 1px 0 0;border-style: solid solid none none">
+                            <p style="text-align: center;line-height: 88px;">
+                                <span style="font-size: 14px">
+                                    <a href="faculty0309.html">叶剑虹</a>
+                                </span>
+                            </p>
+                        </td>
+                        <td style="border-width: 1px 1px 0 0;border-style: solid solid none none">
+                            <p style="text-align: center">
+                                <span style="font-size: 14px">副教授</span>
+                            </p>
+                        </td>
+                        <td style="border-width: 1px 1px 0 0;border-style: solid solid none none">
+                            <p style="text-align: left">
+                                <span style="font-size: 14px">计算机科学与技术（学硕）计算机技术（专硕）</span>
+                            </p>
+                        </td>
+                        <td style="border-width: 1px 0 0 0;border-style: solid none none none">
+                            <p style="text-align: left">
+                                <span style="font-size: 14px">自动化生产系统中的监督控制理论、大数据中的进程挖掘</span>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr style="height: 88px;">
+                        <td style="border-width: 1px 1px 0 0;border-style: solid solid none none">
+                            <p style="text-align: center;line-height: 88px;">
+                                <span style="font-size: 14px">
+                                    <a href="faculty0310.html">刘艳</a>
+                                </span>
+                            </p>
+                        </td>
+                        <td style="border-width: 1px 1px 0 0;border-style: solid solid none none">
+                            <p style="text-align: center">
+                                <span style="font-size: 14px">副教授</span>
+                            </p>
+                        </td>
+                        <td style="border-width: 1px 1px 0 0;border-style: solid solid none none">
+                            <p style="text-align: left">
+                                <span style="font-size: 14px">软件工程（学硕）计算机技术（专硕）</span>
+                            </p>
+                        </td>
+                        <td style="border-width: 1px 0 0 0;border-style: solid none none none">
+                            <p style="text-align: left">
+                                <span style="font-size: 14px">分布式存储系统，海量数据存储，计算机存储技术</span>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr style="height: 53px;">
+                        <td style="border-width: 1px 1px 0 0;border-style: solid solid none none">
+                            <p style="text-align: center;line-height: 53px;">
+                                <span style="font-size: 14px">
+                                    <a href="faculty0311.html">刘进</a>
+                                </span>
+                            </p>
+                        </td>
+                        <td style="border-width: 1px 1px 0 0;border-style: solid solid none none">
+                            <p style="text-align: center">
+                                <span style="font-size: 14px">讲师</span>
+                            </p>
+                        </td>
+                        <td style="border-width: 1px 1px 0 0;border-style: solid solid none none">
+                            <p style="text-align: left">
+                                <span style="font-size: 14px"></span>
+                            </p>
+                        </td>
+                        <td style="border-width: 1px 0 0 0;border-style: solid none none none">
+                            <p style="text-align: left">
+                                <span style="font-size: 14px">信息隐藏</span>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr style="height: 53px;">
+                        <td style="border-width: 1px 1px 0 0;border-style: solid solid none none">
+                            <p style="text-align: center;line-height: 53px;">
+                                <span style="font-size: 14px">
+                                    <a href="#">周长利</a>
+                                </span>
+                            </p>
+                        </td>
+                        <td style="border-width: 1px 1px 0 0;border-style: solid solid none none">
+                            <p style="text-align: center">
+                                <span style="font-size: 14px">讲师</span>
+                            </p>
+                        </td>
+                        <td style="border-width: 1px 1px 0 0;border-style: solid solid none none">
+                            <p style="text-align: left">
+                                <span style="font-size: 14px"></span>
+                            </p>
+                        </td>
+                        <td style="border-width: 1px 0 0 0;border-style: solid none none none">
+                            <p style="text-align: left">
+                                <span style="font-size: 14px">位置隐私保护、移动网络安全</span>
+                            </p>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p>&nbsp;</p>
+                <ul>
+                    <li style="list-style:disc">
+                        <p class="description">
+                            陈永红（领军人才），男，1974年9月出生，博士，教授，硕士研究生导师。主持参与项目共计20余项。其中主持包括国家自然基金
+                            面上项目、教育部回国科研启动项目、省部级科技计划项目、省部级自然科学基金项目、华侨大学科研创新团队与领军人才项目(陈永
+                            红为该团队的带头人、领军人才）。主要从事网络入侵检测、数字水印、云计算应用及安全、大数据应用及安全、物联网和传感网络
+                            安全等方面的研究工作。
+                            <br><br>
+                            个人主页：http://cst.hqu.edu.cn/TeacherTeam/TeacherInforDateil?uid=14494
+                            <br><br>
+                            电子邮件：djandcyh@163.com
+                        </p>
+                    </li>
+                    <li style="list-style:disc">
+                        <p class="description">
+                            田晖，男，1982年10月生于湖北赤壁，博士，副教授，硕士生导师；华中科技大学计算机系统结构专业博士，新加坡国立
+                            大学计算机科学系访问学者；中国计算机学会高级会员、中国互联网专委员会委员、IEEE会员和ACM会员；入选首批华侨
+                            大学培育型科技创新人才和福建省高校杰出科研人才培育计划，系“网络信息安全创新团队”核心成员。目前主持国家自然
+                            科学基金项目2项，国家自然科学基金（海峡联合基金）重点项目一级课题1项，省自然科学基金面上项目1项及福建省教育
+                            科研项目1项。近年来研究兴趣集中在网络信息安全领域的热点问题，包括：云计算安全、大数据隐私保护、多媒体内容安
+                            全、数字取证、信息隐藏及检测等。
+                            <br><br>
+                            个人主页：http://cst.hqu.edu.cn/TeacherTeam/TeacherInforDateil?uid=14620
+                            <br><br>
+                            电子邮件：cshtian@126.com
+                        </p>
+                    </li>
+                    <li style="list-style:disc">
+                        <p class="description">
+                            王田，男，博士，副教授，硕士生导师，生于1982年2月，汉族，祖籍湖南长沙，IEEE会员，香港城市大学计算机科学专
+                            业博士，现为华侨大学“网络信息安全团队”核心成员。在《IEEE Transactions on Mobile Computing》、《IEEE
+                            Transactions on Vehicular Technology》、《Computer Networks》、ACM MobiHoc、IEEE RTSS等国际重要
+                            期刊及会议上发表论文40余篇，主持国家自然科学基金2项，参与完成的项目“面向新型网络计算的可信性理论与方法”获得
+                            2014年湖南省自然科学二等奖（第4完成人）。主要研究领域：移动计算、传感云、雾计算、物联网、社交网络、车联网。
+                            <br><br>
+                            个人主页：http://cst.hqu.edu.cn/info/1151/1563.htm
+                            <br><br>
+                            电子邮件: wangtian@hqu.edu.cn
+                        </p>
+                    </li>
+                    <li style="list-style:disc">
+                        <p class="description">
+                            蔡奕侨，男，博士，讲师，硕士生导师，于2012年7月加入华侨大学计算机科学与技术学院软件工程系。2007年6月于湖南
+                            大学数学与计量经济学院信息科学与技术专业获得理学学士学位。2012年6月在中山大学信息科学与技术学院计算机软件与
+                            理论专业进行硕博连读，获得工学博士学位。现为华侨大学网络信息安全创新团队核心成员之一，并担任学校/学院程序设
+                            计比赛训练队教练。目前主持国家自然科学基金项目1项，福建省自然科学基金项目1项，并参与多项国家自然科学基金项
+                            目。在国内外知名期刊和学术会议上发表论文二十余篇，均被SCI和EI检索，并担任多个期刊和会议的审稿工作。主要从事
+                            智能算法及其应用、数据挖掘等方面的研究工作。
+                            <br><br>
+                            个人主页：http://cst.hqu.edu.cn/TeacherTeam/TeacherInforDateil?uid=14748
+                            <br><br>
+                            电子邮件：yiqiao00@163.com
+                        </p>
+                    </li>
+                    <li style="list-style:disc">
+                        <p class="description">
+                            叶剑虹, 男，1976年9月生于福建厦门，博士，副教授，硕士生导师；中国计算机学会（CCF）高级会员、中国自动化学会
+                            网络信息服务专业委员会委员、IEEE会员。在《IEEE TRANSACTIONS ON SYSTEMS, MAN, AND CYBERNETICS: SYS
+                            TEMS》、《IEEJ TRANSACTIONS ON ELECTRICAL AND ELECTRONIC ENGINEERING》、《软件学报》、《计算机研
+                            究与发展》等国内外重要期刊及会议上发表论文20余篇，目前参与主持国家自然科学基金项目1项，省自然科学基金面上项
+                            目1项。目前研究兴趣集中在生产系统中的监督控制理论、大数据中的进程挖掘等。
+                            <br><br>
+                            个人主页：http://cst.hqu.edu.cn/TeacherTeam/TeacherInforDateil?uid=14438
+                            <br><br>
+                            电子邮件: leafever@163.com
+                        </p>
+                    </li>
+                    <li style="list-style:disc">
+                        <p class="description">
+                            刘艳，女，博士，副教授，硕士生导师，2006年获华中科技大学计算机系统结构专业博士学位；2007至2009年为光电国
+                            家实验室博士后。主要研究是分布式存储系统、计算机存储技术、云计算和云存储。 主持国家自然科学基金资助项目 1项
+                            、横向课题1项（30万），参与国家973项目、多项国家自然科学基金资助项目、福建省自然科学基金资助项目的研究工作。
+                            <br><br>
+                            个人主页：http://cst.hqu.edu.cn/TeacherTeam/TeacherInforDateil?uid=14517
+                            <br><br>
+                            电子邮件: 267313095@qq.com
+                        </p>
+                    </li>
+                    <li style="list-style:disc">
+                        <p class="description">
+                            刘进，男，博士，讲师，生于1986年11月，汉族，华中科技大学计算机专业博士。主要研究领域为信息隐藏。近年来在
+                            ACM Multimedia, IEEE International Conference on communication 等会议和相关期刊发表论文多篇，并参与多项省部级基金项目。
+                            <br><br>
+                            个人主页：http://cst.hqu.edu.cn/TeacherTeam/TeacherInforDateil?uid=14959
+                            <br><br>
+                            电子邮件：geneleo@hqu.edu.cn
+                        </p>
+                    </li>
+                    <li style="list-style:disc">
+                        <p class="description">
+                            周长利，男，博士，讲师，生于1985年3月，汉族，祖籍黑龙江哈尔滨，哈尔滨工程大学计算机科学与技术专业博士。
+                            主要研究领域：位置隐私保护、移动网络安全，在《计算机研究与发展》、《通信学报》、《电子学报》、《Interna
+                            tional Journal of Distributed Sensor Networks》、IFIP International Conference on Network
+                            and Parallel Computing等国际重要期刊及会议上发表论文十余篇，作为主要完成人参与国家自然科学基金、省部级
+                            各项基金课题10余项，主持福建省自然科学青年基金和华侨大学引进人才项目资助各1项。
+                            <br><br>
+                            个人主页：http://cst.hqu.edu.cn/TeacherTeam/TeacherInforDateil?uid=15122
+                            <br><br>
+                            电子邮件：zcl@hqu.edu.cn
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            &nbsp;&nbsp;
+        </div>
+    </div>
+</div>
+
+<div id="black_footer">
+    <div id="container">
+        <div class="footer_col">
+            <div class="plant">
+                <p class="footer_title"><a class="footer_title">校内链接</a></p>
+                <p class="footer_content" ><a class="footer_content" href="http://www.hqu.edu.cn/">华侨大学主页</a></p>
+                <p class="footer_content">
+                    <a class="footer_content" href="http://eee.hqu.edu.cn/">信息科学与工程学院</a>/
+                    <a class="footer_content" href="http://clxy.hqu.edu.cn/">材料科学与工程学院</a>/
+                    <a class="footer_content" href="http://hgxy.hqu.edu.cn/">化工学院</a>/
+                    <a class="footer_content" href="http://med.hqu.edu.cn/">机电与自动化学院</a>/
+                    <a class="footer_content" href="http://civil.hqu.edu.cn/">土木工程学院</a>/
+                    <a class="footer_content" href="http://jzxy.hqu.edu.cn/">建筑学院</a>/
+                    <a class="footer_content" href="http://mdc.hqu.edu.cn/">音乐舞蹈学院</a>/
+                    <a class="footer_content" href="http://hwxy.hqu.edu.cn/">华文学院</a></p>
+                <p class="footer_content">
+                    <a class="footer_content" href="http://gxy.hqu.edu.cn/">工学院</a>/
+                    <a class="footer_content" href="http://ggxy.hqu.edu.cn/">工商管理学院</a>/
+                    <a class="footer_content" href="http://lyxy.hqu.edu.cn/">旅游学院</a>/
+                    <a class="footer_content" href="http://wxy.hqu.edu.cn/">文学院</a>/
+                    <a class="footer_content" href="http://cfa.hqu.edu.cn/">美术学院</a>/
+                    <a class="footer_content" href="http://flc.hqu.edu.cn/">外国语学院</a>/
+                    <a class="footer_content" href="http://guoji.hqu.edu.cn/">国际学院</a>/
+                    <a class="footer_content" href="http://maths.hqu.edu.cn/">数学科学学院</a>/
+                    <a class="footer_content" href="http://tyxy.hqu.edu.cn/">体育学院</a></p>
+                <div class="xuxian"></div>
+            </div>
+            <div  class="plant">
+                <p class="footer_title">
+                    <a class="footer_title">校外链接</a>
+                </p>
+                <p class="footer_content">
+                    <a class="footer_content" href="http://www.baidu.com/">百度</a>/
+                    <a class="footer_content" href="http://www.w3school.com.cn/">w3school</a>
+                </p>
+                <p class="footer_content">
+                    <a class="footer_content" href="http://www.xjtu.edu.cn/">西安交通大学</a>/
+                    <a class="footer_content" href="https://www2.gmu.edu/">乔治·梅森大学</a>
+                </p>
+                <p class="footer_content">
+                    <a class="footer_content" href="http://www.xmisp.com/">厦门鑫点击科技有限公司</a>/
+                    <a class="footer_content" href="http://www.aocmonitor.com.cn/">冠捷科技股份有限公司</a>
+                </p>
+                <div class="xuxian"></div>
+            </div>
+        </div>
+        <div class="footer_col">
+            <div class="plant">
+                <p class="footer_title"><a class="footer_title">学院概况</a></p>
+                <p class="footer_content">
+                    <a class="footer_content" href="introduction.html">学院简介</a>/
+                    <a class="footer_content" href="introduction02.html">现任领导</a>/
+                    <a class="footer_content" href="introduction03.html">组织机构</a>/
+                    <a class="footer_content" href="introduction04.html">学院沿革</a>
+                </p>
+                <div class="xuxian"></div>
+            </div>
+            <div class="plant">
+                <p class="footer_title"><a class="footer_title">教学工作</a></p>
+                <p class="footer_content">
+                    <a class="footer_content" href="teaching.html">教学动态</a>/
+                    <a class="footer_content" href="teaching02.html">专业设置</a>/
+                    <a class="footer_content" href="teaching03.html">教学计划</a>/
+                    <a class="footer_content" href="teaching04.html">教学研究</a>
+                </p>
+                <div class="xuxian"></div>
+            </div>
+            <div class="plant">
+                <p class="footer_title"><a class="footer_title">师资队伍</a></p>
+                <p class="footer_content">
+                    <a class="footer_content" href="faculty.html">师资队伍</a>/
+                    <a class="footer_content" href="faculty02.html">科研团队</a>
+                </p>
+                <div class="xuxian"></div>
+            </div>
+        </div>
+        <div class="footer_col">
+            <div class="plant">
+                <p class="footer_title"><a class="footer_title">院务工作</a></p>
+                <p class="footer_content">
+                    <a class="footer_content" href="affairs.html">学院动态</a>/
+                    <a class="footer_content" href="affairs02.html">学院发文</a>/
+                    <a class="footer_content" href="affairs03.html">学子风采</a>/
+                    <a class="footer_content" href="affairs04.html">就业信息</a>/<a class="footer_content" href="affairs05.html">资料下载</a>
+                </p>
+                <div class="xuxian"></div>
+            </div>
+            <div class="plant">
+                <p class="footer_title"><a class="footer_title">学术研究</a></p>
+                <p class="footer_content">
+                    <a class="footer_content" href="academic.html">科研动态</a>/
+                    <a class="footer_content" href="academic02.html">科研项目</a>/
+                    <a class="footer_content" href="academic03.html">学术论文</a>/
+                    <a class="footer_content" href="academic04.html">项目推广</a>/
+                    <a class="footer_content" href="academic05.html">院企合作</a>
+                </p>
+                <div class="xuxian"></div>
+            </div>
+            <div class="plant">
+                <p class="footer_title"><a class="footer_title">研究生教学</a></p>
+                <p class="footer_content">
+                    <a class="footer_content" href="postgraduate.html">研究生动态</a>/
+                    <a class="footer_content" href="postgraduate02.html">专业介绍</a>/
+                    <a class="footer_content" href="postgraduate03.html">招生信息</a>/
+                    <a class="footer_content" href="postgraduate04.html">导师简介</a>
+                </p>
+                <div class="xuxian"></div>
+            </div>
+        </div>
+        <div class="footer_col">
+            <div id="footer_contact_us"><p id="contact">联系我们</p></div>
+            <div id="picture1"><img src="images/home(Regent)_footer_22.gif"></div>
+            <div id="picture2"><img src="images/home(Regent)_footer_24.gif"></div>
+            <div class="picture3"><img src="images/weibo.jpg" style="width: 63px;max-height:63px;"></div>
+            <div class="picture3"><img src="images/weixin.jpg" style="width: 63px;max-height:63px;"></div>
+            <div class="plant">
+                <div class="xiaoqu">厦门校区</div>
+                <p class="message">办公室电话：0592-6162559<br>传真：0592-6162556<br>团委办公室：0502-6162557<br>教学秘书室：0592-6162551<br>企业招聘：0592-6162557</p>
+                <p class="xiaoqu">泉州校区</p>
+                <p class="message">办公室电话：0595-22693250<br>传真：0595-22693309</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

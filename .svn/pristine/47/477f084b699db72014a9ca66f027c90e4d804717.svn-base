@@ -1,0 +1,26 @@
+$(document).ready(function() {
+	$(function(){
+		$.mopoPost ({
+			url : 'frontdocument_showDocumentByKindId1.action?documentKindId='+6,
+            success : function(resp) {
+            	document.getElementById('time1').innerHTML = resp.data.lastEditTime;
+            	document.getElementById('a1').innerHTML = resp.data.name;
+            	//$("image1").attr("src",resp.data.url);
+            	var element = document.getElementById('image1');
+            	element.src = resp.data.url;
+            	document.getElementById('description1').innerHTML = resp.data.contont;//resp.data.contont;
+            },
+		});
+	});	
+	$(function(){
+		$.mopoPost ({
+			url : 'frontdocument_showDocumentByKindId2.action?documentKindId='+6,
+            success : function(resp) {
+            	document.getElementById('time2').innerHTML = resp.data.lastEditTime;
+            	document.getElementById('a2').innerHTML = resp.data.name;
+            	document.getElementById('description2').innerHTML = resp.data.contont;//resp.data.contont;
+            },
+		});
+	});	
+});
+

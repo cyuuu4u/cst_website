@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>
+        冒泡软件
+    </title>
+    <link rel="shortcut icon" href="../images/logo.ico">
+    <link rel="stylesheet" href="../js/easyui1.5.1/themes/default/easyui.css">
+    <link rel="stylesheet" href="../js/easyui1.5.1/themes/icon.css">
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/chip_test.css">
+    <script src="../js/easyui1.5.1/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/easyui1.5.1/jquery.easyui.min.js"></script>
+    <script src="../js/easyui1.5.1/locale/easyui-lang-zh_CN.js"></script>
+    <script src="../js/mopo.js"></script>
+    <script src="js/data.js" type="text/javascript"></script>
+    <script src="js/chip_test.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+    <!-- 数据网格 -->
+    <table id="idDgChipTest" class="easyui-datagrid" style="width:100%;height:auto;min-height: 100px">
+    </table>
+
+    <!-- 工具栏 -->
+    <div id="idToolChipTest" style="padding:5px;">
+        <div>
+            内控码：<input class="textbox" name="isn" style="width:120px;">
+            <span class="datagrid-tool-separator"></span>
+            日期范围：<input type="text" name="dateFrom" class="easyui-datebox" editable="false" style="width:150px;">
+            <span class="date-separator"></span>
+            <input type="text" name="dateTo" class="easyui-datebox" editable="false" style="width:150px;">
+            <span class="datagrid-tool-separator"></span>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-search" plain="true" onclick="toolChipTest.reload();">查找</a>
+        </div>
+    </div>
+</body>
+</html>

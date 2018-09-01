@@ -1,0 +1,76 @@
+package biz.mopo.hqucst.action;
+import biz.mopo.hqucst.bean.LoginForm;
+import biz.mopo.hqucst.po.User;
+
+import com.xxdw.platform.controller.Action2;
+
+public class LoginLogoutAction extends Action2 {
+    private static final String TOP 	= "top";
+    private static final String LEFT 	= "left";
+    private static final String MAIN 	= "main";
+    
+	private LoginForm		formBean;
+	
+	public void setFormBean(LoginForm formBean) {
+		this.formBean = formBean;
+	}
+	public LoginForm getFormBean() {
+		return formBean;
+	}
+	    
+	public String testPerformance() {
+		System.out.println("testPerformance");
+		LoginForm vo = (LoginForm)this.formBean;
+		User user = (User) vo.toPojo(User.class);		
+		request.setAttribute("user", user);
+		return "test";
+	}
+	
+	public String login() {
+		String verifycode = (String)this.session.getAttribute("verifycode");
+		System.out.println("Into Login"+verifycode);
+		/*if(! formBean.getAuthcode().equals(verifycode)){
+			System.out.println("无法获取验证码");
+			formBean.setErrorMsg("errAuthcode", "验证码错误"); 
+            return INPUT;
+        }*/
+		if(!this.formBean.validate()) {
+			return INPUT;
+        }
+        
+		LoginForm vo = (LoginForm)this.formBean;
+		User user = new User();
+		user.setUsername(vo.getUsername());
+		user.setPassword(vo.getPassword());
+		user.setId(3);
+		if (! (vo.getUsername().equals("admin") && vo.getPassword().equals("admin")) ) {
+			formBean.setErrorMsg("err", "用户名和密码不匹配。"); 
+			return INPUT;
+		}
+		this.setLoginedUser(user);
+		return SUCCESS;
+	}
+	
+	public String logout() {
+		this.session.invalidate();
+		return HOMEPAGE;
+    }
+	
+	public String top() {
+		request.setAttribute("user", this.getLoginedUser());
+		return TOP;
+	}
+	
+	public String left() {
+//		AttendanceService.setRollDir(this.getSystemOption("roll_dir"));
+//		AttendanceService serv = AttendanceService.getInstance();
+//		List<KeyValue<Integer, String>> list = serv.getAllClasses();
+//		request.setAttribute("listClasses", list);
+		//request.setAttribute("mapClasses", KeyValue.toMap(list));
+		return LEFT;
+	}
+	
+	public String main() {
+		return MAIN;
+	}
+}

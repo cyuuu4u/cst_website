@@ -1,0 +1,312 @@
+body a{
+    color: #000000;
+}
+
+*{
+    margin:0;
+    padding:0;
+    border:0;
+    font:inherit;
+    vertical-align: baseline;
+}
+
+ul.section-second li{
+    float: left;
+    list-style: none;
+    top:0;
+    display: block;
+    right : 0;
+    overflow: hidden;
+    cursor: pointer;
+    border-right: 1px dotted #b0b5b5;
+}
+
+/*第二级标题*/
+.row-second{
+    position: relative;
+    width: 970px;
+    height: auto;
+    border-bottom: 1px dotted #b0b5b5;
+    padding: 28px 0;
+}
+/*第一级标题*/
+.title-one{
+    color: black;
+    font-size: 24px;
+    font-weight: bolder;
+    letter-spacing: 6px;
+    line-height: 30px;
+}
+.title-two{
+    color: black;
+    font-size: 24px;
+    font-weight: normal;
+    letter-spacing: 3px;
+    line-height: 20px;
+}
+/*正文标题*/
+.title-three{
+    clear: left;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    letter-spacing: 5px;
+    line-height: 20px;
+    padding: 20px 0 10px 0;
+}
+.title-four{
+    clear: left;
+    font-size: 18px;
+    font-weight: normal;
+    color: #000;
+    letter-spacing: 5px;
+    line-height: 20px;
+    padding: 10px 0 10px 0;
+}
+/*列表*/
+.list{
+    position: relative;
+    float: left;
+    padding: 25px 0 0 0;
+    width: 192px;
+    height: auto;
+}
+.left-list{
+    width: 175px;
+    list-style: none;
+    font-weight: bold;
+    font-size: 14px;
+    color: #000000;
+    letter-spacing: 1px;
+    line-height: 20px;
+    display: block;
+}
+ul.left-list li{
+    border-bottom: 1px dotted #b0b5b5;
+}
+/*正文块*/
+.content{
+    float: left;
+    position: relative;
+    left:0;
+    top:0;
+    width: 750px;
+    height: auto;
+    padding-left:30px ;
+    border-left:1px dotted #b0b5b5;
+}
+/*正文图片*/
+.content-picture{
+    width:750px;
+    height:auto;
+    padding-top: 20px;
+}
+/*第一段正文*/
+.content-top{
+    width: 750px;
+    height: auto;
+    margin-bottom: 10px;
+}
+.contentrow{
+    width: 180px;
+    height:460px;
+    margin-right: 2px;
+    float: left;
+}
+.contentrow2{
+    width: 180px;
+    height: 400px;
+    margin-right: 2px;
+    float: left;
+    background: #f0f1f1;
+}
+.contenttext{
+    float: left;
+    width:50px;
+    height: auto;
+    margin: 10px 20px 0 20px;
+    font-weight: bold;
+    font-size: 14px;
+}
+/*正文第一块内容*/
+/*第一块的第一段*/
+.content-first{
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    letter-spacing: 5px;
+    line-height: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+/*第一块的第二段*/
+.content-second{
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+    letter-spacing: 3px;
+    line-height: 20px;
+}
+/*学院工作正文第二块*/
+.content-center{
+    margin: 40px 0 20px 0;
+    height: auto;
+    border-top: 1px dotted #b0b5b5;
+}
+
+/*学院概况内容左上内容*/
+.left-content{
+    float: left;
+    width: 248px;
+    height:200px;
+    margin: 29px 35px;
+    font-size: 18px;
+    font-weight: normal;
+    color: #FFFFFF;
+    letter-spacing: 3px;
+    line-height: 35px;
+}
+.blue-left-content{
+    background-color: #008fd9;
+}
+/*正文*/
+p.college-introdution{
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    letter-spacing: 3px;
+    line-height: 20px;
+    text-align: justify;
+}
+
+.left-container {
+    position: relative;
+    float: left;
+    padding: 25px 0 0 0;
+    width: 192px;
+    height: auto;
+}
+.middle-container{
+    float: left;
+    position: relative;
+    width: 560px;
+    height: auto;
+
+    border-left: 1px dotted #b0b5b5;
+    border-right: 1px dotted #b0b5b5;
+}
+.middle-content{
+    color: black;
+    position: relative;
+    float: left;
+    margin: 30px 20px auto 20px;
+    border-bottom: 1px dotted #b0b5b5;
+}
+
+.detail-container{
+    float: left;
+    position: relative;
+    width: 780px;
+    height: auto;
+    border-left: 1px dotted #b0b5b5;
+}
+
+.detail-content{
+    color: black;
+    position: relative;
+    float: left;
+    margin: 30px 20px auto 20px;
+}
+
+.news-image{
+    float: right;
+    margin: 10px 0 10px 10px;
+    width: 224px;
+    height: 224px;
+    overflow:hidden;/*溢出部分隐藏*/
+}
+.newspage-image{
+    min-height: 253px;
+    max-height: 500px;
+    max-width: 500px;
+    margin: 20px 0 20px 0;
+}
+.release-time{
+    font-size: 12px;
+    margin: 0 0 10px 0;
+    letter-spacing: 1px;
+}
+.headline{
+    color: #000000;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    line-height: 25px;
+}
+.description{
+    color: black;
+    font-weight: normal;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 18px;
+    letter-spacing: 3px;
+    line-height: 20px;
+    text-align: justify;
+}
+
+.right-container{
+    margin: 25px 25px 0 25px;
+    float: right;
+    position: relative;
+}
+
+.right-content{
+    position: relative;
+}
+
+
+
+/*学院工作图片*/
+.work-picture{
+    margin: 0 0 3px 0;
+    position: relative;
+    float: left;
+}
+.work-picture-row{
+    position: relative;
+    float: left;
+    width: 244px;
+    height: 148px;
+    padding: 0;
+    margin: 3px 0 0 0;
+}
+
+/*学院工作专业设置中的技能*/
+ul.content-first{
+    list-style-type:disc;
+    /*text-indent: 20px;*/
+}
+
+.nav_menu_cur {
+
+}
+
+/*研究生工作招生信息表格*/
+table.postgraduate_table{
+    width:100%;
+    border:0.5px solid #b0b5b5;
+}
+table.postgraduate_table th{
+    border:0.5px solid #b0b5b5;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+
+}
+table.postgraduate_table td {
+    border:0.5px solid #b0b5b5;
+    text-align: center;
+    vertical-align:middle;
+}
+

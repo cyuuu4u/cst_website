@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>
+        冒泡软件
+    </title>
+    <link rel="shortcut icon" href="../images/logo.ico">
+    <link rel="stylesheet" href="../js/easyui1.5.1/themes/default/easyui.css">
+    <link rel="stylesheet" href="../js/easyui1.5.1/themes/icon.css">
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/my_order.css">
+    <script src="../js/easyui1.5.1/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/easyui1.5.1/jquery.easyui.min.js"></script>
+    <script src="../js/easyui1.5.1/locale/easyui-lang-zh_CN.js"></script>
+    <script src="../js/mopo.js"></script>
+    <script src="js/data.js" type="text/javascript"></script>
+    <script src="js/my_order.js" type="text/javascript"></script>
+</head>
+
+<body>
+<div id="idLayoutPage" class="easyui-layout">
+    <!-- 页面左部 -->
+    <div id="idPageWest" data-options="region:'center'">
+        <!-- 数据网格 -->
+        <table id="idDgMyOrder" class="easyui-datagrid" style="width:100%;height:auto;min-height: 400px">
+        </table>
+
+        <!-- 工具栏 -->
+        <div id="idToolMyOrder" style="padding:5px;">
+            <div>
+                <a href="#" class="easyui-linkbutton" iconCls="icon-confirm-order" plain="true" onclick="toolMyOrder.confirmOrder();">确认订单</a>
+                <a href="#" class="easyui-linkbutton" iconCls="icon-cancel-order" plain="true" onclick="toolMyOrder.cancelOrder();">撤单</a>
+                <span class="datagrid-tool-separator"></span>
+                <a href="#" class="easyui-linkbutton" iconCls="icon-reload" plain="true" onclick="toolMyOrder.reload();">刷新</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页面右侧 -->
+    <div id="idPageEast" data-options="region:'east',iconCls:'icon-authorize',split:true">
+        <!------------------------------------ 版本 ------------------------------------>
+        <!-- 数据网格 -->
+        <table id="idDgMyOrderItem" class="easyui-datagrid" style="width:100%;height:auto;min-height: 400px">
+        </table>
+
+        <!-- 工具栏 -->
+        <div id="idToolMyOrderItem" style="padding:5px;display: none">
+            <div>
+                <a href="#" class="easyui-linkbutton" iconCls="icon-open-order" plain="true" onclick="toolMyOrderItem.openMyOrder();">开单</a>
+                <span class="datagrid-tool-separator"></span>
+                <a href="#" class="easyui-linkbutton" iconCls="icon-reload" plain="true" onclick="toolMyOrderItem.reload();">刷新</a>
+            </div>
+        </div>
+
+        <!-- 编辑对话框 -->
+        <div id="idDlgMyOrderItem">
+            <form>
+                <input name="orderItemId" type="hidden">
+                <p>
+                    <span>方案：</span><input class="textbox" type="text" name="schemeName" readonly/>
+                </p>
+                <p>
+                    <span>版本：</span><input class="textbox" type="text" name="versionName" readonly/>
+                </p>
+                <p>
+                    <span>机型：</span><input class="textbox" type="text" name="modelName" readonly/>
+                </p>
+                <p>
+                    <span>订货量：</span><input class="textbox" type="text" name="quantity" readonly/>
+                </p>
+                <p>
+                    <span>开单量：</span><input type="text" class="easyui-numberbox" name="openQuantity" value="" data-options="min:0,precision:0">
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

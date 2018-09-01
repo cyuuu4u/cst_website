@@ -1,0 +1,74 @@
+package biz.mopo.hqucst.dao;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import biz.mopo.hqucst.po.Document;
+import biz.mopo.hqucst.po.DocumentKind;
+import biz.mopo.hqucst.po.User;
+
+import com.xxdw.platform.common.SearchVo;
+import com.xxdw.platform.controller.PageSupport;
+import com.xxdw.platform.db.DaoBase;
+import com.xxdw.platform.db.DbUtil;
+
+public class DocumentDao extends DaoBase {
+
+	public List<Document> findByParentCode(Integer parentcode) throws SQLException {
+		List<DocumentKind> docuKind=new ArrayList<DocumentKind>();
+		List<Document> document=new ArrayList<Document>();
+		String strSql = "SELECT * FROM t_document_kind WHERE f_parentCode="+parentcode;
+		String KindName;
+		docuKind= DbUtil.executeQuery(strSql, DocumentKind.class);
+		for(DocumentKind kind: docuKind)
+		{
+			KindName=kind.getName();
+			strSql="SELECT * FROM t_document WHERE f_documentKindId="+kind.getCode();
+			List<Document> document2=new ArrayList<Document>();
+			document2= DbUtil.executeQuery(strSql, Document.class);
+			for(Document docu:document2)
+			{
+				List<User> user=new ArrayList<User>();
+				strSql="SELECT * FROM t_user WHERE f_id="+docu.getCreatorId();
+				user=DbUtil.executeQuery(strSql,User.class);
+				docu.setCreator(user.get(0).getName());
+				docu.setDocumentKind(KindName);
+				document.add(docu);
+			}
+		}
+		return document;
+	}
+	public void add1(Document po) throws SQLException {
+		List<Object> listValue = new ArrayList<Object>();
+		listValue.add(po.getName());
+		listValue.add(po.getDocumentKindId());
+		listValue.add(po.getCreatorId());;
+		listValue.add(po.getUrl());
+		String strSql = "INSERT INTO t_document (f_name, f_documentKindId, f_uploadTime, f_lastEditTime, f_creatorId, f_url) VALUES ";
+		strSql += "(?, ?, now(), now(), ?, ?)";
+		DbUtil.executeUpdate(strSql, listValue);
+	}/*
+
+	public void update(Project po) throws SQLException {
+		List<Object> listValue = new ArrayList<Object>();
+		listValue.add(po.getOrder());
+		listValue.add(po.getName());
+		listValue.add(po.getDesc());
+		listValue.add(po.getId());
+		String strSql;
+		strSql = "UPDATE t_document SET f_order=?, f_name=?,f_desc=? WHERE f_id=?";
+		DbUtil.executeUpdate(strSql, listValue);
+	}*/
+
+	public void deleteById(String ids) throws SQLException {
+		String strSql = "DELETE FROM t_document WHERE f_id IN (" + ids + ")";
+		DbUtil.executeUpdate(strSql);
+	}
+/*
+	public List<Project> findAll() throws SQLException {
+		String strSql = "SELECT * FROM t_document ORDER BY f_order";
+		return DbUtil.executeQuery(strSql, Project.class);
+	}*/
+	
+}

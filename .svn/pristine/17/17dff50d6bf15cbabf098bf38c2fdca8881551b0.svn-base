@@ -1,0 +1,213 @@
+
+$(document).ready(function () {
+    //------------------------------------------------------------
+    // 可选的统计周期
+    $('#idPeriod').combobox({
+        //url:'combobox_data.json',
+        panelHeight:'auto',
+        valueField:'id',
+        textField:'name',
+        label: '统计周期：',
+        labelWidth: 70,
+        data: listPeriod
+    });
+
+    // 可选的出货产品类型
+    $('#idChipOrInterphone').combobox({
+        //url:'combobox_data.json',
+        panelHeight:'auto',
+        valueField:'id',
+        textField:'name',
+        label: '产品：',
+        labelWidth: 50,
+        data: listProductType,
+        onSelect: function (rec) {
+            var period = $("#idPeriod").combobox('getValue');
+
+            if (rec.id == 1) {
+                if (period == 1) {
+                    $("#idDgStatistic").datagrid('loadData', listShipmentChip1);
+                }
+                else if (period == 2) {
+                    $("#idDgStatistic").datagrid('loadData', listShipmentChip2);
+                }
+                else if (period == 3) {
+                    $("#idDgStatistic").datagrid('loadData', listShipmentChip3);
+                }
+            }
+            else {
+                if (period == 1) {
+                    $("#idDgStatistic").datagrid('loadData', listShipmentInterphone1);
+                }
+                else if (period == 2) {
+                    $("#idDgStatistic").datagrid('loadData', listShipmentInterphone2);
+                }
+                else if (period == 3) {
+                    $("#idDgStatistic").datagrid('loadData', listShipmentInterphone3);
+                }
+            }
+        }
+    });
+
+    $('#idPeriod').combobox({
+        onSelect: function (rec) {
+            var product = $("#idChipOrInterphone").combobox('getValue');
+
+            if (product == 1) {
+                if (rec.id == 1) {
+                    $("#idDgStatistic").datagrid('loadData', listShipmentChip1);
+                }
+                else if (rec.id == 2) {
+                    $("#idDgStatistic").datagrid('loadData', listShipmentChip2);
+                }
+                else if (rec.id == 3) {
+                    $("#idDgStatistic").datagrid('loadData', listShipmentChip3);
+                }
+            }
+            else {
+                if (rec.id == 1) {
+                    $("#idDgStatistic").datagrid('loadData', listShipmentInterphone1);
+                }
+                else if (rec.id == 2) {
+                    $("#idDgStatistic").datagrid('loadData', listShipmentInterphone2);
+                }
+                else if (rec.id == 3) {
+                    $("#idDgStatistic").datagrid('loadData', listShipmentInterphone3);
+                }
+            }
+        }
+    });
+
+    //------------------------------------------------------------
+    // 数据网格
+    $('#idDgStatistic').datagrid({
+        title : '出货量统计',
+        fitColumns: true,
+        striped : true, //斑马线
+        rownumbers : true,
+        checkOnSelect: true,
+        pagination : true,
+        pagePosition: 'bottom',
+        pageList : [10,20,50,100],
+        pageSize : 20,
+        pageNumber : 1,
+        singleSelect : true,
+        toolbar : '#idToolStatistic',
+        //url : 'bgUser_listUser.action',
+        showFooter: true,
+        data : listShipmentChip1,
+        columns:[[
+            {
+                field : 'product',
+                title : '产品',
+                width : 80
+            },
+            {
+                field : 'shipmentTime',
+                title : '出货时间',
+                width : 120
+            },
+            {
+                field : 'quantity',
+                title : '出货量',
+                width : 120
+            }
+        ]]
+    }).datagrid('mergeCells', {
+        index: 0,
+        field: 'product',
+        colspan: 2,
+        type: 'footer'
+    }).datagrid("getPager").pagination({
+        showRefresh:false
+    }); // end of $('#idDgStatistic').datagrid...
+
+    //------------------------------------------------------------
+    // 工具栏操作类
+    toolStatistic = {
+        reload : function () {
+            $('#idDgStatistic').datagrid('reload');
+        }
+    }; // end of toolStatistic = {...
+
+    //////////////////////////////////////////////////////////////
+    // 订单量统计
+
+    // 可选的统计周期
+    $('#idPeriodOrder').combobox({
+        //url:'combobox_data.json',
+        panelHeight:'auto',
+        valueField:'id',
+        textField:'name',
+        label: '统计周期：',
+        labelWidth: 70,
+        data: listPeriodOrder,
+        onSelect: function (rec) {
+            var period = rec.id;
+
+            if (period == 1) {
+                $("#idDgStatisticOrder").datagrid('loadData', listStatisticOrder1);
+            }
+            else if (period == 2) {
+                $("#idDgStatisticOrder").datagrid('loadData', listStatisticOrder2);
+            }
+        }
+    });
+
+    // 数据网格
+    $('#idDgStatisticOrder').datagrid({
+        title : '订单量统计',
+        fitColumns: true,
+        striped : true, //斑马线
+        rownumbers : true,
+        checkOnSelect: true,
+        pagination : true,
+        pagePosition: 'bottom',
+        pageList : [10,20,50,100],
+        pageSize : 20,
+        pageNumber : 1,
+        singleSelect : true,
+        toolbar : '#idToolStatisticOrder',
+        //url : 'bgUser_listUser.action',
+        showFooter: true,
+        data : listStatisticOrder1,
+        columns:[[
+            {
+                field : 'customerName',
+                title : '客户',
+                width : 100
+            },
+            {
+                field : 'schemerName',
+                title : '方案公司',
+                width : 100
+            },
+            {
+                field : 'orderTime',
+                title : '开单时间',
+                width : 100
+            },
+            {
+                field : 'quantity',
+                title : '开单量',
+                width : 50
+            }
+        ]]
+    }).datagrid('mergeCells', {
+        index: 0,
+        field: 'customerName',
+        colspan: 3,
+        type: 'footer'
+    }).datagrid("getPager").pagination({
+        showRefresh:false
+    }); // end of $('#idDgStatisticOrder').datagrid...
+
+    //------------------------------------------------------------
+    // 工具栏操作类
+    toolStatisticOrder = {
+        reload : function () {
+            $('#idDgStatisticOrder').datagrid('reload');
+        }
+    }; // end of toolStatisticOrder = {...
+
+});

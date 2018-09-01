@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>华侨大学计算机学院-专业设置</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/level2.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css"><link rel="stylesheet" type="text/css" href="css/xcConfirm.css">
+
+    <script src="js/jquery-3.1.1.min.js"></script><script src="js/jquery.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/index.js"></script><script src="js/xcConfirm.js"></script>
+</head>
+<body>
+<div id="root">
+    <div class="row">
+        <div>
+            <div id="logo">
+                <a href="index.html"><img src="images/logo.png"></a>
+            </div>
+            <div id="navMenu">
+                <ul class="menu">
+                    <li>
+                        <div class="nav_menu" id="navMenuIntroduction">
+                            <a class="pic_show" href="introduction.html" ><img src="images/menuIntroduction2.png" class="nav_img"></a>
+                            <a class="pic_hide" href="introduction.html"><img src="images/menuIntroduction.png" class="nav_img"></a>
+                        </div>
+                        <div id="navIntroduction" class="nav_popup">
+                            <div>学院概况</div>
+                            <div>
+                                <img src="images/pop_introduction.jpg" width="220px" height="100px" />
+                                <p>
+                                   1980年创办计算机专业，2008年成立计算机科学与技术学院。现有计算机科学与技术、软件工程、网络工程、数字媒体技术四个本科专业；计算机科学与技术、软件工程两个一级学科硕士点；模式识别与智能系统二级硕士点；计算机技术领域工程硕士点。
+                                </p>
+                            </div>
+                            <div>
+                                <ul class="nav_list">
+                                    <li class="nav_item"><a  href="introduction.html">01/学院简介</a></li>
+                                    <li class="nav_item"><a  href="introduction02.html">02/现任领导</a></li>
+                                    <li class="nav_item"><a  href="introduction03.html">03/组织机构</a></li>
+                                    <li class="nav_item"><a  href="introduction03.html">04/学院沿革</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav_menu nav_menu_cur" id="navMenuTeaching" style="top:0;">
+                            <a href="teaching.html"><img src="images/menuTeaching.png" class="nav_img"></a>
+                        </div>
+                        <div id="navTeaching" class="nav_popup">
+                            <div>教学工作</div>
+                            <div>
+                                <img src="images/pop_teaching.png" width="220px" height="100px" />
+                                <p>
+                                    在教学平台方面，学院拥有福建省计算机综合实验教学示范中心，福建省网络工程人才培养模式创新实验区；拥有三门省级精品课程，分别是《编译原理》、《面向对象程序设计》和《数据结构》；《软件工程》教学团队获福建省优秀教学团队称号；获得福建省教学成果二等奖一项。
+                                </p>
+                            </div>
+                            <div>
+                                <ul class="nav_list">
+                                    <li class="nav_item"><a  href="teaching.html">01/教学动态</a></li>
+                                    <li class="nav_item"><a  href="teaching02.html">02/专业设置</a></li>
+                                    <li class="nav_item"><a  href="teaching03.html">03/教学计划</a></li>
+                                    <li class="nav_item"><a  href="teaching04.html">04/教学研究</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav_menu" id="navMenuFaculty">
+                            <a class="pic_show" href="faculty.html"><img src="images/menuFaculty2.png" class="nav_img"></a>
+                            <a class="pic_hide" href="faculty.html"><img src="images/menuFaculty.png" class="nav_img"></a>
+                        </div>
+                        <div id="navFaculty" class="nav_popup">
+                            <div>师资队伍</div>
+                            <div>
+                                <img src="images/pop_faculty.jpg" width="220px" height="100px" />
+                                <p>
+                                    学院现有教职工86名，其中专任教师68人；专任教师中，教授6名、副教授21名，37名教师具有博士学位，占教师总数的54.4%。实验人员中，高级实验师3名。
+                                </p>
+                            </div>
+                            <div>
+                                <ul class="nav_list">
+                                    <li class="nav_item"><a  href="faculty.html">01/师资队伍</a></li>
+                                    <li class="nav_item"><a  href="faculty02.html">02/科研团队</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav_menu" id="navMenuAffairs">
+                            <a class="pic_show" href="affairs.html"><img src="images/menuAffairs2.png" class="nav_img"></a>
+                            <a class="pic_hide" href="affairs.html"><img src="images/menuAffairs.png" class="nav_img"></a>
+                        </div>
+                        <div id="navAffairs" class="nav_popup">
+                            <div>院务工作</div>
+                            <div>
+                                <img src="images/pop_affairs.png" width="220px" height="100px" />
+                                <p>
+                                    学院聘请优秀的教师担任班主任工作，建有本科生科研创新基地，
+                                    鼓励学生积极参与挑战杯、世界大学生程序设计竞赛、数学建模大赛和微软、IBM、Intel等公司的大学生专业技能竞赛，
+                                    广泛开展丰富多彩的课外科技创新活动。至今荣获各级各类奖项超过三十项。
+                                </p>
+                            </div>
+                            <div>
+                                <ul class="nav_list">
+                                    <li class="nav_item"><a  href="affairs.html">01/学院动态</a></li>
+                                    <li class="nav_item"><a  href="affairs02.html">02/学院发文</a></li>
+                                    <li class="nav_item"><a  href="affairs03.html">03/学子风采</a></li>
+                                    <li class="nav_item"><a  href="affairs04.html">04/就业信息</a></li>
+                                    <li class="nav_item"><a  href="affairs05.html">05/资料下载</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav_menu" id="navMenuAcademic">
+                            <a class="pic_show"  href="academic.html"><img src="images/menuAcademic2.png" class="nav_img"></a>
+                            <a class="pic_hide" href="academic.html"><img src="images/menuAcademic.png" class="nav_img"></a>
+                        </div>
+                        <div id="navAcademic" class="nav_popup">
+                            <div>学术科研</div>
+                            <div>
+                                <img src="images/pop_academic.png" width="220px" height="100px" />
+                                <p>
+                                    近年来，学院承担国家级科研项目12项，省部级科研项目36项，地厅级科研项目15项，横向科研项目30余项；
+                                    发表学术论文400余篇，其中SCI、EI收录100余篇；获得专利12项，公开出版专著和教材11部。
+                                </p>
+                            </div>
+                            <div>
+                                <ul class="nav_list">
+                                    <li class="nav_item"><a  href="academic.html">01/科研动态</a></li>
+                                    <li class="nav_item"><a  href="academic02.html">02/科研项目</a></li>
+                                    <li class="nav_item"><a  href="academic03.html">03/学术论文</a></li>
+                                    <li class="nav_item"><a  href="academic04.html">04/项目推广</a></li>
+                                    <li class="nav_item"><a  href="academic05.html">05/院企合作</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav_menu" id="navMenuPostgraduate">
+                            <a class="pic_show" href="postgraduate.html"><img src="images/menuPostgraduate2.png" class="nav_img"></a>
+                            <a class="pic_hide" href="postgraduate.html"><img src="images/menuPostgraduate.png" class="nav_img"></a>
+                        </div>
+                        <div id="navPostgraduate" class="nav_popup">
+                            <div>研究生教学</div>
+                            <div>
+                                <img src="images/pop_postgraduate.jpg" width="220px" height="100px" />
+                                <p>
+                                    学院现有计算机科学与技术与软件工程两个一级学科硕士点，
+                                    以及一个模式识别与智能系统二级硕士点和一个计算机技术领域工程硕士点。
+                                </p>
+                            </div>
+                            <div>
+                                <ul class="nav_list">
+                                    <li class="nav_item"><a  href="postgraduate.html">01/研究生动态</a></li>
+                                    <li class="nav_item"><a  href="postgraduate02.html">02/专业介绍</a></li>
+                                    <li class="nav_item"><a  href="postgraduate03.html">03/招生信息</a></li>
+                                    <li class="nav_item"><a  href="postgraduate04.html">04/导师简介</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="language_bar">
+            <ul class="version">
+                <li class="version"><a href="index.html">简体中文</a>&nbsp;|&nbsp;</li>
+                <li class="version"><a href="index_en.html">English</a></li>
+                <li class="search">
+                    <form action="/search" method="get">
+                        <input type="text" id="to_search" name="to_search" value="" placeholder="站内搜索..."/>
+                        <input style="float: right" type="image" src="images/home(Regent)_15.gif" alt="搜索" onClick="window.open('search.html');return false;" />
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="row-second">
+            <div class="title-one">教学工作</div>&nbsp;
+            <div class="title-two">02/专业设置</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="list">
+            <ul class="left-list">
+                <li>内页</li>
+                <li><a class="left-list" href="teaching.html">01/教学动态</a></li>
+                <li><a class="left-list" style="color: #008fd9">02/专业设置</a></li>
+                <li><a class="left-list" href="teaching03.html">03/教学计划</a></li>
+                <li><a class="left-list" href="teaching04.html">04/教学研究</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div>
+                <p class="title-three">计算机科学与技术专业</p>
+                <p class="content-first">
+                    计算机科学与技术专业，以重视基础，软硬结合，注重实际，突出应用为特色。
+                    培养具有良好的科学素养，系统地掌握计算机科学与技术包括计算机硬件、
+                    软件和应用的基本理论、基本知识和基本技能与方法，
+                    能熟练运用专业基础理论及工程技术方法进行设计、开发、应用和维护，
+                    富有创新精神和创新能力，具有全球化视野的计算机科学与技术学科的高级专门科学技术人才。
+                </p>
+                <p class="title-four">培养目标</p>
+                <p class="content-first">
+                    培养具有良好的科学素养，系统地、扎实地掌握计算机科学与技术包括计算机硬件、软件以及数字媒体技术的基本理论、基本知识和基本技能与方法，
+                    能适应海外、港澳台地区社会经济发展及国内社会主义现代化建设需要，
+                    具备在科研部门、教育、企业、事业、技术与行政管理部门等单位从事计算机教学、
+                    科学研究和应用的德、智、体、美全面发展的计算机科学与技术学科的高级专门科学技术人才。
+                </p>
+                <p class="title-four">培养范围</p>
+                <p class="content-first" style="padding-bottom: 0">
+                    学习计算机科学与技术的基本理论和基本知识，接受从事研究与应用计算机的基本训练，具有研究和开发计算机系统的基本能力。
+                    数字媒体技术方向学生主要接受从事研究、开发与应用数字媒体技术的基本训练。
+                    应具备以下几方面的知识和能力：
+                    <ul class="content-first"><!-- style="padding: 0;margin: 0"-->
+                        <li>掌握计算机科学与技术的基本理论、基本知识和基本技能</li>
+                        <li>掌握计算机系统的分析和设计的基本方法；具有研究开发计算机硬件、软件，特别是应用软件的基本能力</li>
+                        <li>具有良好的科学素养和职业道德素养，了解相关的法律法规和行业规则</li>
+                        <li>了解本专业及相关领域的发展动态。有较强的自学能力，及掌握新知识和新技术的能力，
+                            能适应本学科及相关学科发展需要，具有一定的社会、人文知识、法律知识及国防知识，
+                            具有一定的市场经济知识、组织管理能力、沟通表达能力和知识创新能力</li>
+                        <li>掌握文献检索、资料查询的基本方法，具有获取信息及信息分析的能力</li>
+                        <li>能熟练阅读本专业的英文书刊，有一定的听、写、说能力</li>
+                    </ul>
+                </p>
+
+                <p class="title-four">主干课程</p>
+                <p class="content-first">
+                    面向对象程序设计、离散数学、数据结构、计算机原理、软件工程、计算机网络、数据库系统原理、
+                    操作系统、编译原理、面向对象技术引论、嵌入式系统等课程。
+                </p>
+            </div>
+            <div>
+                <p class="title-three">软件工程专业</p>
+                <p class="content-first">
+                    软件工程专业以理论与实践相结合、注重实践、强调应用为特色，
+                    主要培养具有扎实的软件工程基础理论和很强的工程实践能力的高层次实用型、
+                    复合型软件工程技术和软件工程管理人才。
+                </p>
+                <p class="title-four">培养目标</p>
+                <p class="content-first">
+                    培养适应海外、港澳台地区社会发展需要和内地社会主义现代化建设需要的，
+                    具备运用先进的工程化方法、技术和工具从事软件分析、设计、开发、
+                    维护等工作的能力以及工程项目的组织与管理能力。学生毕业后，能够从事信息产业相关的科学研究与软件设计工作，
+                    适合到国内外知名软件公司、政府机关、企事业单位、科研单位、高等院校等从事软件系统的设计、开发或管理工作，
+                    也可以继续深造攻读软件工程及相关专业的硕士和博士研究生。
+                </p>
+                <p class="title-four">培养范围</p>
+                <p class="content-first" style="padding-bottom: 0">
+                    本专业学生主要学习从事研究、开发和维护计算机软件系统所需的理论和技术。
+                    通过本专业的学习，学生应获得以下几方面的知识和能力：
+                    <ul class="content-first"><!-- style="padding: 0;margin: 0"-->
+                        <li>具有勤奋、严谨、求实、创新的学风和团队合作的精神</li>
+                        <li>具有坚实的数学基础；掌握现代计算机系统的理论和结构体系</li>
+                        <li>掌握软件工程的理论、方法和工具，具备完整地实现软件系统的基本技能；
+                            具有一定的计算机应用领域开发和创新的能力；
+                            具有掌握一定的计算机新技术、新工具的能力</li>
+                        <li>了解本专业及相关领域的发展动态。有较强的自学能力，及掌握新知识和新技术的能力，
+                            能适应本学科及相关学科发展需要，具有一定的社会、人文知识、法律知识及国防知识，
+                            具有一定的市场经济知识、组织管理能力、沟通表达能力和知识创新能力</li>
+                        <li>能过硬地掌握一门外语，具备阅读和翻译专业文献的能力</li>
+                    </ul>
+                </p>
+
+                <p class="title-four">主干课程</p>
+                <p class="content-first">
+                    面向对象程序设计、离散数学、数据结构、软件工程导论、
+                    计算机网络、数据库系统概论、操作系统、编译原理、软件测试与模型检测、软件集成开发环境（JAVA）等。
+                </p>
+            </div>
+            <div>
+                <p class="title-three">网络工程专业</p>
+                <p class="content-first">
+                    本专业2004年开始招生，面向中国大陆、港澳台、东南亚，目前在校学生近400人。
+                    师资力量：教授三名，开展网络数据库应用、网络安全、嵌入式技术与物联网应用等研究方向。
+                    博士与副教授十几名，开展网络安全与存储、网络协议分析与应用、信息隐藏、网络体系分析与设计等研究。
+                    专业实验室：《网络工程专业省级人才培养模式创新实验区》、《网络工程实验室》、《协议分析与仿真实验室》。
+                    联合办学：与英国威斯敏斯特大学联合培养《网络工程专业》本科生，具有“3+1”、“双学位”的模式。
+                    专业硕士点：以网络工程专业为主的《计算机系统结构》硕士点，
+                    将《计算机系统结构》的研究拓展至网络体系，着重强调物联网关键技术的研究与应用。
+                </p>
+                <p class="title-four">培养目标</p>
+                <ul class="content-first">
+                    <li>跟踪计算机网络工程领域国际前沿，适应国家产业结构调整，与国际接轨的实用型、复合型、工程型专业人才。</li>
+                    <li>以市场为导向，适应社会信息化建设需求，德、智、体、美全面发展的工程技术人才，具有较强的组织与沟通能力。</li>
+                    <li>具备扎实的计算机专业基础理论和较强的网络技术动手能力，以网络数据库应用为主要方向，重点掌握网络规划与安全设计、网络工程施工、网络管理与维护、网络数据库应用与开发等技能。</li>
+                </ul>
+                <p class="title-four">培养范围</p>
+                <p class="content-first" style="padding-bottom: 0">
+                    本专业学生主要学习计算机科学与技术方面的基本理论和基本知识，
+                    接受从事研究与应用计算机网络技术的基本训练。要求学生学习现代计算机系统的组织与系统结构、
+                    基本操作技能及逻辑设计方法；掌握计算机网络技术与应用、计算机硬、软件开发及综合应用和实践创新等方面的知识与技能。
+                    毕业生应获得以下几方面的知识和能力：
+                    <ul class="content-first"><!-- style="padding: 0;margin: 0"-->
+                        <li>具有扎实的自然科学基础、较好的人文社会科学基础和外语综合能力</li>
+                        <li>掌握计算机科学与技术特别是网络技术的基本理论、基本知识</li>
+                        <li>掌握网络技术的分析和设计的基本方法</li>
+                        <li>具有研究开发计算机软、硬件、及组建网络的基本能力</li>
+                        <li>了解与计算机网络技术有关的法规；了解计算机网络技术的发展动态</li>
+                        <li>掌握文献检索、资料查询的基本方法，具有获取信息的能力</li>
+                    </ul>
+                </p>
+
+                <p class="title-four">主干课程</p>
+                <p class="content-first">
+                    面向对象程序设计、模拟电子技术基础、离散数学、数字逻辑与设计、计算机组成原理、数据结构、
+                    数据通信与计算机网络、数据库系统原理、操作系统、计算机网络管理、接口与通信技术、TCP/IP协议与网络编程、计算机网络安全、网络工程与系统集成技术等。
+                </p>
+            </div>
+            <div>
+                <p class="title-three">数字媒体技术专业</p>
+                <p class="content-first">
+                    数字媒体技术专业具有计算机媒体技术与艺术设计相结合的特色，以重视基础、注重实际，突出应用为特色，
+                    是多学科融合的典型，旨在培养适应海外、港澳台地区社会发展需要和内地社会主义现代化建设需要的、具有较高道德水准和科学素养、
+                    掌握数字媒体核心技术、具有较高的数字内容创意与制作能力的、既懂技术、媒体又懂艺术的高级复合型人才。
+                </p>
+                <p class="title-four">培养目标</p>
+                <ul class="content-first">
+                    <li>掌握扎实的计算机基础理论和基本技能</li>
+                    <li>接受数字媒体软件开发的良好训练</li>
+                    <li>具有独立工作和从事数字媒体设计和应用开发的能力。 毕业生将兼具信息传播理论、数字媒体技术和设计管理能力，
+                        学生毕业后可在互联网、电子游戏、数字影视、动漫设计与制作、数字出版、广告制作等领域从事数字媒体产品的设计、制作与软件开发工作。
+                        也可以继续深造攻读数字媒体技术以及计算机相关专业的硕士和博士研究生。</li>
+                </ul>
+                <p class="title-four">培养范围</p>
+                <ul class="content-first"><!-- style="padding: 0;margin: 0"-->
+                    <li> 系统掌握数字媒体技术专业的基本理论、基础知识与基本技能，了解本专业及相关领域的前沿和发展动态</li>
+                    <li>掌握计算机动画和网络游戏等数字作品设计的基础理论和基本知识，具有技术表现的基本技能和方法</li>
+                    <li>掌握游戏软件设计的基本理论和技术，具备开展游戏软件开发能力</li>
+                    <li>了解影视后期技术、影视后期合成的规律，能够利用影视后期特效制作软件对数字视频进行剪辑、特效、合成</li>
+                    <li>掌握数字媒体产品开发项目的策划与管理的相关理论与方法，了解相关的法律法规和行业规则，具备组织、控制、管理、推广项目的能力</li>
+                    <li>让学生受到较好的工程实践基本训练，培养学生的实践动手能力、分析解决问题的能力和开拓创新能力</li>
+                    <li>掌握文献检索、资料查询的基本方法，具有获取信息及信息分析的能力</li>
+                    <li>能熟练阅读本专业的英文书刊，有一定的听、写、说能力</li>
+                </ul>
+                </p>
+
+                <p class="title-four">主干课程</p>
+                <p class="content-first">
+                    面向对象程序设计、高等代数、高等代数、计算机导论、素描与速写、数字媒体技术概论、随机数学、色彩与平面构成、
+                    数据结构、计算机网络、软件集成开发环境（JAVA）、数据库系统原理、数字图像处理、数字媒体信息检索、计算机图形学、
+                    计算机动画技术、游戏设计理论基础、游戏软件开发、影视特效与后期制作等课程。
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="black_footer">
+    <div id="container">
+        <div class="footer_col">
+            <div class="plant">
+                <p class="footer_title"><a class="footer_title">校内链接</a></p>
+                <p class="footer_content" ><a class="footer_content" href="http://www.hqu.edu.cn/">华侨大学主页</a></p>
+                <p class="footer_content">
+                    <a class="footer_content" href="http://eee.hqu.edu.cn/">信息科学与工程学院</a>/
+                    <a class="footer_content" href="http://clxy.hqu.edu.cn/">材料科学与工程学院</a>/
+                    <a class="footer_content" href="http://hgxy.hqu.edu.cn/">化工学院</a>/
+                    <a class="footer_content" href="http://med.hqu.edu.cn/">机电与自动化学院</a>/
+                    <a class="footer_content" href="http://civil.hqu.edu.cn/">土木工程学院</a>/
+                    <a class="footer_content" href="http://jzxy.hqu.edu.cn/">建筑学院</a>/
+                    <a class="footer_content" href="http://mdc.hqu.edu.cn/">音乐舞蹈学院</a>/
+                    <a class="footer_content" href="http://hwxy.hqu.edu.cn/">华文学院</a></p>
+                <p class="footer_content">
+                    <a class="footer_content" href="http://gxy.hqu.edu.cn/">工学院</a>/
+                    <a class="footer_content" href="http://ggxy.hqu.edu.cn/">工商管理学院</a>/
+                    <a class="footer_content" href="http://lyxy.hqu.edu.cn/">旅游学院</a>/
+                    <a class="footer_content" href="http://wxy.hqu.edu.cn/">文学院</a>/
+                    <a class="footer_content" href="http://cfa.hqu.edu.cn/">美术学院</a>/
+                    <a class="footer_content" href="http://flc.hqu.edu.cn/">外国语学院</a>/
+                    <a class="footer_content" href="http://guoji.hqu.edu.cn/">国际学院</a>/
+                    <a class="footer_content" href="http://maths.hqu.edu.cn/">数学科学学院</a>/
+                    <a class="footer_content" href="http://tyxy.hqu.edu.cn/">体育学院</a></p>
+                <div class="xuxian"></div>
+            </div>
+            <div  class="plant">
+                <p class="footer_title">
+                    <a class="footer_title">校外链接</a>
+                </p>
+                <p class="footer_content">
+                    <a class="footer_content" href="http://www.baidu.com/">百度</a>/
+                    <a class="footer_content" href="http://www.w3school.com.cn/">w3school</a>
+                </p>
+                <p class="footer_content">
+                    <a class="footer_content" href="http://www.xjtu.edu.cn/">西安交通大学</a>/
+                    <a class="footer_content" href="https://www2.gmu.edu/">乔治·梅森大学</a>
+                </p>
+                <p class="footer_content">
+                    <a class="footer_content" href="http://www.xmisp.com/">厦门鑫点击科技有限公司</a>/
+                    <a class="footer_content" href="http://www.aocmonitor.com.cn/">冠捷科技股份有限公司</a>
+                </p>
+                <div class="xuxian"></div>
+            </div>
+        </div>
+        <div class="footer_col">
+            <div class="plant">
+                <p class="footer_title"><a class="footer_title">学院概况</a></p>
+                <p class="footer_content">
+                    <a class="footer_content" href="introduction.html">学院简介</a>/
+                    <a class="footer_content" href="introduction02.html">现任领导</a>/
+                    <a class="footer_content" href="introduction03.html">组织机构</a>/
+                    <a class="footer_content" href="introduction04.html">学院沿革</a>
+                </p>
+                <div class="xuxian"></div>
+            </div>
+            <div class="plant">
+                <p class="footer_title"><a class="footer_title">教学工作</a></p>
+                <p class="footer_content">
+                    <a class="footer_content" href="teaching.html">教学动态</a>/
+                    <a class="footer_content" href="teaching02.html">专业设置</a>/
+                    <a class="footer_content" href="teaching03.html">教学计划</a>/
+                    <a class="footer_content" href="teaching04.html">教学研究</a>
+                </p>
+                <div class="xuxian"></div>
+            </div>
+            <div class="plant">
+                <p class="footer_title"><a class="footer_title">师资队伍</a></p>
+                <p class="footer_content">
+                    <a class="footer_content" href="faculty.html">师资队伍</a>/
+                    <a class="footer_content" href="faculty02.html">科研团队</a>
+                </p>
+                <div class="xuxian"></div>
+            </div>
+        </div>
+        <div class="footer_col">
+            <div class="plant">
+                <p class="footer_title"><a class="footer_title">院务工作</a></p>
+                <p class="footer_content">
+                    <a class="footer_content" href="affairs.html">学院动态</a>/
+                    <a class="footer_content" href="affairs02.html">学院发文</a>/
+                    <a class="footer_content" href="affairs03.html">学子风采</a>/
+                    <a class="footer_content" href="affairs04.html">就业信息</a>/<a class="footer_content" href="affairs05.html">资料下载</a>
+                </p>
+                <div class="xuxian"></div>
+            </div>
+            <div class="plant">
+                <p class="footer_title"><a class="footer_title">学术研究</a></p>
+                <p class="footer_content">
+                    <a class="footer_content" href="academic.html">科研动态</a>/
+                    <a class="footer_content" href="academic02.html">科研项目</a>/
+                    <a class="footer_content" href="academic03.html">学术论文</a>/
+                    <a class="footer_content" href="academic04.html">项目推广</a>/
+                    <a class="footer_content" href="academic05.html">院企合作</a>
+                </p>
+                <div class="xuxian"></div>
+            </div>
+            <div class="plant">
+                <p class="footer_title"><a class="footer_title">研究生教学</a></p>
+                <p class="footer_content">
+                    <a class="footer_content" href="postgraduate.html">研究生动态</a>/
+                    <a class="footer_content" href="postgraduate02.html">专业介绍</a>/
+                    <a class="footer_content" href="postgraduate03.html">招生信息</a>/
+                    <a class="footer_content" href="postgraduate04.html">导师简介</a>
+                </p>
+                <div class="xuxian"></div>
+            </div>
+        </div>
+        <div class="footer_col">
+            <div id="footer_contact_us"><p id="contact">联系我们</p></div>
+            <div id="picture1"><img src="images/home(Regent)_footer_22.gif"></div>
+            <div id="picture2"><img src="images/home(Regent)_footer_24.gif"></div>
+            <div class="picture3"><img src="images/weibo.jpg" style="width: 63px;max-height:63px;"></div>
+            <div class="picture3"><img src="images/weixin.jpg" style="width: 63px;max-height:63px;"></div>
+            <div class="plant">
+                <div class="xiaoqu">厦门校区</div>
+                <p class="message">办公室电话：0592-6162559<br>传真：0592-6162556<br>团委办公室：0502-6162557<br>教学秘书室：0592-6162551<br>企业招聘：0592-6162557</p>
+                <p class="xiaoqu">泉州校区</p>
+                <p class="message">办公室电话：0595-22693250<br>传真：0595-22693309</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

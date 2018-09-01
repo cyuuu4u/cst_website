@@ -1,0 +1,78 @@
+
+$(document).ready(function () {
+    //------------------------------------------------------------
+    // 数据网格
+    $('#idDgChipTest').datagrid({
+        title : '芯片测试结果列表',
+        fitColumns: true,
+        striped : true, //斑马线
+        rownumbers : true,
+        checkOnSelect: true,
+        pagination : true,
+        pagePosition: 'bottom',
+        pageList : [10,20,50,100],
+        pageSize : 20,
+        pageNumber : 1,
+        singleSelect : false,
+        toolbar : '#idToolChipTest',
+        //url : 'bgUser_listUser.action',
+        data : listChipTest,
+        columns:[[
+            {
+                field : 'id',
+                title : '编号',
+                width : 5,
+                hidden : true
+            },
+            {
+                field : 'isn',
+                title : '内控码',
+                width : 100
+            },
+            {
+                field : 'result',
+                title : '测试结果',
+                width : 100
+            },
+            {
+                field : 'testTime',
+                title : '测试时间',
+                width : 120
+            },
+            {
+                field : 'postWeldOrder',
+                title : '后焊工单',
+                width : 120
+            },
+            {
+                field : 'postWeldLine',
+                title : '后焊线',
+                width : 120
+            },
+            {
+                field : 'assembleOrder',
+                title : '组装工单',
+                width : 120
+            },
+            {
+                field : 'assembleLine',
+                title : '组装线',
+                width : 120
+            }
+
+        ]]
+        //rownumbers : false,
+    }).datagrid("getPager").pagination({
+        showRefresh:false
+    }); // end of $('#idDgChipTest').datagrid...
+
+    //------------------------------------------------------------
+    // 工具栏操作类
+    toolChipTest = {
+
+        query : function() {
+            $('#idDgChipTest').datagrid('reload');
+        }
+    }; // end of toolChipTest = {...
+
+});

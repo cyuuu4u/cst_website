@@ -1,0 +1,68 @@
+
+$(document).ready(function () {
+    //------------------------------------------------------------
+    // 数据网格
+    $('#idDgInterphoneTest').datagrid({
+        title : '芯片测试结果列表',
+        fitColumns: true,
+        striped : true, //斑马线
+        rownumbers : true,
+        checkOnSelect: true,
+        pagination : true,
+        pagePosition: 'bottom',
+        pageList : [10,20,50,100],
+        pageSize : 20,
+        pageNumber : 1,
+        singleSelect : false,
+        toolbar : '#idToolInterphoneTest',
+        //url : 'bgUser_listUser.action',
+        data : listInterphoneTest,
+        columns:[[
+            {
+                field : 'id',
+                title : '编号',
+                width : 5,
+                hidden : true
+            },
+            {
+                field : 'isn',
+                title : '内控码',
+                width : 100
+            },
+            {
+                field : 'sn',
+                title : 'SN码',
+                width : 100
+            },
+            {
+                field : 'weight',
+                title : '重量',
+                width : 100
+            },
+            {
+                field : 'result',
+                title : '测试结果',
+                width : 100
+            },
+            {
+                field : 'testTime',
+                title : '测试时间',
+                width : 120
+            }
+
+        ]]
+        //rownumbers : false,
+    }).datagrid("getPager").pagination({
+        showRefresh:false
+    }); // end of $('#idDgInterphoneTest').datagrid...
+
+    //------------------------------------------------------------
+    // 工具栏操作类
+    toolInterphoneTest = {
+
+        query : function() {
+            $('#idDgInterphoneTest').datagrid('reload');
+        }
+    }; // end of toolInterphoneTest = {...
+
+});

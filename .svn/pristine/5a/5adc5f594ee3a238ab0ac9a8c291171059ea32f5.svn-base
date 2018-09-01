@@ -1,0 +1,240 @@
+$(document).ready(function() {
+	// ------------------------------------------------------------
+	// 数据网格
+	$('#idDgDocument').datagrid({
+		title: '已发布文章一览',
+		fitColumns : true,
+		striped : true, // 斑马线
+		rownumbers : true,
+		pagination : true,
+		pagePosition : 'bottom',
+		pageList : [ 10, 20, 50, 100 ],
+		pageSize : 20,
+		pageNumber : 1,
+		singleSelect : false,
+		toolbar : '#idtoolDocument',
+		url : "document.action?parentCode="+1,
+		// data : listAirport,
+		columns : [ [ {
+			field : 'id',
+			title : '编号',
+			width : 40,
+			checkbox: true
+		}, {
+			field : 'name',
+			title : '文章名称',
+			width : 300
+		}, {
+			field : 'documentKind',
+			title : '文章类型',
+			width : 80
+		},{
+			field : 'documentType',
+			title : '文章存放类型',
+			width : 80,
+			hidden: true
+		},  {
+			field : 'uploadTime',
+			title : '上传时间',
+			width : 200
+		}, {
+			field : 'lastEditTime',
+			title : '最近修改时间',
+			width : 200
+		},{
+			field : 'creator',
+			title : '作者',
+			width :  100
+		},{
+			field : 'desc',
+			title : '备注',
+			width : 300,
+		} ] ],
+		//onLoadSuccess: function (resp) {$.mopoDatagridSuccess(resp, this);},
+        onSelect: function(rowIndex, rowData) {$('#idDocuId').val(rowData.id)}
+	}).datagrid("getPager").pagination({
+		showRefresh : false
+	});
+	toolDocument = {
+		getIds : function() {
+	    	var ids = [];
+	   		var rows =  $('#idDgDocument').datagrid('getSelections');
+	   		if (rows.length > 0) {
+              for (var i = 0; i < rows.length; i++)
+            	  {
+            	       ids.push(rows[i].id);
+            	  }
+	   		}	    		
+	    	return ids;
+	    },	
+	    
+		addByFile : function() {
+			$('#idDlgDocument').form('load', {
+			}).dialog({
+				title : '文件上传'
+			}).dialog('open');
+		},
+		
+		addByWriting :function() {
+			$('#idDlgDocument2').form('load',{				
+			}).dialog({
+				title:  '编写文章'
+			}).dialog('open');
+		},
+		
+		remove : function() {
+	        var ids = this.getIds();
+	        if (ids.length > 0) {
+	             $.messager.confirm('确定操作', '你确定要删除所选的文章吗？', function(flag) {
+	                 if(flag) {
+	                     $.mopoPost ({
+	                			url : 'document_del.action',
+	                            data : {"ids" : ids.join(",")},
+	                            success : function(resp) {
+	                                $('#idDgDocument').datagrid('reload');
+	                                $.messager.show({title : '提示', msg : resp.message});
+	                            }
+	                		});
+	                    }
+	                });
+	          } else {
+	              $.messager.alert('提示', '请选择要删除的用户！！', 'info');
+	          }
+	    },
+	    
+	    edit : function() {
+        	var rows =  $('#idDgDocument').datagrid('getSelections');
+            if (rows.length == 1) {
+                $('#idDlgDocumentEdit').form('load',{
+                    id   : 		rows[0].id,
+                    name : 	    rows[0].name,
+                    desc :      rows[0].desc
+                }).dialog({title : '编辑用户信息'}).dialog('open');
+            } else {
+                $.messager.alert('警告', '必须选中且只能选中一行！！', 'warning');
+            }
+        },
+        reload : function() {
+            $('#idDgDocument').datagrid('reload');
+        },
+
+        inverse : function() {
+            $("#idDgDocument").inverse();
+        }
+	}; 
+	$('#idDlgDocument').dialog({
+		width : 500,
+		height: 250,
+		title : '文件上传',
+		modal : true,
+		closed : true,
+		buttons : [ {
+			text : '提交',
+			iconCls : 'icon-ok',
+			handler: function(){
+				if($('#idDlgDocument').form('validate')) {
+					var url="document_upload.action";
+					var sel = $('#state').combobox('getValue');
+					$.mopoSubmit({
+						"formId" 	: "idFileForm",		// 填要提交的表单的ID
+						"url"		: url,
+						"data"		: {"documentKindId" : sel},
+						"success" 	: function(resp) {
+							$.messager.show({title : '提示', msg : resp.message});
+                            $('#idDgDocument').datagrid('reload');
+                            $('#idDlgDocument').dialog('close').form('reset');
+                            $.mopoClearFormErrorMsg('#idDlgDocument');
+						}
+					});
+				}
+			}
+					/*$('#addTask').form('submit', {
+						   url: 'project_upload.action?projectId='+$('#idProjectId').val(),
+						   //data : $("#idDlgCustomer").find('form').serialize(),
+						   success:function(data){
+						     // change the JSON string to javascript object
+						     var msg = eval('(' + data + ')');
+						     if (msg.success) {
+						       alert(1);
+						     }else{
+						       alert(2);
+						     }
+						   }
+						 });*/
+            		/*$.mopoPost ({
+            			url : 'project_upload.action?projectId='+$('#idProjectId').val(),
+                        data : $("#idDlgCustomer").find('form').serialize(),
+                        success : function(resp) {
+                            $.messager.show({title : '提示', msg : resp.message});
+                            $('#idDgCustomer').datagrid('reload');
+                            $('#idDlgCustomer').dialog('close').form('reset');
+                            $.mopoClearFormErrorMsg('#idDlgCustomer');
+                        },
+            			error : function(resp) {
+            				$.mopoSetFormErrorMsg(resp.errors, '#idDlgCustomer');
+            			}
+            		});*/							
+		}, {
+			text : '取消',
+			iconCls : 'icon-cancel',
+			handler : function() {
+				$('#idDlgDocument').dialog('close').form('reset')
+			}
+		} ]
+	});
+	$('#idDlgDocument2').dialog({
+		width : 700,
+		height: 450,
+		title : '文章编辑',
+		modal : true,
+		closed : true,
+		buttons : [ {
+			text : '提交',
+			iconCls : 'icon-ok',
+			handler: function(){
+				if($('#idDlgDocument2').form('validate')) {
+					var sel = $('#state').combobox('getValue');
+					$.mopoPost ({
+            			url : 'project_upload.action?projectId='+$('#idProjectId').val(),
+                        data : $("#idDlgDocument2").find('form').serialize(),
+                        success : function(resp) {
+                            $.messager.show({title : '提示', msg : resp.message});
+                            $('#idDgDocument').datagrid('reload');
+                            $('#idDlgDocument2').dialog('close').form('reset');
+                            $.mopoClearFormErrorMsg('#idDlgDocument2');
+                        },
+            			error : function(resp) {
+            				$.mopoSetFormErrorMsg(resp.errors, '#idDlgDocument2');
+            			}
+            		});
+				}
+			}									
+		}, {
+			text : '取消',
+			iconCls : 'icon-cancel',
+			handler : function() {
+				$('#idDlgDocument2').dialog('close').form('reset')
+			}
+		} ]
+	});
+	$('#comboBox1').combobox({		
+	    valueField:'id',
+	    textField:'text',
+	    onSelect: function(rec){
+	        var url = 'get_data2.php?id='+rec.id;
+	        }
+	});
+	/*$(function(){
+		$.mopoPost ({
+			url : 'project_showIndex.action?projectId='+$('#idProjectId').val(),
+            success : function(resp) {
+                $("#idProjectIndex input[name='projectName']").val(resp.data.name);
+                $("#idProjectIndex input[name='dataNum']").val(resp.data.documentNum);
+                $("#idProjectIndex .desc").text(resp.data.desc);
+                $("#idProjectIndex input[name='projectAddr']").val(resp.data.countryName);
+            },
+		});
+	});*/
+	
+});
+

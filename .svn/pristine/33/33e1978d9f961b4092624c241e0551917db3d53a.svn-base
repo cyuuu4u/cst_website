@@ -1,0 +1,13 @@
+/**
+ * Created by molin on 2016/12/27.
+ */
+$(document).ready(function() {
+    //================首页大图动画===================
+    //bootstrap
+    $('#show-image').carousel({
+        interval: 2000,
+        pause:"hover",
+        wrap:true
+    });
+
+});

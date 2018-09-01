@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>
+        冒泡软件
+    </title>
+    <link rel="shortcut icon" href="../images/logo.ico">
+    <link rel="stylesheet" href="../js/easyui1.5.1/themes/default/easyui.css">
+    <link rel="stylesheet" href="../js/easyui1.5.1/themes/icon.css">
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/schemer.css">
+    <script src="../js/easyui1.5.1/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/easyui1.5.1/jquery.easyui.min.js"></script>
+    <script src="../js/easyui1.5.1/locale/easyui-lang-zh_CN.js"></script>
+    <script src="../js/mopo.js"></script>
+    <script src="js/data.js" type="text/javascript"></script>
+    <script src="js/schemer.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+    <!-- 数据网格 -->
+    <table id="idDgSchemer" class="easyui-datagrid" style="width:100%;height:auto;min-height: 100px">
+    </table>
+
+    <!-- 工具栏 -->
+    <div id="idToolSchemer" style="padding:5px;">
+        <div>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="toolSchemer.add();">添加</a>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="toolSchemer.remove();">删除</a>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="toolSchemer.edit();">编辑</a>
+            <span class="datagrid-tool-separator"></span>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-reload" plain="true" onclick="toolSchemer.reload();">刷新</a>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-inverse" plain="true" onclick="toolSchemer.inverse();">反选</a>
+        </div>
+    </div>
+
+    <!-- 编辑对话框 -->
+    <div id="idDlgSchemer">
+        <form>
+            <input name="schemerId" type="hidden">
+            <p>
+                <span>登录名：</span><input class="textbox" name="loginName" type="text" placeholder="由6~30个英文字母、数字、下划线组成"/>
+            </p>
+            <p>
+                <span>名称：</span><input class="textbox" type="text" name="name" placeholder="不能超过20个汉字或60个英文字符"/>
+            </p>
+            <p>
+                <span>联系人：</span><input class="textbox" type="text" name="linkman" placeholder="不能超过20个汉字或60个英文字符"/>
+            </p>
+            <p>
+                <span>电话：</span><input class="textbox" type="text" name="phone"  placeholder="数字组成，多个电话以逗号分隔"/>
+            </p>
+            <p>
+                <span>电子信箱：</span><input class="textbox" type="text" name="email"  placeholder="60个字符以内"/>
+            </p>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,176 @@
+
+var currentItem = null;
+
+// $(function() {}); === $(document).ready(function(){...});
+$(document).ready(function () {
+
+    // 设置日期时间
+    showCurrentDateTime();
+
+    // 左侧导航项
+    showAccordionItems();
+    // 导航菜单标题
+    $("#idLayoutLeft").prev().children('.panel-title').css('font-size', '1.4rem');
+
+    $(window).resize(function(){
+        $('#idLayoutApp').layout('resize');
+    });
+});
+
+function showCurrentDateTime() {
+    setInterval("idDate.innerHTML='今天是'+new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);
+}
+
+function showAccordionItems() {
+    var items = [
+        {
+            title: '用户与权限',
+            iconCls: 'icon-caption',
+            selected: true,
+            children: [{
+                text: '帐号管理',
+                href: 'account.html'
+            }, {
+                text: '角色管理',
+                href: 'role.html'
+            }, {
+                text: '更改我的密码',
+                href: 'password.html'
+            }, {
+                text: '方案公司管理',
+                href: 'schemer.html'
+            }, {
+                text: '客户公司管理',
+                href: 'customer.html'
+            }, {
+                text: 'PCB板供应商管理',
+                href: 'pcb_provider.html'
+            }]
+        }, {
+            title: '订单管理',
+            iconCls: 'icon-caption',
+            selected: true,
+            children: [{
+                text: '方案管理',
+                href: 'scheme.html'
+            }, {
+                text: '客户下单',
+                href: 'make_order.html'
+            }, {
+                text: '方案公司开单',
+                href: 'order.html'
+            }, {
+                text: '我的订单（客户）',
+                href: 'my_order.html'
+            }, {
+                text: '我的订单（方案公司）',
+                href: 'schemer_order.html'
+            }]
+        }, {
+            title: '统计与查询',
+            iconCls: 'icon-caption',
+            selected: true,
+            children: [{
+                text: '综合统计',
+                href: 'statistic.html'
+            }, {
+                text: '芯片测试结果',
+                href: 'chip_test.html'
+            }, {
+                text: '整机测试结果',
+                href: 'interphone_test.html'
+            }]
+        }, {
+            title: '系统管理',
+            iconCls: 'icon-caption',
+            selected: true,
+            children: [{
+                text: '参数设置',
+                href: 'parameter.html'
+            }, {
+                text: '备份与恢复',
+                href: 'backup.html'
+            }, {
+                text: '操作日志',
+                href: 'log.html'
+            }]
+        }
+    ];
+
+    $.each(items, function(idx, obj) {
+        var section = '';
+        $.each(obj.children, function(i, sub) {
+            //section += '<div class="navItem"><a href="' + sub.href + '">' + sub.text + '</a></div>\n';
+            section += '<div class="navItem" onclick="addTab(\'' + sub.text + '\',\'' + sub.href + '\')">'+ sub.text +'</div>\n';
+        });
+
+        $('#idAccordion').accordion('add', {
+            multiple: true,
+            title: obj.title,
+            iconCls: obj.iconCls,
+            selected: obj.selected,
+            content: section,
+            bodyCls: 'accordionSection',
+            border: false
+        });
+
+        /*$('#idAccordion').append(function(n) {
+            var section = '<div class="accordionSection" title="' + obj.title
+                + '" iconCls="' + obj.iconCls + '" selected="' + obj.selected + '">\n';
+
+            $.each(obj.children, function(i, sub) {
+                section += '<a href="' + sub.href + '"><span class="navItem">' + sub.text + '</span></a>\n';
+            });
+
+            section += '</div>\n';
+            return section;
+        });*/
+    });
+
+    /* 动态改变属性示例， 属性通过options得到， 用json对象设置
+    var panels = $('#idAccordion').accordion('panels');
+    //alert(panels[1].panel('options').title);
+    $.each(panels, function(idx, p) {
+        p.panel({bodyCls: 'accordionSection'});
+    });*/
+
+    $(".navItem").hover(
+        function() {
+            $(this).css("background-color", "#e0ecff");
+            //$(this).css("color", "white");
+        },
+
+        function() {
+            //$(this).css("color", "#0099FF");
+            $(this).css("background-color", "white");
+        }
+    ).click(
+        function () {
+            if (currentItem) {
+                currentItem.css("color", "#0099FF");
+            }
+            $(this).css("color", "red");
+            currentItem = $(this);
+        }
+    );
+}
+
+function view(url) {
+    $('#idContentFrame').attr('src',url);
+}
+
+// 添加选项卡方法
+function addTab(title, url) {
+    var tab = $('#idContentTabs').tabs('exists', title);
+    if (tab) {
+        $('#idContentTabs').tabs('select', title);
+    } else {
+        $('#idContentTabs').tabs('add', {
+            fix: true,
+            border: false,
+            title: title,
+            content: '<iframe class="contentFrame" src="' + url + '"></iframe>',
+            closable: true
+        });
+    }
+}

@@ -1,0 +1,193 @@
+html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}input,textarea,select{*font-size:100%}legend{color:#000}#yui3-css-stamp.cssreset{display:none}a{text-decoration: none;}
+
+body {
+	font-family: Arial,Verdana,sans-serif,"瀹嬩綋";
+	font-weight: normal;
+	background-color: #000;
+}
+/*--------------------------Home Page FrameSet 首页框架---------------------*/
+#homepage {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#homepage .bottom {
+	width: 100%;
+	height: 90px;
+	background-color: #000;
+	position:fixed;
+	bottom:0px;/*把图像的底边缘设置在其包含元素底边缘之上某像素高的位置*/
+	top:auto;
+	z-index: 1;/*设置图像的层次*/
+}
+#home-top {
+	width: 1200px;
+	height: 96px;
+	margin-left: auto;/*<p>的边距 根据浏览器设置*/
+	margin-right: auto;
+}
+#home-bottom {
+	width: 1200px;
+	height: 70px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*-----------------------Top Content CSS 顶端内容------------------------*/
+.logo {
+	width: 300px;
+	float: left;
+}
+
+.top-links {
+	width: 900px;
+	float: left;
+}
+.animate-area {
+	width: 601px;
+	height: 36px;
+	position: absolute;
+	z-index: 100;
+}
+.aa-content {
+	width: 275px;
+	float: left;
+	display: none;
+	padding: 10px 10px 10px 15px;
+}
+.sum, .sum-en {
+	float: left;
+	width: 200px;
+	height: 36px;
+}
+.deps, .deps-en {
+	width: 200px;
+	float: left;
+	height: 36px;
+}
+.links {
+	width: 299px;
+	float: right;
+	height: 36px;
+}
+.links a {
+	font-size: 12px;
+	line-height: 36px;
+	color: #FFF;
+	float: left;
+	margin: 0 5px;
+    height:36px;
+}
+.links a:hover {
+	text-decoration: underline;
+}
+.links a.bord {
+	font-weight: 700;
+}
+.links a.link2tv {
+	width:30px;
+	background:url(images/tv.png) 0 0 no-repeat;
+}
+.links a.link2tv:hover {
+	background:url(images/tv.png) 0 -36px no-repeat;
+}
+.links span {
+	float: left;
+	color: #FFF;
+	font-size: 12px;
+	line-height: 36px;
+}
+.searchbox {
+	width: 200px;
+	height: 50px;
+	float: left;
+	background-color: #0378ea;
+	padding: 5px 45px 5px 54px;
+}
+.searchbox-en {
+	height: 30px;
+        padding: 6px 45px 0px 54px;
+}
+.searchbox input.inputtext {
+	width: 200px;
+	height: 24px;
+	float: left;
+	border: none;
+	padding: 0 30px 0 5px;
+	background: url(images/searchbox_bg.png) no-repeat 0 0;
+	color: #FFF;
+	font-size: 14px;
+	line-height: 24px;
+}
+.searchbox input.submit {
+	float: left;
+	width: 24px;
+	height: 24px;
+	margin-left: -24px;
+}
+.searchbox div.help {
+	width: 160px;
+	height: 20px;
+	float: left;
+	font-size: 12px;
+	line-height: 20px;
+	color: #FFF;
+	margin: 5px 0 0;
+    overflow:hidden;
+}
+.searchbox a.help {
+	float:right;
+	height:20px;
+	font-size:12px;
+	line-height:20px;
+	color:#FFF;
+	text-align:right;
+	margin:5px 0 0 0;
+}
+
+/*--------------------------footer---------------------------*/
+/*footer行1*/
+.bc-line-1 {
+	width: 1200px;
+	height: 20px;
+	float: left;
+	margin-top: 15px;
+}
+/*footer行2左*/
+.bc-left-1 {
+	float: left;
+	font-size: 12px;
+	line-height: 25px;
+	color: #666;
+}
+/*footer行1右*/
+.bc-right-1 {
+	float: right;
+	font-size: 12px;
+	line-height: 25px;
+	color: #666;
+}
+/*footer行2*/
+.bc-line-2 {
+	width: 1200px;
+	height: 20px;
+	float: left;
+	margin-top: 5px;
+}
+/*footer行2左*/
+.bc-left-2 {
+	float: left;
+	font-size: 12px;
+	line-height: 25px;
+	color: #666;
+}
+/*footer行2右*/
+.bc-right-2 {
+	float: right;
+	font-size: 12px;
+	line-height: 25px;
+	color: #666;
+}
+

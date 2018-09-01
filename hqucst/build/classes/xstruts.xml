@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xstruts>
+	<constant name="version" value="2.0" />
+	<constant name="extension" value="action" />
+	<constant name="encoding" value="utf-8" />
+	<constant name="debug" value="true" />
+	<constant name="default_db" value="mysql" />
+	<constant name="default_result_type" value="forward" />
+	<constant name="session_name_user" value="__user__" />
+
+    <!-- 供Action使用的选项 -->
+    <options>
+    	<!-- <option name="force_cross_domain" value="yes" /> -->
+        <option name="backup_directory" value="WEB-INF/backup" />
+        <option name="auto_backup" value="1" />
+        <option name="backup_interval" value="DAY 1" />
+        <option name="roll_dir" value="D:\svn\lesson\roll_all\2015-2016U\" />
+    </options>
+
+    <db name="mysql" class="com.xxdw.platform.db.DbConnection"
+		fieldprefix="f_">
+		<param name="driver">com.mysql.jdbc.Driver</param>
+		<param name="url">jdbc:mysql://localhost:3306/hqucst</param>
+		<param name="user">root</param>
+		<param name="password">x5</param>
+	</db>
+
+	<package name="root" namespace="/">
+		<interceptors>
+			<interceptor name="resubmitInterceptor"
+				class="com.xxdw.platform.interceptor.ResubmitInterceptor" />
+		</interceptors>
+
+		<global-results>
+			<!-- 若action中的result与此处定义的同名，action中的优先。 
+				forward方法:路径以"/"开头表示是相对ContextPath的路径 
+				redirect方法:路径以"/"开头表示是相对容器根的路径 -->
+			<result name="homepage" type="redirect_top">/hqucst/index.html</result>
+			<result name="need_login" type="json">{"success":false,"op":"NEED_LOGIN","message":"您尚未登录或已超时！"}</result>
+            <result name="error">/error.html</result>
+		</global-results>
+
+		<!-- 本节配置对用户是否登录的验证，mode表示缺省拒绝还是允许访问，
+			与exception(例外的action)参数中配置的action名配合使用 -->
+		<login required="true" mode="deny" sessionname="__user__">
+			<!-- <param name="result">homepage</param>  --><!-- 应为一个action或global-result -->
+			<param name="result">need_login</param>
+			<param name="result_ajax">need_login</param>
+			<param name="exception">goto, loginlogout, user_testPerformance</param> <!-- 以“，”分隔，action名前缀匹配 -->
+		</login>
+
+		<action name="goto" class="biz.mopo.hqucst.action.GotoAction">
+        	<result>${url}</result>
+        </action>
+        
+        <action name="loginlogout" class="biz.mopo.hqucst.action.LoginLogoutAction">
+        	<result>admin.html
+        		<!-- 参数被设置到request或添加到url之后 -->
+            	<param name="module">admin</param>
+        	</result>
+            <result name="input">index.html</result>
+        </action>
+        
+        <action name="document" class="biz.mopo.hqucst.action.DocumentAction">
+            <result name="test">test.jsp</result>
+        </action>
+        
+        <action name="teacher" class="biz.mopo.hqucst.action.TeacherAction">
+            <result name="test">test.jsp</result>
+        </action>
+        
+	</package>
+</xstruts>

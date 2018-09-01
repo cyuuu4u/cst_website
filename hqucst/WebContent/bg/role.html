@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>
+        冒泡软件
+    </title>
+    <link rel="shortcut icon" href="../images/logo.ico">
+    <link rel="stylesheet" href="../js/easyui1.5.1/themes/default/easyui.css">
+    <link rel="stylesheet" href="../js/easyui1.5.1/themes/icon.css">
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/role.css">
+    <script src="../js/easyui1.5.1/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/easyui1.5.1/jquery.easyui.min.js"></script>
+    <script src="../js/easyui1.5.1/locale/easyui-lang-zh_CN.js"></script>
+    <script src="../js/mopo.js"></script>
+    <script src="js/data.js" type="text/javascript"></script>
+    <script src="js/role.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+<div id="idLayoutPage" class="easyui-layout">
+    <!-- 页面左部 -->
+    <div id="idPageWest" data-options="region:'center'">
+        <!-- 数据网格 -->
+        <table id="idDgRole" class="easyui-datagrid" style="width:100%;height:auto;min-height: 400px">
+        </table>
+
+        <!-- 工具栏 -->
+        <div id="idToolRole" style="padding:5px;">
+            <div>
+                <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="toolRole.add();">添加</a>
+                <a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="toolRole.remove();">删除</a>
+                <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="toolRole.edit();">编辑</a>
+                <span class="datagrid-tool-separator"></span>
+                <a href="#" class="easyui-linkbutton" iconCls="icon-reload" plain="true" onclick="toolRole.reload();">刷新</a>
+            </div>
+        </div>
+
+        <!-- 编辑对话框 -->
+        <div id="idDlgRole">
+            <form>
+                <input name="roleId" type="hidden">
+                <p>
+                    <span>名称：</span><input class="textbox" type="text" name="name" placeholder="不能超过20个汉字或60个英文字符"/>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- 页面右侧 -->
+    <div id="idPageEast" data-options="region:'east',title:'权限分配',iconCls:'icon-authorize',split:true">
+        <div class="sub-area">
+            <!------------------------------------ 帐号分配 ------------------------------------>
+            <!-- 数据网格 -->
+            <table id="idDgAccount" class="easyui-datagrid" style="width:100%;height:auto;min-height: 100px">
+            </table>
+
+            <!-- 工具栏 -->
+            <div id="idToolAccount" style="padding:5px;">
+                <div>
+                    <a href="#" class="easyui-linkbutton" iconCls="icon-id-add" plain="true" onclick="toolAccount.add();">添加帐号到角色</a>
+                    <a href="#" class="easyui-linkbutton" iconCls="icon-id-remove" plain="true" onclick="toolAccount.remove();">从角色中移除帐号</a>
+                    <a href="#" class="easyui-linkbutton" iconCls="icon-inverse" plain="true" onclick="toolAccount.inverse();">反选</a>
+                </div>
+            </div>
+
+            <!-- 编辑对话框 -->
+            <div id="idDlgAccount">
+                <form>
+                    <p>
+                        <input class="textbox" type="text" name="loginName" placeholder="在此输入要查找的登录名"/>
+                        <a id="idBtnSearchAccount" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'">查找</a>
+                    </p>
+                    <p>
+                        <table id="idDgAccountCandidate" class="easyui-datagrid" style="width:100%;height:auto;min-height: 100px">
+                        </table>
+                    </p>
+                </form>
+            </div>
+
+            <!--------------------------------------权限分配------------------------------------>
+            <div style="line-height: 2rem">&nbsp;</div>
+            <div class="double-list">
+                <div class="left-side"><div id="idDlGot"></div></div>
+                <div class="middle-op">
+                    <p><a id="idBtn2Remaining" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-right'">移除</a></p>
+                    <p><a id="idBtn2Got" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-left'">添加</a></p>
+                </div>
+                <div class="right-side"><div id="idDlRemaining"></div></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

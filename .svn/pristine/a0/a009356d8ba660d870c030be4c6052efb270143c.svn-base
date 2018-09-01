@@ -1,0 +1,39 @@
+
+$(document).ready(function () {
+    //------------------------------------------------------------
+    // 可选的统计周期
+    $('#idSecondLevel').combobox({
+        //url:'combobox_data.json',
+        panelHeight:'auto',
+        valueField:'id',
+        textField:'name',
+        label: '统计周期：',
+        required:true,
+        editable:true,//不可编辑，只能选择
+        labelWidth: 70,
+        data: listModel1,
+        onSelect: function (rec) {
+            if(rec.id == 2){
+               $('#idThirdLevel').combobox('loadData',listModel12);
+            }
+
+        }
+    });
+
+    // 可选的出货产品类型
+    $('#idThirdLevel').combobox({
+        //url:'combobox_data.json',
+        panelHeight:'auto',
+        valueField:'id',
+        textField:'name',
+        label: '产品：',
+        labelWidth: 50,
+        required:true,
+        editable:false,//不可编辑，只能选择
+        data:listModel11
+
+    });
+
+
+});
+

@@ -1,0 +1,19 @@
+<%@ page language="java" pageEncoding="utf-8"%>
+<%@ include file="header.inc.jsp"%>
+
+<body>
+<input type="hidden" id="idKindId" value="${id}" />
+<div id="idLayoutPage" class="easyui-layout">
+<form id="idFileForm" enctype="multipart/form-data"  method="post">
+    <!-- 页面左部 -->
+    <p>请选择文章分类：<select class="easyui-combobox"  id="comboBoxAdd" name="comboBoxAdd" style="width:100px;"></select></p>
+    <div class="editorArea">
+        <textarea id="editor" class="ckeditor"></textarea>
+        <script type="text/javascript">CKEDITOR.replace('editor');</script>
+    </div>
+    <p><a id="idBtnSubmit" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-right'">提交</a></p>
+</form>
+
+</div>
+</body>
+</html>

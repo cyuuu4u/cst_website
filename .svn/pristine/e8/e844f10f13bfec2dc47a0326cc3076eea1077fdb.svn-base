@@ -1,0 +1,131 @@
+package biz.mopo.hqucst.action;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import org.apache.commons.fileupload.FileUploadBase.InvalidContentTypeException;
+import org.apache.commons.fileupload.FileUploadBase.SizeLimitExceededException;
+
+import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
+import com.xxdw.platform.common.KeyValueNode;
+import com.xxdw.platform.controller.Action2;
+import com.xxdw.platform.util.CommonUtils;
+
+import biz.mopo.hqucst.bean.DocumentForm;
+import biz.mopo.hqucst.common.Constants;
+import biz.mopo.hqucst.po.Document;
+import biz.mopo.hqucst.po.User;
+import biz.mopo.hqucst.service.DocumentService;
+
+public class DocumentAction extends Action2 {
+	private DocumentForm			documentForm;
+	private DocumentService	        documentService;
+	
+	public void setDocumentForm(DocumentForm projectForm) {
+		this.documentForm = projectForm;
+	}
+	
+	public void setDocumentService(DocumentService projectService) {
+		this.documentService = projectService;
+	}
+	
+	//====================================================
+	@Override
+	public String execute() {
+		try {
+			int parentCode = CommonUtils.str2int(this.documentForm.getParentCode(), -1);
+			List<Document> listDocument = this.documentService.findByParentCode(parentCode);
+			jsonVo.setSuccess(true);
+			jsonVo.setRows(listDocument);
+			jsonVo.setTotal(listDocument.size());
+		} catch (SQLException e) {
+			jsonVo.setMessage("获取员工列表出错。");
+		}
+
+		return JSON;
+	}
+
+	public String del(){
+		if(this.getIds().isEmpty()) {
+			jsonVo.setMessage(this.getMessage());
+		}
+		else {
+			try {
+				this.documentService.deleteById(this.getIds());
+				jsonVo.setSuccess(true);
+				jsonVo.setMessage("已成功删除文章");
+			}catch (SQLException e) {
+				jsonVo.setMessage("删除文章出错!");
+				logger.debug("删除文章出错。", e);
+			}
+		}
+
+		return JSON;
+	}
+	public String upload() {
+		int documentKindId = CommonUtils.str2int(this.documentForm.getDocumentKindId(), -1);// 确认客户端参数是否为id
+		if (documentKindId == -1) {
+			jsonVo.setMessage("错误的项目编号");
+		}
+ 		 if(uploadtry()) {
+			try {
+				String url = getUpload().getUrl("filedata");// 设置上传后图片的URL, "Filedata"为表单项的name
+				CommonUtils.TRACE(url);
+				Document po=new Document();
+				po.setName(this.documentForm.getName());
+				po.setDocumentKindId(documentKindId);
+				po.setCreatorId(3);
+				po.setUrl(url);			
+				this.documentService.add1(po);
+				jsonVo.setSuccess(true);
+				jsonVo.setMessage("上传文件成功。");
+			} catch (SQLException e) {
+				jsonVo.setMessage("上传文件失败。");
+			}
+		}
+
+		this.print(jsonVo);
+		return null;
+	}
+	
+	private boolean uploadtry() {
+		if(getUpload() == null) {
+			System.out.println("上传表单必须是\"multipart/form-data\".");
+			return false;
+		}
+		try {
+			getUpload().setParentPath(getUpload().getParentPath() + Constants.SOFTWARE_UPLOAD_PATH);             
+			getUpload().upload();
+			if(getUpload().getUrl("filedata").equals("")) {
+				jsonVo.setMessage("请选择文件！");
+			}
+			else {
+				return true;
+			}
+		} catch(SizeLimitExceededException e){            
+			jsonVo.setMessage("上传文件太大！");
+		} catch(InvalidContentTypeException e) {
+			jsonVo.setMessage("上传文件类型不被支持！");
+		} catch(java.io.FileNotFoundException e) {
+			jsonVo.setMessage("文件或目录不存在！");
+		} catch (Exception e) {
+			e.printStackTrace();
+			jsonVo.setMessage("上传过程发生未知错误！");
+		}
+
+		return false;
+	}
+	/*public String update(){
+		try {
+			String Desc=this.projectForm.getDesc();	
+			System.out.println(Desc+" ? ? ?"+this.projectForm.getId());
+			Project po = (Project)this.projectForm.toPojo(Project.class);
+			this.projectService.update(po);
+			jsonVo.setSuccess(true);
+		} catch (SQLException e) {
+			jsonVo.setMessage("更改文件出错！");
+		}		
+	return JSON;
+    }*/
+	
+}	
